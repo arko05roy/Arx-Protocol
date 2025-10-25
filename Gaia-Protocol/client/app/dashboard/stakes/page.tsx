@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input"
 import { Zap, Plus, Loader, AlertCircle, UserPlus, ArrowDownToLine, Lock, Upload, FileText, TrendingUp, Briefcase, CheckCircle, X } from "lucide-react"
 import { parseEther, formatUnits, formatEther } from "viem"
 import { motion, AnimatePresence } from "framer-motion"
+import { SelfVerification } from "@/components/self-verification"
 
 export default function CarbonStakesPage() {
   const { address } = useAccount()
@@ -53,6 +54,8 @@ export default function CarbonStakesPage() {
   const [showProofModal, setShowProofModal] = useState(false)
   const [selectedTaskForProof, setSelectedTaskForProof] = useState<bigint | null>(null)
   const [registerAmount, setRegisterAmount] = useState("")
+  const [showSelfVerification, setShowSelfVerification] = useState(false)
+  const [isVerified, setIsVerified] = useState(false)
 
   // Filter tasks by status
   const fundedTasks = (tasks || []).filter((t) => t.status === TaskStatus.Funded)
@@ -95,6 +98,29 @@ export default function CarbonStakesPage() {
     } catch (err) {
       setError(err instanceof Error ? err.message : "Failed to register")
     }
+  }
+
+  const handleOpenRegisterModal = () => {
+    // Always show Self verification modal when user clicks register
+    setShowSelfVerification(true)
+  }
+
+  const handleVerificationSuccess = () => {
+    // Store verification in localStorage (only verify once)
+    const verificationKey = `self_verified_${address}`
+    localStorage.setItem(verificationKey, 'true')
+    
+    setIsVerified(true)
+    setShowSelfVerification(false)
+    setShowRegisterModal(true)
+    setSuccessMessage("Identity verified! You can now register as an operator.")
+    setTimeout(() => setSuccessMessage(null), 3000)
+  }
+
+  const handleVerificationSkip = () => {
+    // Do not mark verified; simply close modal and open register flow
+    setShowSelfVerification(false)
+    setShowRegisterModal(true)
   }
 
   const handleWithdraw = async () => {
@@ -290,7 +316,7 @@ export default function CarbonStakesPage() {
               Register as an operator to accept and execute environmental tasks. Minimum stake: {minStakeLoading ? "..." : formatEther(minimumStake || 0n)} CELO
             </p>
             <Button
-              onClick={() => setShowRegisterModal(true)}
+              onClick={handleOpenRegisterModal}
               className="bg-primary text-primary-foreground hover:bg-primary/90"
             >
               <UserPlus className="h-4 w-4 mr-2" />
@@ -787,6 +813,15 @@ export default function CarbonStakesPage() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Self Verification Modal */}
+      <SelfVerification
+        isOpen={showSelfVerification}
+        onClose={() => setShowSelfVerification(false)}
+        onSuccess={handleVerificationSuccess}
+        onSkip={handleVerificationSkip}
+        userAddress={address}
+      />
     </div>
   )
 }
