@@ -92,7 +92,7 @@ export default function FloatingChat() {
             <motion.div key="open" initial={{ rotate: 90 }} animate={{ rotate: 0 }} exit={{ rotate: -90 }}>
               <Image
                 src="/chat-bubble-icon.png"
-                alt="Gaia Chat"
+                alt="Arx Chat"
                 width={56}
                 height={56}
                 className="w-full h-full object-contain"
@@ -113,7 +113,7 @@ export default function FloatingChat() {
           >
             {/* Header */}
             <div className="p-4 border-b border-border bg-primary text-white">
-              <h3 className="font-semibold">Gaia Assistant</h3>
+              <h3 className="font-semibold">Arx Assistant</h3>
               <p className="text-xs text-white/80">Always here to help</p>
             </div>
 

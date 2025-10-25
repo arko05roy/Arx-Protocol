@@ -234,7 +234,7 @@ function Bento3Section() {
           <div className="space-y-5">
             <div className="inline-flex items-center gap-3 rounded-full px-3 py-1 text-xs uppercase tracking-[0.4em] text-current">
               <span className={`h-1 w-14 rounded-full ${palette.headingAccent}`} />
-              The Gaia Consensus 
+              The Arx Consensus 
             </div>
             <h1 className={`text-3xl font-semibold leading-tight sm:text-4xl md:text-5xl ${palette.heading}`}>
               Proof of Impact

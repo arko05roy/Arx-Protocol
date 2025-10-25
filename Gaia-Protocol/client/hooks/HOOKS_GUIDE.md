@@ -1,6 +1,6 @@
-# Gaia Protocol React Hooks - Quick Start Guide
+# Arx Protocol React Hooks - Quick Start Guide
 
-Complete React hooks for Gaia Protocol smart contracts using Wagmi v2+.
+Complete React hooks for Arx Protocol smart contracts using Wagmi v2+.
 
 ## Setup
 

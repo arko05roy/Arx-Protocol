@@ -2,13 +2,13 @@ import { Leaf, Github, Twitter, Mail, FileText } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="bg-gaia-black text-gaia-yellow py-16 px-6">
+    <footer className="bg-arx-black text-arx-yellow py-16 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div className="md:col-span-2">
             <div className="flex items-center gap-2 mb-4">
               <Leaf className="w-8 h-8" />
-              <span className="text-2xl font-bold tracking-tight">GAIA PROTOCOL</span>
+              <span className="text-2xl font-bold tracking-tight">ARX PROTOCOL</span>
             </div>
             <p className="text-lg leading-relaxed mb-6">
               A Layer 3 blockchain on Celo where transactions represent real-world environmental impact,
@@ -80,8 +80,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gaia-yellow pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm">© 2025 Gaia Protocol. All rights reserved.</p>
+        <div className="border-t border-arx-yellow pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-sm">© 2025 Arx Protocol. All rights reserved.</p>
           <div className="flex gap-6 text-sm">
             <a href="#" className="hover:opacity-60 transition-opacity">
               Privacy Policy

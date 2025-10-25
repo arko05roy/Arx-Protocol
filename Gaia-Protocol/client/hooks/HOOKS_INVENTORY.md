@@ -1,4 +1,4 @@
-# Gaia Protocol Hooks - Complete Inventory
+# Arx Protocol Hooks - Complete Inventory
 
 ## 📋 All 68 Hooks at a Glance
 

@@ -1,6 +1,6 @@
-# Gaia Protocol React Hooks
+# Arx Protocol React Hooks
 
-Production-ready React hooks for interacting with Gaia Protocol smart contracts on Celo blockchain using Wagmi v2+.
+Production-ready React hooks for interacting with Arx Protocol smart contracts on Celo blockchain using Wagmi v2+.
 
 ## 📦 What's Included
 

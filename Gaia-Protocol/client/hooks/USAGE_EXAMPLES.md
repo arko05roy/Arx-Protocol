@@ -1,4 +1,4 @@
-# Gaia Protocol Hooks - Usage Examples
+# Arx Protocol Hooks - Usage Examples
 
 Real-world examples showing how to use the hooks in your components.
 

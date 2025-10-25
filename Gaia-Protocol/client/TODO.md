@@ -1,4 +1,4 @@
-# Gaia Protocol - TODO List
+# Arx Protocol - TODO List
 
 ## 🔗 Hook Integration Required
 

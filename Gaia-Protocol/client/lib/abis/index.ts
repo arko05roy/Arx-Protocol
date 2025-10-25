@@ -1,5 +1,5 @@
 /**
- * Smart Contract ABIs for Gaia Protocol
+ * Smart Contract ABIs for Arx Protocol
  * Extracted from web3/artifacts
  */
 
