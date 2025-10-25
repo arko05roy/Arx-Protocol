@@ -161,7 +161,7 @@ export default function ModelRegistry() {
       architecture: model.architecture,
       performance: Number(accuracy) / 100,
       predictions: Number(totalPredictions),
-      stake: `${(Number(model.stake) / 1e18).toLocaleString()} GAIA`,
+      stake: `${(Number(model.stake) / 1e18).toLocaleString()} ARX`,
       accuracy: Number(accuracy) / 100,
       lastUpdated: new Date(Number(model.registeredAt) * 1000).toLocaleDateString(),
       status: model.isActive ? "active" : "inactive",

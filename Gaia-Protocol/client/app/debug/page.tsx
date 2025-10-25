@@ -56,7 +56,7 @@ export default function DebugPage() {
               <span className="font-semibold">Chain ID:</span> {chainId || "Unknown"}
             </p>
             <p>
-              <span className="font-semibold">Expected Chain ID:</span> 424242 (Gaia L2)
+              <span className="font-semibold">Expected Chain ID:</span> 424242 (Arx L2)
             </p>
           </div>
         </Card>

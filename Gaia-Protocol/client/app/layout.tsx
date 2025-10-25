@@ -24,8 +24,8 @@ const roboto = Roboto({
 })
 
 export const metadata: Metadata = {
-  title: "Gaia Protocol - Empowering Real-World Impact",
-  description: "Gaia Protocol connects dreamers and doers — funding real actions that heal the planet.",
+  title: "Arx Protocol - Empowering Real-World Impact",
+  description: "Arx Protocol connects dreamers and doers — funding real actions that heal the planet.",
   generator: "v0.app",
 }
 

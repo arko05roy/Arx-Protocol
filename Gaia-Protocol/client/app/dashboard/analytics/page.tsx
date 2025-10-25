@@ -93,7 +93,7 @@ export default function Analytics() {
           <div className="flex justify-between items-center">
             <div>
               <h1 className="text-3xl font-bold text-foreground">Analytics Dashboard</h1>
-              <p className="text-muted-foreground">Comprehensive insights into the Gaia Protocol ecosystem</p>
+              <p className="text-muted-foreground">Comprehensive insights into the Arx Protocol ecosystem</p>
             </div>
             <div className="flex gap-2">
               <Button variant="outline" className="gap-2">

@@ -17,7 +17,7 @@ export default function DashboardHeader() {
     <header className="border-b border-border bg-card px-6 py-4 flex items-center justify-between">
       <div className="flex-1">
         <h1 className="text-2xl font-bold">Overview</h1>
-        <p className="text-sm text-foreground/60">Welcome back to your Gaia Protocol dashboard</p>
+          <p className="text-sm text-foreground/60">Welcome back to your Arx Protocol dashboard</p>
       </div>
 
       {/* cUSD Balance Display */}
@@ -25,7 +25,7 @@ export default function DashboardHeader() {
         <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary/10 border border-primary/20">
           <DollarSign className="h-5 w-5 text-primary" />
           <div className="flex flex-col">
-            <span className="text-xs text-foreground/60 font-medium">GAIA Balance</span>
+              <span className="text-xs text-foreground/60 font-medium">ARX Balance</span>
             <div className="flex items-center gap-2">
               {isLoading ? (
                 <Loader className="h-4 w-4 animate-spin text-primary" />

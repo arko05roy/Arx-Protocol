@@ -4,7 +4,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 
 const faqs = [
   {
-    question: "How does Gaia verify impact?",
+    question: "How does Arx verify impact?",
     answer:
       "We use a combination of satellite imagery, on-ground verification, and blockchain technology to ensure all reported impact is accurate and verifiable.",
   },
@@ -36,7 +36,7 @@ export default function FAQ() {
       <div className="mx-auto max-w-3xl">
         <div className="text-center mb-12">
           <h2 className="text-4xl sm:text-5xl font-bold mb-4">Frequently Asked Questions</h2>
-          <p className="text-lg text-foreground/70">Find answers to common questions about Gaia Protocol.</p>
+          <p className="text-lg text-foreground/70">Find answers to common questions about Arx Protocol.</p>
         </div>
 
         <Accordion type="single" collapsible className="w-full">
