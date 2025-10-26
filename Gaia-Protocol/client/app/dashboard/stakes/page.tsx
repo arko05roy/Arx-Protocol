@@ -256,9 +256,9 @@ export default function CarbonStakesPage() {
                   {stakeLoading ? (
                     <Loader className="h-6 w-6 animate-spin" />
                   ) : availableStake ? (
-                    formatEther(availableStake) + " CELO"
+                    formatEther(availableStake) + " ARX"
                   ) : (
-                    "0 CELO"
+                    "0 ARX"
                   )}
                 </p>
               </div>
@@ -274,9 +274,9 @@ export default function CarbonStakesPage() {
                   {totalStakeLoading ? (
                     <Loader className="h-6 w-6 animate-spin" />
                   ) : totalStake ? (
-                    formatEther(totalStake) + " CELO"
+                    formatEther(totalStake) + " ARX"
                   ) : (
-                    "0 CELO"
+                    "0 ARX"
                   )}
                 </p>
               </div>
@@ -313,7 +313,7 @@ export default function CarbonStakesPage() {
           <Card className="p-6 bg-card border border-border">
             <h2 className="text-xl font-bold mb-2">Become an Operator</h2>
             <p className="text-sm text-foreground/60 mb-4">
-              Register as an operator to accept and execute environmental tasks. Minimum stake: {minStakeLoading ? "..." : formatEther(minimumStake || 0n)} CELO
+              Register as an operator to accept and execute environmental tasks. Minimum stake: {minStakeLoading ? "..." : formatEther(minimumStake || 0n)} ARX
             </p>
             <Button
               onClick={handleOpenRegisterModal}
@@ -358,7 +358,7 @@ export default function CarbonStakesPage() {
                 )}
 
                 <div>
-                  <label className="block text-sm font-medium mb-2">Stake Amount (CELO)</label>
+                  <label className="block text-sm font-medium mb-2">Stake Amount (ARX)</label>
                   <Input
                     type="number"
                     placeholder="1.0"
