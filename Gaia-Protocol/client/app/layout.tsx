@@ -48,7 +48,7 @@ export default async function RootLayout({
   );
   return (
     <html lang="en">
-      <body className={`${poppins.variable} ${roboto.variable} ${robotoCondensed.variable} font-sans antialiased roboto-condensed`}>
+      <body className={`${poppins.variable} ${roboto.variable} ${robotoCondensed.variable} antialiased roboto-condensed`}>
         <Providers initialState={initialState}>
           {children}
         <FloatingChat />
