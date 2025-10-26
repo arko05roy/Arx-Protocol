@@ -273,28 +273,24 @@ pnpm test:e2e
 
 ## 📊 Contract Addresses
 
-### Celo Alfajores Testnet
+
+
+### Gaia L3 
 
 | Contract | Address |
 |----------|---------|
-| TaskRegistry | 0x... |
-| FundingPool | 0x... |
-| CollateralManager | 0x... |
-| VerificationManager | 0x... |
-| CarbonCreditMinter | 0x... |
-| CarbonMarketplace | 0x... |
-| PredictionMarket | 0x... |
-| GovernanceDAO | 0x... |
-| ImpactToken | 0x... |
-| DataRegistry | 0x... |
+CUSSD | 0x5FbDB2315678afecb367f032d93F642f64180aa3|
+TASK_REGISTRY | 0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0|
+FUNDING_POOL|0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9|
+COLLATERAL_MANAGER | 0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9"
+VERIFICATION_MANAGER="0x5FC8d32690cc91D4c39d9d3abcBD16989F875707"
+CARBON_CREDIT_MINTER="0x0165878A594ca255338adfa4d48449f69242Eb8F"
+CARBON_MARKETPLACE="0xa513E6E4b8f2a923D98304ec87F64353C4D5C853"
+PREDICTION_MARKET="0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6"
+GOVERNANCE_DAO="0x8A791620dd6260079BF849Dc5567aDC3F2FdC318"
+DATA_REGISTRY="0x610178dA211FEF7D417bC0e6FeD39F05609AD788"
+MODEL_REGISTRY="0xB7f8BC63BbcaD18155201308C8f3540b07f84F5e"
 
-### Gaia L3 (Live)
-
-| Contract | Address |
-|----------|---------|
-| TaskRegistry | 0x... |
-| FundingPool | 0x... |
-| ... | ... |
 
 ---
 
@@ -320,15 +316,6 @@ pnpm test:e2e
 - /governance - DAO proposals
 - /dashboard - User dashboard
 
----
-
-## 🔐 Security
-
-### Audits
-
-- ✅ *OpenZeppelin Contracts* used for battle-tested primitives
-- 🔄 *Audit in progress* by [Audit Firm Name]
-- 🐛 *Bug Bounty:* Contact security@gaia.eco
 
 ### Key Security Features
 
@@ -386,15 +373,6 @@ git commit -m "feat: add amazing feature"
 git push origin feature/amazing-feature
 
 
----
-
-## 🏆 Hackathon Wins
-
-- 🥇 *ETHGlobal 2024* - Best ReFi Project
-- 🥈 *Celo Hackathon* - Most Innovative Use of Celo
-- 🥉 *OP Stack Builders* - Best L3 Application
-
----
 
 ## 🗺 Roadmap
 
@@ -453,22 +431,6 @@ This project is licensed under MIT License - see [LICENSE](./LICENSE) file for d
 - *The Graph* - Decentralized indexing
 - *IPFS/Filecoin* - Decentralized storage
 
----
-
-## 💡 Why OP Stack L3?
-
-| Feature | Gaia L3 | Celo L2 | Ethereum L1 |
-|---------|---------|---------|-------------|
-| Block Time | 2s | 5s | 12s |
-| Gas Cost | $0.0001 | $0.01 | $5-50 |
-| TPS | 1000+ | 100+ | 15-30 |
-| Custom Gas Token | ✅ $IMPACT | ❌ | ❌ |
-| Dedicated Blockspace | ✅ | ❌ | ❌ |
-| Proof of Impact | ✅ | ❌ | ❌ |
-
-*Bottom Line:* We need speed, low cost, and custom consensus. L3 gives us all three while inheriting Ethereum's security.
-
----
 
 ## 🚨 Disclaimer
 
