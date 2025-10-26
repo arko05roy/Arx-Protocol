@@ -222,11 +222,11 @@ export default function TaskDetail() {
                 <div>
                   <div className="flex justify-between text-sm mb-2">
                     <span className="text-muted-foreground">Expected CO₂ Offset</span>
-                    <span className="text-foreground font-medium">{formatUnits(task.expectedCO2, 0)} tons</span>
+                    <span className="text-foreground font-medium">{formatUnits(task.expectedCO2, 18)} tons</span>
                   </div>
                   <div className="text-xs text-muted-foreground">
                     {task.actualCO2 > 0n && (
-                      <p>Actual: {formatUnits(task.actualCO2, 0)} tons</p>
+                      <p>Actual: {formatUnits(task.actualCO2, 18)} tons</p>
                     )}
                   </div>
                 </div>
