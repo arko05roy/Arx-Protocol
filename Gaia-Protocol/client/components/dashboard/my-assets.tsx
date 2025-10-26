@@ -1,8 +1,8 @@
 "use client"
 
 import { Card } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Download, Eye } from "lucide-react"
+import { CartoonButton } from "@/components/ui/cartoon-button"
+ 
 import { useGetBalanceOfBatch, useGetCreditMetadata } from "@/hooks"
 import { useAccount } from "wagmi"
 import { formatUnits } from "viem"
@@ -21,15 +21,9 @@ export default function MyAssets() {
     <Card className="gaia-card">
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-xl font-bold">My Carbon Assets</h2>
-        <div className="flex gap-2">
-          <Button variant="outline" size="sm" className="gap-2 bg-transparent">
-            <Download className="h-4 w-4" />
-            Export Data
-          </Button>
-          <Button className="gaia-button-primary gap-2" size="sm">
-            <Eye className="h-4 w-4" />
-            View Details
-          </Button>
+        <div className="flex gap-2 items-center">
+          <CartoonButton label="Export Data" color="bg-green-400" />
+          <CartoonButton label="View Details" color="bg-green-400" />
         </div>
       </div>
 
