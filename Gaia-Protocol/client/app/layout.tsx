@@ -1,6 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Poppins, Roboto } from "next/font/google"
+import { Poppins, Roboto, Roboto_Condensed } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 import FloatingChat from "@/components/floating-chat"
@@ -23,6 +23,13 @@ const roboto = Roboto({
   variable: "--font-roboto",
 })
 
+const robotoCondensed = Roboto_Condensed({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "700"],
+  style: ["normal", "italic"],
+  variable: "--font-roboto-condensed",
+})
+
 export const metadata: Metadata = {
   title: "Arx Protocol - Empowering Real-World Impact",
   description: "Arx Protocol connects dreamers and doers — funding real actions that heal the planet.",
@@ -41,7 +48,7 @@ export default async function RootLayout({
   );
   return (
     <html lang="en">
-      <body className={`${poppins.variable} ${roboto.variable} font-sans antialiased `}>
+      <body className={`${poppins.variable} ${roboto.variable} ${robotoCondensed.variable} antialiased roboto-condensed`}>
         <Providers initialState={initialState}>
           {children}
         <FloatingChat />

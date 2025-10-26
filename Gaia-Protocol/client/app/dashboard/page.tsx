@@ -4,14 +4,12 @@ import { useState, useMemo } from "react"
 import { useAccount } from "wagmi"
 import { formatUnits } from "viem"
 import DashboardHeader from "@/components/dashboard/header"
-import StatsCards from "@/components/dashboard/stats-cards"
 import PoolComposition from "@/components/dashboard/pool-composition"
 import FeatureCards from "@/components/dashboard/feature-cards"
 import MyAssets from "@/components/dashboard/my-assets"
 import CreateTaskModal from "@/components/dashboard/create-task-modal"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
 import {
   useGetTotalTasks,
@@ -131,10 +129,7 @@ export default function Dashboard() {
             </Button>
           </div>
 
-          {/* Protocol-Wide Stats */}
-          <StatsCards />
-
-          {/* User Portfolio Section */}
+          {/* Key Metrics Section */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {portfolioStats.map((stat, index) => {
               const Icon = stat.icon
@@ -158,15 +153,17 @@ export default function Dashboard() {
               {/* Pool Composition */}
               <PoolComposition />
 
-              {/* Protocol Stats */}
+              {/* Protocol Overview */}
               <Card className="gaia-card">
-                <h2 className="text-xl font-bold mb-6">Protocol Statistics</h2>
+                <div className="flex items-center justify-between mb-6">
+                  <h2 className="text-xl font-bold">Protocol Overview</h2>
+                </div>
                 <div className="grid grid-cols-2 gap-4">
                   {protocolStats.map((stat, index) => (
-                    <div key={index} className="p-4 rounded-lg bg-muted/50">
-                      <p className="text-sm text-foreground/60 mb-1">{stat.label}</p>
+                    <div key={index} className="p-4 rounded-lg bg-muted/50 hover:bg-muted/70 transition-colors">
+                      <p className="text-sm text-foreground/60 mb-2">{stat.label}</p>
                       <p className="text-2xl font-bold text-foreground">{stat.value.toLocaleString()}</p>
-                      <p className="text-xs text-foreground/40 mt-1">{stat.subtext}</p>
+                      <p className="text-xs text-foreground/40 mt-2">{stat.subtext}</p>
                     </div>
                   ))}
                 </div>

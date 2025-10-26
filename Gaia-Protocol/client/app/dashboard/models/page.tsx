@@ -293,10 +293,10 @@ export default function ModelRegistry() {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-foreground mb-2">Initial Stake (GAIA)</label>
+                    <label className="block text-sm font-medium text-foreground mb-2">Initial Stake (ARX)</label>
                     <Input 
                       type="number"
-                      placeholder="Minimum 10 GAIA"
+                      placeholder="Minimum 10 ARX"
                       value={registerForm.stakeAmount}
                       onChange={(e) => setRegisterForm({...registerForm, stakeAmount: e.target.value})}
                       min="10"
@@ -304,7 +304,7 @@ export default function ModelRegistry() {
                     />
                     {registerForm.stakeAmount && parseFloat(registerForm.stakeAmount) < 10 && (
                       <p className="text-xs text-red-500 mt-1">
-                        ⚠️ Minimum stake is 10 GAIA
+                        ⚠️ Minimum stake is 10 ARX
                       </p>
                     )}
                     {registerForm.stakeAmount && parseFloat(registerForm.stakeAmount) >= 10 && (
@@ -619,7 +619,7 @@ export default function ModelRegistry() {
                 <label className="text-sm font-medium text-muted-foreground mb-2">Performance Metrics</label>
                 <div className="grid grid-cols-3 gap-4">
                   <div className="bg-muted p-3 rounded-lg text-center">
-                    <span className="text-lg font-bold text-primary min-w-fit">GAIA</span>
+                    <span className="text-lg font-bold text-primary min-w-fit">ARX</span>
                     {(selectedModel.accuracy * 100).toFixed(1)}%
                     <div className="text-sm text-muted-foreground">Accuracy</div>
                   </div>
@@ -637,7 +637,7 @@ export default function ModelRegistry() {
               <div>
                 <label className="text-sm font-medium text-muted-foreground mb-2">Total Rewards Earned</label>
                 <p className="text-foreground font-medium text-primary">
-                  {(Number(selectedModel.totalRewardsEarned) / 1e18).toLocaleString()} GAIA
+                  {(Number(selectedModel.totalRewardsEarned) / 1e18).toLocaleString()} ARX
                 </p>
               </div>
 
