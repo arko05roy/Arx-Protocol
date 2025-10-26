@@ -230,12 +230,12 @@ export default function DataMarketplacePage() {
 
                     <div className="space-y-3 pt-4 border-t border-border">
                       <div className="flex justify-between items-center">
-                        <p className="text-sm text-muted-foreground mb-2">Price per credit (GAIA)</p>
-                        <span className="font-bold">{pricePerCredit.toFixed(2)} GAIA</span>
+                        <p className="text-sm text-muted-foreground mb-2">Price per credit (ARX)</p>
+                        <span className="font-bold">{pricePerCredit.toFixed(2)} ARX</span>
                       </div>
                       <div className="flex justify-between items-center">
                         <span className="text-sm text-foreground/60">Total Price</span>
-                        <span className="font-bold text-lg text-primary">{totalPrice.toFixed(2)} GAIA</span>
+                        <span className="font-bold text-lg text-primary">{totalPrice.toFixed(2)} ARX</span>
                       </div>
 
                       <Button
@@ -286,7 +286,7 @@ export default function DataMarketplacePage() {
                           <p className="text-sm"><span className="font-semibold">Token ID:</span> #{selectedModal.order.tokenId.toString()}</p>
                           <p className="text-sm"><span className="font-semibold">Seller:</span> {selectedModal.order.seller.slice(0, 10)}...{selectedModal.order.seller.slice(-8)}</p>
                           <p className="text-sm"><span className="font-semibold">Available:</span> {formatUnits(selectedModal.order.amount, 0)} CO₂</p>
-                          <p className="text-sm"><span className="font-semibold">Price:</span> {formatUnits(selectedModal.order.pricePerCredit, 18)} GAIA/credit</p>
+                          <p className="text-sm"><span className="font-semibold">Price:</span> {formatUnits(selectedModal.order.pricePerCredit, 18)} ARX/credit</p>
                         </div>
                       </div>
 
@@ -307,7 +307,7 @@ export default function DataMarketplacePage() {
                       {isApproving && (
                         <div className="p-3 rounded-lg bg-yellow-50 border border-yellow-200 text-yellow-700 text-sm flex gap-2">
                           <Loader className="h-4 w-4 flex-shrink-0 mt-0.5 animate-spin" />
-                          <span>Approving GAIA spend...</span>
+                          <span>Approving ARX spend...</span>
                         </div>
                       )}
 
@@ -337,7 +337,7 @@ export default function DataMarketplacePage() {
                       <div className="bg-primary/10 p-4 rounded-lg">
                         <p className="text-sm text-foreground/60 mb-1">Total Cost</p>
                         <p className="text-2xl font-bold text-primary">
-                          {((Number.parseFloat(buyAmount || "0") * Number(formatUnits(selectedModal.order.pricePerCredit, 18)))).toFixed(2)} GAIA
+                          {((Number.parseFloat(buyAmount || "0") * Number(formatUnits(selectedModal.order.pricePerCredit, 18)))).toFixed(2)} ARX
                         </p>
                       </div>
                     </div>

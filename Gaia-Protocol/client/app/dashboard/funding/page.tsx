@@ -220,7 +220,7 @@ export default function FundingPage() {
 
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-semibold text-foreground mb-2">Funding Goal (GAIA)</label>
+                <label className="block text-sm font-semibold text-foreground mb-2">Funding Goal (ARX)</label>
                 <div className="flex items-center gap-4">
                   <input
                     type="number"
@@ -236,13 +236,13 @@ export default function FundingPage() {
                     className="flex-1 px-3 py-2 border border-border rounded-lg bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
                     disabled={isFunding || fundSuccess}
                   />
-                  <span className="text-lg font-bold text-primary min-w-fit">GAIA</span>
+                  <span className="text-lg font-bold text-primary min-w-fit">ARX</span>
                 </div>
               </div>
 
               <div className="grid grid-cols-2 gap-4 p-4 bg-primary/5 rounded-lg">
                 <div>
-                  <p className="text-xs text-foreground/60">Allowance: {allowance !== undefined ? (Number(allowance) / 1e18).toFixed(4) : '...'} GAIA</p>
+                  <p className="text-xs text-foreground/60">Allowance: {allowance !== undefined ? (Number(allowance) / 1e18).toFixed(4) : '...'} ARX</p>
                   <p className="font-semibold text-foreground">
                     {fundAmount && selectedTask.estimatedCost > 0n
                       ? Math.round(
