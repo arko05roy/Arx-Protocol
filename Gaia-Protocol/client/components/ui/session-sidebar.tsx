@@ -125,7 +125,7 @@ export function SessionNavBar() {
                         {!isCollapsed && (
                           <>
                             <p className="text-sm font-medium  ">
-                              {"Organization"}
+                              {"PROTOCOL MENU"}
                             </p>
                             <ChevronsUpDown className="h-4 w-4 text-muted-foreground/50" />
                           </>
@@ -133,33 +133,6 @@ export function SessionNavBar() {
                       </motion.li>
                     </Button>
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent align="start">
-                    <DropdownMenuItem
-                      asChild
-                      className="flex items-center gap-2"
-                    >
-                      <Link href="/settings/members">
-                        <UserCog className="h-4 w-4" /> Manage members
-                      </Link>
-                    </DropdownMenuItem>{" "}
-                    <DropdownMenuItem
-                      asChild
-                      className="flex items-center gap-2"
-                    >
-                      <Link href="/settings/integrations">
-                        <Blocks className="h-4 w-4" /> Integrations
-                      </Link>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem asChild>
-                      <Link
-                        href="/select-org"
-                        className="flex items-center gap-2"
-                      >
-                        <Plus className="h-4 w-4" />
-                        Create or join an organization
-                      </Link>
-                    </DropdownMenuItem>
-                  </DropdownMenuContent>
                 </DropdownMenu>
               </div>
             </div>

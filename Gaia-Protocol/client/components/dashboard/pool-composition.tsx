@@ -1,7 +1,7 @@
 "use client"
 
 import { Card } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
+import { CartoonButton } from "@/components/ui/cartoon-button"
 import { MoreVertical } from "lucide-react"
 import { useGetAllActiveOrders, useGetOrders } from "@/hooks"
 import { formatUnits } from "viem"
@@ -36,12 +36,10 @@ export default function PoolComposition() {
     <Card className="gaia-card">
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h2 className="text-xl font-bold">Gaia BioCarbon Pool (GCP)</h2>
+          <h2 className="text-xl font-bold">ARX Carbon Pool (ACP)</h2>
           <p className="text-sm text-foreground/60">Credits deposited into pool: 1,021 TCO2</p>
         </div>
-        <Button variant="ghost" size="sm">
-          <MoreVertical className="h-4 w-4" />
-        </Button>
+        <CartoonButton label="Menu" color="bg-green-400" />
       </div>
 
       {/* Composition Bar */}
