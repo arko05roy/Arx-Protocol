@@ -4,7 +4,6 @@ import { cn } from "@/lib/utils";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
-import { useSidebar } from "@/lib/sidebar-context";
 import {
   Blocks,
   ChevronsUpDown,
@@ -88,19 +87,7 @@ const staggerVariants = {
 
 export function SessionNavBar() {
   const [isCollapsed, setIsCollapsed] = useState(true);
-  const { setIsCollapsed: setContextCollapsed } = useSidebar();
   const pathname = usePathname();
-  
-  const handleMouseEnter = () => {
-    setIsCollapsed(false);
-    setContextCollapsed(false);
-  };
-  
-  const handleMouseLeave = () => {
-    setIsCollapsed(true);
-    setContextCollapsed(true);
-  };
-  
   return (
     <motion.div
       className={cn(
@@ -110,8 +97,8 @@ export function SessionNavBar() {
       animate={isCollapsed ? "closed" : "open"}
       variants={sidebarVariants}
       transition={transitionProps}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
+      onMouseEnter={() => setIsCollapsed(false)}
+      onMouseLeave={() => setIsCollapsed(true)}
     >
       <motion.div
         className={`relative z-40 flex text-muted-foreground h-full shrink-0 flex-col bg-white dark:bg-black transition-all`}

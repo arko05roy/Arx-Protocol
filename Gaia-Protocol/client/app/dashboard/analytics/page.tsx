@@ -34,7 +34,6 @@ import {
   ResponsiveContainer,
   Legend
 } from "recharts"
-import { ResponsiveHeading } from "@/components/dashboard/responsive-heading"
 
 // Mock data for charts
 const carbonCreditsData = [
@@ -91,24 +90,22 @@ export default function Analytics() {
       <div className="flex-1 overflow-auto">
         <div className="p-6 space-y-6">
           {/* Header */}
-          <ResponsiveHeading>
-            <div className="flex justify-between items-center">
-              <div>
-                <h1 className="text-3xl font-bold text-foreground">Analytics Dashboard</h1>
-                <p className="text-muted-foreground">Comprehensive insights into the Arx Protocol ecosystem</p>
-              </div>
-              <div className="flex gap-2">
-                <Button variant="outline" className="gap-2">
-                  <Download className="h-4 w-4" />
-                  Export Data
-                </Button>
-                <Button className="bg-primary hover:bg-primary/90 text-primary-foreground gap-2">
-                  <RefreshCw className="h-4 w-4" />
-                  Refresh
-                </Button>
-              </div>
+          <div className="flex justify-between items-center">
+            <div>
+              <h1 className="text-3xl font-bold text-foreground">Analytics Dashboard</h1>
+              <p className="text-muted-foreground">Comprehensive insights into the Arx Protocol ecosystem</p>
             </div>
-          </ResponsiveHeading>
+            <div className="flex gap-2">
+              <Button variant="outline" className="gap-2">
+                <Download className="h-4 w-4" />
+                Export Data
+              </Button>
+              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground gap-2">
+                <RefreshCw className="h-4 w-4" />
+                Refresh
+              </Button>
+            </div>
+          </div>
 
           {/* Top Metrics Cards */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">

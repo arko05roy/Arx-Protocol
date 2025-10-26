@@ -22,7 +22,6 @@ import {
 import { useAccount } from "wagmi"
 import { formatUnits } from "viem"
 import DashboardHeader from "@/components/dashboard/header"
-import { ResponsiveHeading } from "@/components/dashboard/responsive-heading"
 
 interface VerificationStep {
   id: string
@@ -184,13 +183,12 @@ export default function VerificationPage() {
       <div className="flex-1 overflow-auto">
         <div className="p-4 md:p-6 space-y-6">
           {/* Header */}
-          <ResponsiveHeading>
-            <div>
-              <div className="flex items-center justify-between mb-4">
-                <div>
-                  <h1 className="text-3xl font-bold text-foreground">Verification Dashboard</h1>
-                  <p className="text-foreground/60 mt-1">Review and verify environmental projects</p>
-                </div>
+          <div>
+            <div className="flex items-center justify-between mb-4">
+              <div>
+                <h1 className="text-3xl font-bold text-foreground">Verification Dashboard</h1>
+                <p className="text-foreground/60 mt-1">Review and verify environmental projects</p>
+              </div>
               {validatorCheckLoading ? (
                 <div className="flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-lg border border-primary/20">
                   <Loader className="h-4 w-4 animate-spin text-primary" />
@@ -211,9 +209,8 @@ export default function VerificationPage() {
                   )}
                 </div>
               )}
-              </div>
             </div>
-          </ResponsiveHeading>
+          </div>
 
           {/* Validator Check */}
           {!validatorCheckLoading && !isValidator && (

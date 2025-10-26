@@ -23,7 +23,6 @@ import {
   TaskStatus,
 } from "@/hooks"
 import { TrendingUp, Zap, Target, Award, Loader2 } from "lucide-react"
-import { ResponsiveHeading } from "@/components/dashboard/responsive-heading"
 
 export default function Dashboard() {
   const { address } = useAccount()
@@ -117,20 +116,18 @@ export default function Dashboard() {
       <DashboardHeader />
       <div className="flex-1 overflow-auto">
         <div className="p-6 space-y-6">
-          <ResponsiveHeading>
-            <div className="flex justify-between items-center">
-              <div>
-                <h1 className="text-3xl font-bold">Dashboard Overview</h1>
-                <p className="text-muted-foreground mt-1">Welcome back! Here's your environmental impact summary.</p>
-              </div>
-              <Button
-                onClick={() => setShowCreateTask(true)}
-                className="bg-primary text-primary-foreground hover:bg-primary/90"
-              >
-                Create Task
-              </Button>
+          <div className="flex justify-between items-center">
+            <div>
+              <h1 className="text-3xl font-bold">Dashboard Overview</h1>
+              <p className="text-muted-foreground mt-1">Welcome back! Here's your environmental impact summary.</p>
             </div>
-          </ResponsiveHeading>
+            <Button
+              onClick={() => setShowCreateTask(true)}
+              className="bg-primary text-primary-foreground hover:bg-primary/90"
+            >
+              Create Task
+            </Button>
+          </div>
 
           {/* Key Metrics Section */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">

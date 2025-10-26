@@ -9,7 +9,6 @@ import { Input } from "@/components/ui/input"
 import { Database, Search, Check, Loader, AlertCircle, ShoppingCart, X } from "lucide-react"
 import { formatUnits, parseEther } from "viem"
 import { motion, AnimatePresence } from "framer-motion"
-import { ResponsiveHeading } from "@/components/dashboard/responsive-heading"
 
 interface Order {
   orderId: bigint
@@ -136,15 +135,13 @@ export default function DataMarketplacePage() {
   return (
     <div className="flex flex-col h-full">
       <div className="p-6 space-y-6 flex-1 overflow-auto">
-        <ResponsiveHeading>
-          <div>
-            <h1 className="text-3xl font-bold flex items-center gap-2">
-              <Database className="h-8 w-8 text-primary" />
-              Carbon Credit Marketplace
-            </h1>
-            <p className="text-foreground/60 mt-2">Browse and purchase carbon credits</p>
-          </div>
-        </ResponsiveHeading>
+        <div>
+          <h1 className="text-3xl font-bold flex items-center gap-2">
+            <Database className="h-8 w-8 text-primary" />
+            Carbon Credit Marketplace
+          </h1>
+          <p className="text-foreground/60 mt-2">Browse and purchase carbon credits</p>
+        </div>
 
         {/* Search and Filter */}
         <div className="space-y-4">

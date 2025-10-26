@@ -7,7 +7,6 @@ import { useGetTotalTasks, useGetTasks, useGetBalanceOfBatch, TaskStatus } from 
 import { useAccount } from "wagmi"
 import { formatUnits } from "viem"
 import DashboardHeader from "@/components/dashboard/header"
-import { ResponsiveHeading } from "@/components/dashboard/responsive-heading"
 
 export default function MyAssetsPage() {
   const { address } = useAccount()
@@ -38,12 +37,10 @@ export default function MyAssetsPage() {
       <div className="flex-1 overflow-auto">
         <div className="p-4 md:p-6 space-y-6">
           {/* Header */}
-          <ResponsiveHeading>
-            <div>
-              <h1 className="text-3xl font-bold text-foreground">My Carbon Assets</h1>
-              <p className="text-foreground/60 mt-1">View your profile and carbon credits</p>
-            </div>
-          </ResponsiveHeading>
+          <div>
+            <h1 className="text-3xl font-bold text-foreground">My Carbon Assets</h1>
+            <p className="text-foreground/60 mt-1">View your profile and carbon credits</p>
+          </div>
 
           {/* Profile Card */}
           <motion.div
