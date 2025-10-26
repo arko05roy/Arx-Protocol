@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { useAccount, useWatchContractEvent } from "wagmi"
 import { Card } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
+import { CartoonButton } from "@/components/ui/cartoon-button"
 import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
@@ -285,26 +285,22 @@ export default function PredictionMarket() {
 
           <div className="flex gap-2">
             {!approvedEnough ? (
-              <Button
-                className="flex-1"
+              <CartoonButton
+                label={`Approve ARX ${fee ? `(${formatEther(fee)} ARX)` : ''}`.trim()}
+                color="bg-green-400"
                 disabled={!userAddress || fee === undefined || isApproving}
                 onClick={async () => {
                   if (fee === undefined) return
                   approveToken(cUSD as `0x${string}`, PREDICTION_MARKET_ADDRESS, fee)
                 }}
-              >
-                {isApproving ? <Loader2 className="h-4 w-4 mr-2 animate-spin" /> : null}
-                Approve ARX ({fee ? `${formatEther(fee)} ARX` : '...'} )
-              </Button>
+              />
             ) : (
-              <Button
-                className="flex-1 bg-primary hover:bg-primary/90"
+              <CartoonButton
+                label={isCreating ? "Creating..." : "Create Market"}
+                color="bg-green-400"
                 disabled={!userAddress || isCreating}
                 onClick={() => createMarket(taskId, deadline)}
-              >
-                {isCreating ? <Loader2 className="h-4 w-4 mr-2 animate-spin" /> : <Target className="h-4 w-4 mr-2" />}
-                Create Market
-              </Button>
+              />
             )}
             {createError ? (
               <div className="text-xs text-red-600 mt-2">
@@ -402,45 +398,37 @@ export default function PredictionMarket() {
         <div className="flex gap-2">
           {isActive && !isResolved && (
             <>
-              <Button
-                variant="outline"
-                className="flex-1 border-green-200 text-green-700 hover:bg-green-50"
+              <CartoonButton
+                label="Buy YES"
+                color="bg-green-400"
                 onClick={() => {
                   setSelectedMarketId(taskId)
                   setBetSide("yes")
                   setShowBetModal(true)
                 }}
-              >
-                <TrendingUp className="h-4 w-4 mr-2" />
-                Buy YES
-              </Button>
-              <Button
-                variant="outline"
-                className="flex-1 border-red-200 text-red-700 hover:bg-red-50"
+              />
+              <CartoonButton
+                label="Buy NO"
+                color="bg-green-400"
                 onClick={() => {
                   setSelectedMarketId(taskId)
                   setBetSide("no")
                   setShowBetModal(true)
                 }}
-              >
-                <TrendingDown className="h-4 w-4 mr-2" />
-                Buy NO
-              </Button>
+              />
             </>
           )}
           
           {isResolved && (
-            <Button
-              className="w-full bg-primary hover:bg-primary/90"
+            <CartoonButton
+              label={isClaiming ? "Claiming..." : "Claim Winnings"}
+              color="bg-green-400"
               onClick={() => {
                 setSelectedMarketId(taskId)
                 handleClaimWinnings()
               }}
               disabled={isClaiming}
-            >
-              {isClaiming ? <Loader2 className="h-4 w-4 mr-2 animate-spin" /> : <Target className="h-4 w-4 mr-2" />}
-              Claim Winnings
-            </Button>
+            />
           )}
 
           {!isActive && !isResolved && (
@@ -463,10 +451,7 @@ export default function PredictionMarket() {
               <h1 className="text-3xl font-bold text-foreground">Prediction Market</h1>
               <p className="text-muted-foreground">Trade on climate and environmental outcomes</p>
             </div>
-            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground gap-2">
-              <Target className="h-4 w-4" />
-              Claim Winnings
-            </Button>
+            <CartoonButton label="Claim Winnings" color="bg-green-400" />
           </div>
 
           {/* Stats Cards */}
@@ -586,52 +571,40 @@ export default function PredictionMarket() {
 
             <div className="flex flex-col gap-2">
               <div className="flex gap-2">
-                <Button
-                  variant="outline"
+                <CartoonButton
+                  label="Cancel"
+                  color="bg-green-400"
                   onClick={() => setShowBetModal(false)}
-                  className="flex-1"
-                >
-                  Cancel
-                </Button>
+                />
                 {(() => {
                   try {
                     const required = betAmount ? parseEther(betAmount) : undefined
                     const approvedEnough = required !== undefined && spendAllowance !== undefined ? (spendAllowance as bigint) >= required : false
                     if (!approvedEnough) {
                       return (
-                        <Button
+                        <CartoonButton
+                          label={isApproving ? "Approving..." : "Approve ARX"}
+                          color="bg-green-400"
                           onClick={() => {
                             if (!betAmount) return
                             const amt = parseEther(betAmount)
                             approveToken(cUSD as `0x${string}`, PREDICTION_MARKET_ADDRESS, amt)
                           }}
                           disabled={!userAddress || !betAmount || parseFloat(betAmount) <= 0 || isApproving}
-                          className="flex-1"
-                        >
-                          {isApproving ? <Loader2 className="h-4 w-4 mr-2 animate-spin" /> : null}
-                          Approve ARX  
-                        </Button>
+                        />
                       )
                     }
                     return (
-                      <Button
+                      <CartoonButton
+                        label={isBuying ? "Placing..." : "Place Bet"}
+                        color="bg-green-400"
                         onClick={handlePlaceBet}
                         disabled={!betAmount || parseFloat(betAmount) <= 0 || isBuying}
-                        className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground"
-                      >
-                        {isBuying ? (
-                          <>
-                            <Loader2 className="h-4 w-4 mr-2 animate-spin" />
-                            Placing...
-                          </>
-                        ) : (
-                          <>Place Bet</>
-                        )}
-                      </Button>
+                      />
                     )
                   } catch {
                     return (
-                      <Button disabled className="flex-1">Enter valid amount</Button>
+                      <CartoonButton label="Enter valid amount" color="bg-green-400" disabled />
                     )
                   }
                 })()}

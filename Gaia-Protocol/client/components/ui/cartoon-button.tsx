@@ -1,4 +1,6 @@
-interface CartoonButtonProps {
+import * as React from "react"
+import { cn } from "@/lib/utils"
+interface CartoonButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   label: string;
   color?: string;
   hasHighlight?: boolean;
@@ -12,6 +14,9 @@ export function CartoonButton({
   hasHighlight = true,
   disabled = false,
   onClick,
+  className,
+  type,
+  ...rest
 }: CartoonButtonProps) {
   const handleClick = () => {
     if (disabled) return;
@@ -25,9 +30,15 @@ export function CartoonButton({
       <button
         disabled={disabled}
         onClick={handleClick}
-        className={`relative h-12 px-6 text-xl rounded-full font-bold text-neutral-800 border-2 border-neutral-800 transition-all duration-150 overflow-hidden group
-        ${color} hover:shadow-[0_4px_0_0_#262626]
-        ${disabled ? 'opacity-50 pointer-events-none' : 'hover:-translate-y-1 active:translate-y-0 active:shadow-none'}`}
+        type={type ?? (onClick ? 'button' : undefined)}
+        className={cn(
+          'relative h-12 px-6 text-xl rounded-full font-bold text-neutral-800 border-2 border-neutral-800 transition-all duration-150 overflow-hidden group',
+          color,
+          'hover:shadow-[0_4px_0_0_#262626]',
+          disabled ? 'opacity-50 pointer-events-none' : 'hover:-translate-y-1 active:translate-y-0 active:shadow-none',
+          className,
+        )}
+        {...rest}
       >
         <span className="relative z-10 whitespace-nowrap">{label}</span>
         {hasHighlight && !disabled && (

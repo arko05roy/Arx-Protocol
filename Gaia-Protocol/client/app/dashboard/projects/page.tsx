@@ -6,7 +6,7 @@ import Image from "next/image"
 import { useGetTotalTasks, useGetTasks, TaskStatus } from "@/hooks"
 import { useAccount } from "wagmi"
 import { Card } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
+import { CartoonButton } from "@/components/ui/cartoon-button"
 import CreateTaskModal from "@/components/dashboard/create-task-modal"
 import { Plus, Loader } from "lucide-react"
 import { formatUnits } from "viem"
@@ -36,16 +36,9 @@ export default function ProjectsPage() {
       <div className="border-b border-border bg-card px-6 py-4">
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-2xl font-bold">Projects</h1>
-            <p className="text-sm text-foreground/60">Manage your environmental projects</p>
+            <h1 className="text-2xl font-bold">TRANSACTIONS</h1>
+            <p className="text-sm text-foreground/60">Send out transaction, for an eventual completion of a novel action</p>
           </div>
-          <Button
-            onClick={() => setShowCreateTask(true)}
-            className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2"
-          >
-            <Plus className="h-4 w-4" />
-            Create Task
-          </Button>
         </div>
       </div>
 
@@ -54,19 +47,18 @@ export default function ProjectsPage() {
           <div className="flex items-center justify-center h-full">
             <div className="text-center">
               <Loader className="h-8 w-8 animate-spin mx-auto mb-4 text-primary" />
-              <p className="text-foreground/60">Loading projects...</p>
+              <p className="text-foreground/60">Loading transaction...</p>
             </div>
           </div>
         ) : !tasks || tasks.length === 0 ? (
           <div className="flex items-center justify-center h-full">
             <div className="text-center">
-              <p className="text-foreground/60 mb-4">No projects yet. Create your first task!</p>
-              <Button
+              <p className="text-foreground/60 mb-4">No transactions yet. Create your first transaction!</p>
+              <CartoonButton
+                label="Create Transaction"
+                color="bg-green-400"
                 onClick={() => setShowCreateTask(true)}
-                className="bg-primary text-primary-foreground hover:bg-primary/90"
-              >
-                Create Task
-              </Button>
+              />
             </div>
           </div>
         ) : (
