@@ -95,7 +95,7 @@ export default function CreateTaskModal({ isOpen, onClose }: CreateTaskModalProp
         formData.ipfsHash
       )
     } catch (err) {
-      const errorMsg = err instanceof Error ? err.message : "Failed to create task"
+      const errorMsg = err instanceof Error ? err.message : "Failed to create transaction"
       console.error("Form submission error:", errorMsg)
       setError(errorMsg)
     }
@@ -127,7 +127,7 @@ export default function CreateTaskModal({ isOpen, onClose }: CreateTaskModalProp
       <Card className="w-full max-w-2xl max-h-[90vh] overflow-y-auto">
         <div className="p-6">
           <div className="flex justify-between items-start mb-6">
-            <h2 className="text-2xl font-bold">Create New Task</h2>
+            <h2 className="text-2xl font-bold">New Transaction</h2>
             <button onClick={onClose} className="text-muted-foreground hover:text-foreground text-2xl">
               ✕
             </button>
@@ -136,11 +136,11 @@ export default function CreateTaskModal({ isOpen, onClose }: CreateTaskModalProp
           <form onSubmit={handleSubmit} className="space-y-4">
             {/* Project Title */}
             <div>
-              <label className="block text-sm font-semibold mb-2">Project Title</label>
+              <label className="block text-sm font-semibold mb-2">Transaction Title</label>
               <Input
                 type="text"
                 name="title"
-                placeholder="e.g., Mangrove Restoration in Indonesia"
+                placeholder="e.g., Be wild, the environment needs it"
                 value={formData.title}
                 onChange={handleChange}
                 required
@@ -153,7 +153,7 @@ export default function CreateTaskModal({ isOpen, onClose }: CreateTaskModalProp
               <label className="block text-sm font-semibold mb-2">Description</label>
               <textarea
                 name="description"
-                placeholder="Describe your project, goals, and impact..."
+                placeholder="Describe your transaction, goals, and impact..."
                 value={formData.description}
                 onChange={handleChange}
                 required
@@ -162,22 +162,6 @@ export default function CreateTaskModal({ isOpen, onClose }: CreateTaskModalProp
               />
             </div>
 
-            {/* Category */}
-            <div>
-              <label className="block text-sm font-semibold mb-2">Category</label>
-              <select
-                name="category"
-                value={formData.category}
-                onChange={handleChange}
-                className="w-full px-3 py-2 border border-border rounded-lg bg-background"
-              >
-                <option value="reforestation">Reforestation</option>
-                <option value="wetland">Wetland Restoration</option>
-                <option value="coral">Coral Reef Protection</option>
-                <option value="mangrove">Mangrove Restoration</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
 
             {/* Location */}
             <div>
@@ -195,14 +179,14 @@ export default function CreateTaskModal({ isOpen, onClose }: CreateTaskModalProp
 
             {/* Funding Goal */}
             <div>
-              <label className="block text-sm font-semibold mb-2">Funding Goal (GAIA)</label>
+              <label className="block text-sm font-semibold mb-2">Funding Goal (ARX)</label>
               <Input
                 type="number"
                 name="fundingGoal"
                 placeholder="50000"
                 value={formData.fundingGoal}
                 onChange={handleChange}
-                required
+                required  
                 step="0.01"
                 className="w-full"
               />
@@ -287,7 +271,7 @@ export default function CreateTaskModal({ isOpen, onClose }: CreateTaskModalProp
                 disabled={isPending || isSuccess}
                 className="flex-1 bg-primary text-primary-foreground hover:bg-primary/90"
               >
-                {isPending ? "Creating..." : isSuccess ? "Created!" : "Create Task"}
+                {isPending ? "Sending..." : isSuccess ? "Sent!" : "Send Transaction"}
               </Button>
             </div>
           </form>

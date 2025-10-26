@@ -122,6 +122,13 @@
   body {
     @apply bg-background text-foreground;
   }
+  /* Slimmer font option using Roboto Condensed from next/font */
+  .roboto-condensed {
+    font-family: var(--font-roboto-condensed), sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
 }
 
 @layer components {
