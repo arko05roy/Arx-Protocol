@@ -10,6 +10,7 @@ import { CartoonButton } from "@/components/ui/cartoon-button"
 import CreateTaskModal from "@/components/dashboard/create-task-modal"
 import { Plus, Loader } from "lucide-react"
 import { formatUnits } from "viem"
+import { ResponsiveHeading } from "@/components/dashboard/responsive-heading"
 
 export default function ProjectsPage() {
   const router = useRouter()
@@ -33,14 +34,14 @@ export default function ProjectsPage() {
 
   return (
     <div className="flex flex-col h-full">
-      <div className="border-b border-border bg-card px-6 py-4">
+      <ResponsiveHeading className="border-b border-border px-6 py-4">
         <div className="flex items-center justify-between">
           <div>
             <h1 className="text-2xl font-bold">TRANSACTIONS</h1>
             <p className="text-sm text-foreground/60">Send out transaction, for an eventual completion of a novel action</p>
           </div>
         </div>
-      </div>
+      </ResponsiveHeading>
 
       <div className="flex-1 overflow-auto p-6">
         {isLoading ? (

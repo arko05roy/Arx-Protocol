@@ -10,6 +10,7 @@ import { Zap, Plus, Loader, AlertCircle, UserPlus, ArrowDownToLine, Lock, Upload
 import { parseEther, formatUnits, formatEther } from "viem"
 import { motion, AnimatePresence } from "framer-motion"
 import { SelfVerification } from "@/components/self-verification"
+import { ResponsiveHeading } from "@/components/dashboard/responsive-heading"
 
 export default function CarbonStakesPage() {
   const { address } = useAccount()
@@ -220,13 +221,15 @@ export default function CarbonStakesPage() {
   return (
     <div className="flex flex-col h-full">
       <div className="p-6 space-y-6 flex-1 overflow-auto">
-        <div>
-          <h1 className="text-3xl font-bold flex items-center gap-2">
-            <Zap className="h-8 w-8 text-primary" />
-            Operator Stakes
-          </h1>
-          <p className="text-foreground/60 mt-2">Manage your operator stake and accept environmental tasks</p>
-        </div>
+        <ResponsiveHeading>
+          <div>
+            <h1 className="text-3xl font-bold flex items-center gap-2">
+              <Zap className="h-8 w-8 text-primary" />
+              Operator Stakes
+            </h1>
+            <p className="text-foreground/60 mt-2">Manage your operator stake and accept environmental tasks</p>
+          </div>
+        </ResponsiveHeading>
 
         {/* Operator Status & Stats */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">

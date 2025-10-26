@@ -32,6 +32,7 @@ import {
 import { useAccount } from "wagmi"
 import { AnimatePresence, motion } from "framer-motion"
 import { parseEther } from "viem"
+import { ResponsiveHeading } from "@/components/dashboard/responsive-heading"
 
 const categories = ["All", "Mangrove Restoration", "Solar Installation", "Renewable Energy", "Forest Conservation"]
 
@@ -173,19 +174,21 @@ export default function DataRegistry() {
       <div className="flex-1 overflow-auto">
         <div className="p-6 space-y-6">
           {/* Header */}
-          <div className="flex justify-between items-center">
-            <div>
-              <h1 className="text-3xl font-bold text-foreground">Data Registry</h1>
-              <p className="text-muted-foreground">Explore and contribute to environmental datasets</p>
+          <ResponsiveHeading>
+            <div className="flex justify-between items-center">
+              <div>
+                <h1 className="text-3xl font-bold text-foreground">Data Registry</h1>
+                <p className="text-muted-foreground">Explore and contribute to environmental datasets</p>
+              </div>
+              <Button 
+                onClick={() => setShowUploadModal(true)}
+                className="bg-primary hover:bg-primary/90 text-primary-foreground gap-2"
+              >
+                <Upload className="h-4 w-4" />
+                Upload Dataset
+              </Button>
             </div>
-            <Button 
-              onClick={() => setShowUploadModal(true)}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground gap-2"
-            >
-              <Upload className="h-4 w-4" />
-              Upload Dataset
-            </Button>
-          </div>
+          </ResponsiveHeading>
 
           {/* Success Message */}
           <AnimatePresence>

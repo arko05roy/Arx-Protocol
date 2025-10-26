@@ -37,6 +37,7 @@ import {
   TrendingUp,
   Users,
 } from "lucide-react"
+import { ResponsiveHeading } from "@/components/dashboard/responsive-heading"
 
 // Proposal state labels
 const PROPOSAL_STATE_LABELS: Record<ProposalState, string> = {

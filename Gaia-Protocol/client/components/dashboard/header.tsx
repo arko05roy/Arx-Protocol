@@ -14,9 +14,9 @@ export default function DashboardHeader() {
   const formattedBalance = balance ? Number(formatUnits(balance, 18)).toFixed(2) : "0.00"
 
   return (
-    <header className="border-b border-border bg-card px-6 py-4 flex items-center justify-between">
+    <header className="border-b border-border  px-6 py-4 flex items-center justify-between">
       <div className="flex-1">
-        <h1 className="text-2xl font-bold">Overview</h1>
+        <h1 className="text-2xl bg-transparent font-bold">Overview</h1>
           <p className="text-sm text-foreground/60">Welcome back to your Arx Protocol dashboard</p>
       </div>
 

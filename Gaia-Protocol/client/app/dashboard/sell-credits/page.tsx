@@ -9,6 +9,7 @@ import { Card } from "@/components/ui/card"
 import { Coins, Check, X, Loader, AlertCircle, Trash2 } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 import { parseEther, formatUnits } from "viem"
+import { ResponsiveHeading } from "@/components/dashboard/responsive-heading"
 
 interface SellModalData {
   taskId: bigint
@@ -144,13 +145,15 @@ export default function SellCarbonCreditsPage() {
   return (
     <div className="flex flex-col h-full">
       <div className="p-6 space-y-6 flex-1 overflow-auto">
-        <div>
-          <h1 className="text-3xl font-bold flex items-center gap-2">
-            <Coins className="h-8 w-8 text-primary" />
-            Sell Carbon Credits
-          </h1>
-          <p className="text-foreground/60 mt-2">Sell your earned carbon credits from verified projects on the marketplace</p>
-        </div>
+        <ResponsiveHeading>
+          <div>
+            <h1 className="text-3xl font-bold flex items-center gap-2">
+              <Coins className="h-8 w-8 text-primary" />
+              Sell Carbon Credits
+            </h1>
+            <p className="text-foreground/60 mt-2">Sell your earned carbon credits from verified projects on the marketplace</p>
+          </div>
+        </ResponsiveHeading>
 
         {tasksLoading ? (
           <div className="flex items-center justify-center py-12">

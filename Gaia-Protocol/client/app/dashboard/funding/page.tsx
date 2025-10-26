@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button"
 import DashboardHeader from "@/components/dashboard/header"
 import { parseEther, formatUnits } from "viem"
 import TaskCard from "./task-card"
+import { ResponsiveHeading } from "@/components/dashboard/responsive-heading"
 
 const FUNDING_POOL_ADDRESS = '0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9' as const
 
@@ -126,10 +127,12 @@ export default function FundingPage() {
       <div className="flex-1 overflow-auto">
         <div className="p-4 md:p-6 space-y-6">
           {/* Header */}
-          <div>
-            <h1 className="text-3xl font-bold text-foreground">Mempool</h1>
-            <p className="text-foreground/60 mt-1">Support environmental projects and earn carbon credits</p>
-          </div>
+          <ResponsiveHeading>
+            <div>
+              <h1 className="text-3xl font-bold text-foreground">Mempool</h1>
+              <p className="text-foreground/60 mt-1">Support environmental projects and earn carbon credits</p>
+            </div>
+          </ResponsiveHeading>
 
           {/* Search */}
           <div className="relative">
