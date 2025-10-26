@@ -40,7 +40,7 @@ export default function TaskCard({ task, index, isLoading, onFund }: TaskCardPro
         <div>
           <div className="flex items-center justify-between mb-2">
             <span className="text-xs font-semibold text-primary bg-primary/10 px-2 py-1 rounded">
-              Task #{Number(task.id)}
+              Transaction #{Number(task.id)}
             </span>
             <span className="text-xs text-foreground/60">{task.location}</span>
           </div>
@@ -53,7 +53,7 @@ export default function TaskCard({ task, index, isLoading, onFund }: TaskCardPro
           <div className="flex justify-between text-sm mb-2">
             <span className="text-foreground/60">Funding Progress</span>
             <span className="font-semibold text-foreground">
-              {funded ? formatUnits(funded, 18) : "0"} / {estimatedCost.toLocaleString()} cUSD
+              {funded ? formatUnits(funded, 18) : "0"} / {estimatedCost.toLocaleString()} ARX
             </span>
           </div>
           <div className="w-full h-2 bg-foreground/10 rounded-full overflow-hidden">
