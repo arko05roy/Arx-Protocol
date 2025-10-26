@@ -32,7 +32,7 @@ export default function FundingPage() {
   
   const [searchTerm, setSearchTerm] = useState("")
   const [selectedTaskId, setSelectedTaskId] = useState<bigint | null>(null)
-  const [fundAmount, setFundAmount] = useState("1000")
+  const [fundAmount, setFundAmount] = useState("0")
   const [showFundModal, setShowFundModal] = useState(false)
   const [fundError, setFundError] = useState<string | null>(null)
   const [approvalStep, setApprovalStep] = useState(false)
