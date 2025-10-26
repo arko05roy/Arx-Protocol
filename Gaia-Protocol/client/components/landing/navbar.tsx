@@ -34,7 +34,7 @@ export default function Header() {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Leaf className="w-8 h-8" />
-            <span className="text-2xl font-bold tracking-tight">GAIA</span>
+            <span className="text-2xl font-bold tracking-tight">ARX</span>
           </div>
 
           <nav className="hidden md:flex items-center gap-8">

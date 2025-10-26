@@ -9,10 +9,10 @@ export default function Hero() {
       <div className="max-w-6xl mx-auto w-full">
         <div className="text-center space-y-6">
           <h1 className="text-6xl md:text-[12rem] font-serif font-bold leading-tight">
-            Gaia
+            ARX
           </h1>
           <p className="text-3xl md:text-5xl font-serif leading-tight max-w-4xl mx-auto">
-            An L3 Refi Protocol powered by Celo
+            a blockchain for refi
           </p>
 
        
@@ -36,9 +36,9 @@ export default function Hero() {
           <img src="/gaiahero.png" alt="Gaia Illustration" className="w-full rounded-xl shadow-lg brightness-125" />
         </div>
 
-        <div className="mt-20">
+        <div className="mt-16">
           <p className="text-lg md:text-xl leading-relaxed max-w-5xl mx-auto text-center">
-            Gaia, is the first blockchain for enviroment that allows you to Participate, Own, and Earn through Proof backed carbon credits, tokenized  incentives, and onchain prediction markets and an open DeSCI dataset.
+            ARX, is the first blockchain for enviroment that allows you to Participate, Own, and Earn through Proof backed carbon credits, tokenized  incentives, and onchain prediction markets and an open DeSCI dataset.
           </p>
         </div>
       </div>
