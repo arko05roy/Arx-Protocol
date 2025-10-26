@@ -70,21 +70,30 @@ export default function TaskCard({ task, index, isLoading, onFund }: TaskCardPro
           <span>{expectedCO2.toLocaleString()} CO₂ tons expected</span>
         </div>
 
-        {/* Fund Button */}
-        <Button
-          onClick={onFund}
-          className="w-full bg-primary hover:bg-primary/90 text-white gap-2"
-          disabled={isLoading}
-        >
-          {isLoading ? (
-            <>
-              <Loader className="h-4 w-4 animate-spin" />
-              Processing...
-            </>
-          ) : (
-            "Fund Now"
-          )}
-        </Button>
+        {/* Fund Button - Only show if not fully funded */}
+        {fundingPercentage < 100 && (
+          <Button
+            onClick={onFund}
+            className="w-full bg-primary hover:bg-primary/90 text-white gap-2"
+            disabled={isLoading}
+          >
+            {isLoading ? (
+              <>
+                <Loader className="h-4 w-4 animate-spin" />
+                Processing...
+              </>
+            ) : (
+              "Fund Now"
+            )}
+          </Button>
+        )}
+        
+        {/* Fully Funded Badge */}
+        {fundingPercentage >= 100 && (
+          <div className="w-full py-2 px-4 bg-green-50 border border-green-200 rounded-lg text-center">
+            <span className="text-sm font-semibold text-green-700">✓ Fully Funded</span>
+          </div>
+        )}
       </div>
     </motion.div>
   )

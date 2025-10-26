@@ -150,7 +150,7 @@ export default function DataRegistry() {
       const taskId = BigInt(uploadForm.taskId)
       createDataEntry(taskId, uploadForm.ipfsHash)
     } catch (err) {
-      setUploadError(err instanceof Error ? err.message : "Failed to upload dataset")
+      setUploadError(err instanceof Error ? err.message : "Failed to update dataset")
     }
   }
 
@@ -183,7 +183,7 @@ export default function DataRegistry() {
               className="bg-primary hover:bg-primary/90 text-primary-foreground gap-2"
             >
               <Upload className="h-4 w-4" />
-              Upload Dataset
+              Update Dataset
             </Button>
           </div>
 
@@ -197,7 +197,7 @@ export default function DataRegistry() {
                 className="p-4 bg-green-50 border border-green-200 rounded-lg flex items-center gap-3"
               >
                 <CheckCircle className="text-green-500" size={20} />
-                <p className="text-green-700">Dataset uploaded successfully!</p>
+                <p className="text-green-700">Dataset updated successfully!</p>
               </motion.div>
             )}
           </AnimatePresence>
@@ -482,7 +482,7 @@ export default function DataRegistry() {
               className="bg-card border border-border rounded-lg p-6 max-w-md w-full space-y-6"
             >
               <div className="flex items-center justify-between">
-                <h2 className="text-2xl font-bold">Upload Dataset</h2>
+                <h2 className="text-2xl font-bold">Update Dataset</h2>
                 <button
                   onClick={() => setShowUploadModal(false)}
                   className="text-foreground/60 hover:text-foreground transition-colors"
@@ -501,7 +501,7 @@ export default function DataRegistry() {
                     onChange={(e) => setUploadForm({...uploadForm, taskId: e.target.value})}
                     min="1"
                   />
-                  <p className="text-xs text-muted-foreground mt-1">ID of the verified task to update</p>
+                  <p className="text-xs text-muted-foreground mt-1">ID of the verified task</p>
                 </div>
 
                 <div>
@@ -539,12 +539,12 @@ export default function DataRegistry() {
                   {isCreating ? (
                     <>
                       <Loader2 className="h-4 w-4 mr-2 animate-spin" />
-                      Uploading...
+                      Updating...
                     </>
                   ) : (
                     <>
                       <Upload className="h-4 w-4 mr-2" />
-                      Upload
+                      Update
                     </>
                   )}
                 </Button>
