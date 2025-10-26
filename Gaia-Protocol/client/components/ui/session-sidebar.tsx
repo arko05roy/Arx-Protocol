@@ -228,7 +228,7 @@ export function SessionNavBar() {
                         )}
                       </motion.li>
                     </Link>
-                    <Link
+                    {/* <Link
                       href="/dashboard/marketplace"
                       className={cn(
                         "flex h-8 w-full flex-row items-center rounded-md px-2 py-1.5 transition hover:bg-muted hover:text-primary",
@@ -241,7 +241,7 @@ export function SessionNavBar() {
                           <p className="ml-2 text-sm font-medium">Data Marketplace</p>
                         )}
                       </motion.li>
-                    </Link>
+                    </Link> */}
                     <Link
                       href="/dashboard/assets"
                       className={cn(
