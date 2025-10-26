@@ -1,7 +1,7 @@
 "use client"
 
 import { Card } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
+import { CartoonButton } from "@/components/ui/cartoon-button"
 import { ArrowRight } from "lucide-react"
 import { useGetTasksByStatus, useGetTotalOrders, useGetAllValidators, TaskStatus } from "@/hooks"
 
@@ -22,8 +22,8 @@ export default function FeatureCards() {
         <h3 className="font-bold text-lg mb-2">Available now:</h3>
         <p className="text-sm font-semibold mb-4">The World's First Liquid Market for Biochar</p>
         <div className="flex gap-2">
-          <Button className="gaia-button-primary text-sm h-9">Buy Credits</Button>
-          <Button className="gaia-button-secondary text-sm h-9">Contact us</Button>
+          <CartoonButton label="Buy Credits" color="bg-green-400" />
+          
         </div>
       </div>
 
