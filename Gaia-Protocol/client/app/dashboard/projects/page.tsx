@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { useRouter } from "next/navigation"
+import Image from "next/image"
 import { useGetTotalTasks, useGetTasks, TaskStatus } from "@/hooks"
 import { useAccount } from "wagmi"
 import { Card } from "@/components/ui/card"
@@ -80,6 +81,14 @@ export default function ProjectsPage() {
                 >
                   <div className="space-y-4">
                     <div>
+                      <Image
+                        src="/card.png"
+                        alt="Project"
+                        width={600}
+                        height={300}
+                        className="w-full h-40 object-cover rounded-md"
+                        priority
+                      />
                       <h3 className="text-lg font-bold line-clamp-2">{task.description}</h3>
                       <p className="text-sm text-foreground/60 mt-1 line-clamp-2">{task.proofRequirements}</p>
                     </div>
