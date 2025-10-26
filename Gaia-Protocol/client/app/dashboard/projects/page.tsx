@@ -96,7 +96,7 @@ export default function ProjectsPage() {
                       </div>
                       <div className="flex justify-between">
                         <span className="text-foreground/60">Expected CO₂:</span>
-                        <span className="font-medium">{formatUnits(task.expectedCO2, 0)} tons</span>
+                        <span className="font-medium">{formatUnits(task.expectedCO2, 18)} tons</span>
                       </div>
                     </div>
 

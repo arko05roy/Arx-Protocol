@@ -544,7 +544,7 @@ export default function AdminPage() {
                         </span>
                       </td>
                       <td className="px-6 py-4 text-sm font-semibold">${Number(formatUnits(task.estimatedCost, 18)).toLocaleString()}</td>
-                      <td className="px-6 py-4 text-sm font-semibold text-primary">{Number(formatUnits(task.expectedCO2, 0)).toLocaleString()} tons</td>
+                      <td className="px-6 py-4 text-sm font-semibold text-primary">{Number(formatUnits(task.expectedCO2, 18)).toLocaleString()} tons</td>
                     </tr>
                   ))}
                 </tbody>
