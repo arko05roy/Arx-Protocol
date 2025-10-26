@@ -1,14 +1,14 @@
-# Gaia: Verifiable Impact Protocol on OP Stack L3
+# Arx: Verifiable Impact Protocol on OP Stack L3
 
 > *Bridging Real-World Environmental Action with On-Chain Verification*
 
-Gaia is a Layer 3 blockchain built on OP Stack, settling to Celo, that transforms environmental projects into verifiable, tradeable carbon credits through decentralized validation and proof-of-impact consensus.
+Arx is a Layer 3 blockchain built on OP Stack, settling to Celo, that transforms environmental projects into verifiable, tradeable carbon credits through decentralized validation and proof-of-impact consensus.
 
 ---
 
-## 🌍 What is Gaia?
+## 🌍 What is Arx?
 
-Gaia solves the climate finance trilemma: *verification, **transparency, and **liquidity*. We enable:
+Arx solves the climate finance trilemma: *verification, **transparency, and **liquidity*. We enable:
 
 - 🌱 *Funders* to invest in verified environmental work and receive tokenized carbon credits
 - 🔨 *Operators* to access capital for projects and prove their impact on-chain
@@ -22,11 +22,10 @@ Gaia solves the climate finance trilemma: *verification, **transparency, and **l
 
 
 ┌─────────────────────────────────────────┐
-│      Gaia L3 (OP Stack + Custom)        │
-│  • 2-second blocks                      │
-│  • Custom $IMPACT gas token             │
+│     Arx L3 (OP Stack)                   │
+│  • $ARX Token (Gas + Rewards)           |
 │  • Proof of Impact consensus            │
-│  • Dedicated blockspace                 │
+│                                         │
 └──────────────┬──────────────────────────┘
                │ Settles to
                ↓
@@ -61,7 +60,7 @@ Every task spawns a market. Community trades YES/NO shares on project success, p
 All verified tasks publish data to an open dataset. Train fraud detection models, stake them on-chain, and earn rewards for accuracy.
 
 ### 5. *On-Chain Governance*
-Carbon credit holders vote on protocol parameters, validator disputes, and treasury allocation via Gaia DAO.
+Carbon credit holders vote on protocol parameters, validator disputes, and treasury allocation via Arx DAO.
 
 ---
 
@@ -78,8 +77,8 @@ Carbon credit holders vote on protocol parameters, validator disputes, and treas
 ### 1. Clone Repository
 
 bash
-git clone https://github.com/your-org/gaia.git
-cd gaia
+git clone https://github.com/your-org/Arx-Protocol.git
+cd Gaia-Protocol
 
 
 ### 2. Setup Environment
@@ -93,11 +92,11 @@ cp .env.example .env
 # Edit .env with your private keys and RPC URLs
 
 
-### 3. Deploy Smart Contracts to Gaia L3
+### 3. Deploy Smart Contracts to Arx L3
 
 bash
 cd contracts
-pnpm hardhat deploy --network gaiaL3
+pnpm hardhat deploy --network ArxL3
 
 
 ### 4. Start Frontend
@@ -122,7 +121,7 @@ cd op-stack-deployment
 ## 📂 Repository Structure
 
 
-gaia/
+Arx/
 ├── contracts/              # Smart contracts (Hardhat)
 │   ├── core/
 │   │   ├── TaskRegistry.sol
@@ -165,7 +164,24 @@ gaia/
 
 
 ---
+### Arx L3 
 
+| Contract | Address |
+|----------|---------|
+CUSSD | 0x5FbDB2315678afecb367f032d93F642f64180aa3|
+TASK_REGISTRY | 0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0|
+FUNDING_POOL|0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9|
+COLLATERAL_MANAGER | 0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9|
+VERIFICATION_MANAGER | 0x5FC8d32690cc91D4c39d9d3abcBD16989F875707|
+CARBON_CREDIT_MINTER | 0x0165878A594ca255338adfa4d48449f69242Eb8F|
+CARBON_MARKETPLACE | 0xa513E6E4b8f2a923D98304ec87F64353C4D5C853|
+PREDICTION_MARKET | 0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6|
+GOVERNANCE_DAO | 0x8A791620dd6260079BF849Dc5567aDC3F2FdC318|
+DATA_REGISTRY | 0x610178dA211FEF7D417bC0e6FeD39F05609AD788|
+MODEL_REGISTRY |0xB7f8BC63BbcaD18155201308C8f3540b07f84F5e|
+
+
+---
 ## 🎯 User Flows
 
 ### Flow 1: Task Creation → Funding → Execution → Verification
@@ -228,14 +244,14 @@ npx hardhat run scripts/deploy-all.ts --network celoAlfajores
 npx hardhat verify --network celoAlfajores <CONTRACT_ADDRESS>
 
 
-### Gaia L3 (Local or Live)
+### Arx L3 (Local or Live)
 
 bash
 # Deploy to local L3
-npx hardhat run scripts/deploy-all.ts --network gaiaL3
+npx hardhat run scripts/deploy-all.ts --network ArxL3
 
-# Deploy to live Gaia L3
-npx hardhat run scripts/deploy-all.ts --network gaiaL3Mainnet
+# Deploy to live Arx L3
+npx hardhat run scripts/deploy-all.ts --network ArxL3Mainnet
 
 
 ---
@@ -274,25 +290,6 @@ pnpm test:e2e
 ## 📊 Contract Addresses
 
 
-
-### Gaia L3 
-
-| Contract | Address |
-|----------|---------|
-CUSSD | 0x5FbDB2315678afecb367f032d93F642f64180aa3|
-TASK_REGISTRY | 0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0|
-FUNDING_POOL|0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9|
-COLLATERAL_MANAGER | 0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9|
-VERIFICATION_MANAGER | 0x5FC8d32690cc91D4c39d9d3abcBD16989F875707|
-CARBON_CREDIT_MINTER | 0x0165878A594ca255338adfa4d48449f69242Eb8F|
-CARBON_MARKETPLACE | 0xa513E6E4b8f2a923D98304ec87F64353C4D5C853|
-PREDICTION_MARKET | 0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6|
-GOVERNANCE_DAO | 0x8A791620dd6260079BF849Dc5567aDC3F2FdC318|
-DATA_REGISTRY | 0x610178dA211FEF7D417bC0e6FeD39F05609AD788|
-MODEL_REGISTRY |0xB7f8BC63BbcaD18155201308C8f3540b07f84F5e|
-
-
----
 
 ## 🎨 Frontend
 
@@ -383,9 +380,9 @@ git push origin feature/amazing-feature
 - 🔄 Security audit ongoing
 
 ### Q1 2026
-- 🎯 Deploy Gaia L3 mainnet
+- 🎯 Deploy Arx L3 mainnet
 - 🎯 Onboard first 100 tasks
-- 🎯 Launch $IMPACT token
+- 🎯 Launch $ARX token
 - 🎯 Mobile app (iOS/Android)
 
 ### Q2 2026
@@ -405,15 +402,6 @@ git push origin feature/amazing-feature
 - *Founder:* [Your Name] - [@twitter](https://twitter.com/you)
 - *CTO:* [Co-founder] - [@github](https://github.com/cofounder)
 - *Advisors:* Climate experts, Blockchain devs, ReFi veterans
-
----
-
-## 💬 Community
-
-- *Discord:* https://discord.gg/gaia
-- *Twitter:* https://twitter.com/GaiaProtocol
-- *Telegram:* https://t.me/gaiaprotocol
-- *Forum:* https://forum.gaia.eco
 
 ---
 
