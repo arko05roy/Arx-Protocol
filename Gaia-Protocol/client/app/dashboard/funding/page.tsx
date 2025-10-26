@@ -127,7 +127,7 @@ export default function FundingPage() {
         <div className="p-4 md:p-6 space-y-6">
           {/* Header */}
           <div>
-            <h1 className="text-3xl font-bold text-foreground">Fund Projects</h1>
+            <h1 className="text-3xl font-bold text-foreground">Mempool</h1>
             <p className="text-foreground/60 mt-1">Support environmental projects and earn carbon credits</p>
           </div>
 
