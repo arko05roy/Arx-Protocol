@@ -1,0 +1,6 @@
+t=2025-10-30T23:59:42+0530 lvl=info msg="Initializing L2Output Submitter"
+t=2025-10-30T23:59:43+0530 lvl=info msg="Started metrics server" addr=[::]:7302
+t=2025-10-30T23:59:43+0530 lvl=info msg="Stopping Proposer"
+t=2025-10-30T23:59:43+0530 lvl=info msg="balance metrics shutting down"
+t=2025-10-30T23:59:43+0530 lvl=info msg="L2Output Submitter stopped"
+t=2025-10-30T23:59:43+0530 lvl=crit msg="Application failed" message="failed to setup: failed to init Driver: failed to get version: failed to unpack result: failed to unpack data: abi: attempting to unmarshal an empty string while arguments are expected"

@@ -1,0 +1,4 @@
+t=2025-10-30T23:59:37+0530 lvl=info msg="Initializing Batch Submitter"
+t=2025-10-30T23:59:37+0530 lvl=info msg="Stopping batcher"
+t=2025-10-30T23:59:37+0530 lvl=info msg="Batch Submitter stopped"
+t=2025-10-30T23:59:37+0530 lvl=crit msg="Application failed" message="failed to setup: failed to load rollup config: invalid rollup config: missing L2 genesis time"

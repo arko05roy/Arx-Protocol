@@ -35,8 +35,6 @@ cd ~/celo-l3-project
 git clone https://github.com/ethereum-optimism/optimism.git
 cd optimism
 
-# Create a new branch for your Celo modifications
-git checkout -b celo-l3-custom
 
 # Install dependencies
 pnpm install
