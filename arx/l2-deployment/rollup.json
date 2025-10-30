@@ -1,19 +1,23 @@
 {
   "genesis": {
     "l1": {
-      "hash": "0x6de784206f025d5d788cebbc665e54cf6daaa169f3c8626bcf9c1bdc6ad343fa",
+      "hash": "0x6d465cd30c89b4cd7e353843802bb59e584c1c75211f71b8043b7b43c0c0b7aa",
       "number": 8539727
     },
     "l2": {
-      "hash": "0x52e6b4689d8d77c8e8ff3c706a6d52ec8750aae0c1ac408ef13a2558594c0d41",
+      "hash": "0x8976181ad4dadc5cbd185ff469f661ab7bb88ae21936429faf41462e63abb843",
       "number": 0
     },
-    "l2_time": 0,
+    "l2_time": 1761823715,
     "system_config": {
-      "batcherAddr": "0xd9fC5AEA3D4e8F484f618cd90DC6f7844a500f62",
-      "overhead": "0x0000000000000000000000000000000000000000000000000000000000000834",
-      "scalar": "0x00000000000000000000000000000000000000000000000000000000000f4240",
-      "gasLimit": 30000000
+      "batcherAddr": "0xd9fc5aea3d4e8f484f618cd90dc6f7844a500f62",
+      "overhead": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "scalar": "0x0100000000000000000000000000000000000000000000000000000000000000",
+      "gasLimit": 30000000,
+      "eip1559Params": "0x0000000000000000",
+      "operatorFeeParams": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "minBaseFee": 0,
+      "daFootprintGasScalar": 0
     }
   },
   "block_time": 2,
@@ -25,9 +29,20 @@
   "regolith_time": 0,
   "canyon_time": 0,
   "delta_time": 0,
-  "ecotone_time": 0,
-  "fjord_time": 0,
+  "ecotone_time": null,
+  "fjord_time": null,
+  "granite_time": null,
+  "holocene_time": null,
+  "isthmus_time": null,
+  "jovian_time": null,
+  "interop_time": null,
   "batch_inbox_address": "0xff00000000000000000000000000000000424242",
-  "deposit_contract_address": "0x6C5Fd71d75Fa4b6054E0b9b5cC154AEBb18930c1",
-  "l1_system_config_address": "0xC7D71BC3bF37C129fa12c81377B8566661435a96"
+  "deposit_contract_address": "0x6c5fd71d75fa4b6054e0b9b5cc154aebb18930c1",
+  "l1_system_config_address": "0xc7d71bc3bf37c129fa12c81377b8566661435a96",
+  "protocol_versions_address": "0x0000000000000000000000000000000000000000",
+  "chain_op_config": {
+    "eip1559Elasticity": 6,
+    "eip1559Denominator": 50,
+    "eip1559DenominatorCanyon": 250
+  }
 }
