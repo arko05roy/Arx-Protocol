@@ -4477,3 +4477,81 @@ t=2025-10-31T02:36:29+0530 lvl=info msg="Advancing bq origin" origin=0xafd17e8af
 t=2025-10-31T02:36:30+0530 lvl=info msg="Advancing bq origin" origin=0xeeaaf86415eaa003b8565b1e679695edc5daaf6fb9aad707886b1ddfb4d6d0d1:8539741 originBehind=false
 t=2025-10-31T02:36:30+0530 lvl=info msg="Advancing bq origin" origin=0x575912949c178e6a60aa779333cc3ddb6e619278d9685357a23cd13561e82659:8539742 originBehind=false
 t=2025-10-31T02:36:30+0530 lvl=info msg="Advancing bq origin" origin=0x9051b6d079d805fa162258740a602f7dc9aa62dd32ed1dd2fa83dd6ad7f9f888:8539743 originBehind=false
+t=2025-10-31T02:36:30+0530 lvl=info msg="Advancing bq origin" origin=0x6473580af98ffd9072649eb0a72a7d1152536fc7985ba072660707745dbfa0ae:8539744 originBehind=false
+t=2025-10-31T02:36:30+0530 lvl=info msg="Advancing bq origin" origin=0x3e27f1240657271c5212a30f87e98adf28d1a18ef0db514f04cabfaacf0cc5c7:8539745 originBehind=false
+t=2025-10-31T02:36:30+0530 lvl=info msg="Advancing bq origin" origin=0x771450a9c023fc7e2e735292a5aeab7ae90b3a9e5e0bdd78b3fc074a2cf5692e:8539746 originBehind=false
+t=2025-10-31T02:36:30+0530 lvl=info msg="Advancing bq origin" origin=0xe4166923c6fe213300cf2909aa86f5313102ae27bdfa83e550a0d129b72cba98:8539747 originBehind=false
+t=2025-10-31T02:36:30+0530 lvl=info msg="Advancing bq origin" origin=0xb09a2b604ebb3bab1c956b701e879d41ce053cc684f7f42ed26abfb90a8458c8:8539748 originBehind=false
+t=2025-10-31T02:36:30+0530 lvl=info msg="Advancing bq origin" origin=0x1a4f64eef15cb9e6712c5c4d92bbb79ce7e0536c59e2aa162ba6b6c2fa5a5268:8539749 originBehind=false
+t=2025-10-31T02:36:30+0530 lvl=info msg="Advancing bq origin" origin=0x3adcc54d11886a4db11c1b9d7957dde3b61a190280555e27a23301d21c34dc15:8539750 originBehind=false
+t=2025-10-31T02:36:31+0530 lvl=info msg="Advancing bq origin" origin=0x6ccdc99715ed93e06735f1ace37e0b613817aaa198a93eeaf121482b7197ceae:8539751 originBehind=false
+t=2025-10-31T02:36:31+0530 lvl=info msg="Advancing bq origin" origin=0xe8c497248bf48436cae8be5d79c74b1e581695794a87f562492d0eb42cde0727:8539752 originBehind=false
+t=2025-10-31T02:36:31+0530 lvl=info msg="Advancing bq origin" origin=0x83cd04466bac412ac4b1e047bce5a7fb39fcdba18d077ffab23f34ebc50a8ce1:8539753 originBehind=false
+t=2025-10-31T02:36:31+0530 lvl=info msg="Started sequencing new block" parent=0x8976181ad4dadc5cbd185ff469f661ab7bb88ae21936429faf41462e63abb843:0 l1Origin=0x22219833d4be19b9fa6a99ac9a3cc0fbd0e611477d2af3932f6a8796901a59d7:8539728
+t=2025-10-31T02:36:31+0530 lvl=warn msg="Failed to share forkchoice-updated signal" state="&{HeadBlockHash:0x8976181ad4dadc5cbd185ff469f661ab7bb88ae21936429faf41462e63abb843 SafeBlockHash:0x8976181ad4dadc5cbd185ff469f661ab7bb88ae21936429faf41462e63abb843 FinalizedBlockHash:0x8976181ad4dadc5cbd185ff469f661ab7bb88ae21936429faf41462e63abb843}" err="Unsupported fork: map[err:fcuV2 must only be called with paris or shanghai payloads]"
+t=2025-10-31T02:36:31+0530 lvl=warn msg="Deriver system is resetting" err="need reset to resolve pre-state problem: unexpected engine error code in forkchoice-updated response: Unsupported fork: map[err:fcuV2 must only be called with paris or shanghai payloads]"
+t=2025-10-31T02:36:31+0530 lvl=error msg="Sequencer encountered reset signal, aborting work" err="need reset to resolve pre-state problem: unexpected engine error code in forkchoice-updated response: Unsupported fork: map[err:fcuV2 must only be called with paris or shanghai payloads]"
+t=2025-10-31T02:36:31+0530 lvl=info msg="Advancing bq origin" origin=0x774198dd8e3e496d6bddcefe8334c2f3e4472473f7734bf52565327a914515a1:8539754 originBehind=false
+t=2025-10-31T02:36:31+0530 lvl=info msg="Loaded current L2 heads" unsafe=0x8976181ad4dadc5cbd185ff469f661ab7bb88ae21936429faf41462e63abb843:0 safe=0x8976181ad4dadc5cbd185ff469f661ab7bb88ae21936429faf41462e63abb843:0 finalized=0x8976181ad4dadc5cbd185ff469f661ab7bb88ae21936429faf41462e63abb843:0 unsafe_origin=0x6d465cd30c89b4cd7e353843802bb59e584c1c75211f71b8043b7b43c0c0b7aa:8539727 safe_origin=0x6d465cd30c89b4cd7e353843802bb59e584c1c75211f71b8043b7b43c0c0b7aa:8539727
+t=2025-10-31T02:36:31+0530 lvl=info msg="Walking back L1Block by number" curr=0x6d465cd30c89b4cd7e353843802bb59e584c1c75211f71b8043b7b43c0c0b7aa:8539727 next=0x6d465cd30c89b4cd7e353843802bb59e584c1c75211f71b8043b7b43c0c0b7aa:8539727 l2block=0x8976181ad4dadc5cbd185ff469f661ab7bb88ae21936429faf41462e63abb843:0
+t=2025-10-31T02:36:31+0530 lvl=info msg="Hit finalized L2 head, returning immediately" unsafe=0x8976181ad4dadc5cbd185ff469f661ab7bb88ae21936429faf41462e63abb843:0 safe=0x8976181ad4dadc5cbd185ff469f661ab7bb88ae21936429faf41462e63abb843:0 finalized=0x8976181ad4dadc5cbd185ff469f661ab7bb88ae21936429faf41462e63abb843:0 unsafe_origin=0x6d465cd30c89b4cd7e353843802bb59e584c1c75211f71b8043b7b43c0c0b7aa:8539727 safe_origin=0x6d465cd30c89b4cd7e353843802bb59e584c1c75211f71b8043b7b43c0c0b7aa:8539727
+t=2025-10-31T02:36:31+0530 lvl=info msg="Reset of Engine is completed" local_unsafe=0x8976181ad4dadc5cbd185ff469f661ab7bb88ae21936429faf41462e63abb843:0 cross_unsafe=0x8976181ad4dadc5cbd185ff469f661ab7bb88ae21936429faf41462e63abb843:0 local_safe=0x8976181ad4dadc5cbd185ff469f661ab7bb88ae21936429faf41462e63abb843:0 cross_safe=0x8976181ad4dadc5cbd185ff469f661ab7bb88ae21936429faf41462e63abb843:0 finalized=0x8976181ad4dadc5cbd185ff469f661ab7bb88ae21936429faf41462e63abb843:0
+t=2025-10-31T02:36:31+0530 lvl=info msg="Confirming pipeline reset"
+t=2025-10-31T02:36:31+0530 lvl=info msg="Engine reset confirmed, sequencer may continue" next=true
+t=2025-10-31T02:36:31+0530 lvl=info msg="Scheduled sequencer action" delta=1.999975917s
+t=2025-10-31T02:36:31+0530 lvl=info msg="Rewinding derivation-pipeline L1 traversal to handle reset"
+t=2025-10-31T02:36:31+0530 lvl=info msg="completed reset of derivation pipeline" origin=0x6d465cd30c89b4cd7e353843802bb59e584c1c75211f71b8043b7b43c0c0b7aa:8539727
+t=2025-10-31T02:36:31+0530 lvl=info msg="Reset of L1Retrieval done" origin=0x6d465cd30c89b4cd7e353843802bb59e584c1c75211f71b8043b7b43c0c0b7aa:8539727
+t=2025-10-31T02:36:31+0530 lvl=info msg="Advancing bq origin" origin=0x22219833d4be19b9fa6a99ac9a3cc0fbd0e611477d2af3932f6a8796901a59d7:8539728 originBehind=false
+t=2025-10-31T02:36:31+0530 lvl=info msg="Advancing bq origin" origin=0xd079a7442eb32df623d4cfdf646c4d3edf04ce2ce9215912ad9534c30328e044:8539729 originBehind=false
+t=2025-10-31T02:36:31+0530 lvl=info msg="Advancing bq origin" origin=0xe2c985fc485beb891e1de4fca41a5edd1a9414fea637867d5dc6e280704e41d0:8539730 originBehind=false
+t=2025-10-31T02:36:31+0530 lvl=info msg="Advancing bq origin" origin=0xfa3551170a87c00ac031632e29b3e69caf80519d26d19cf7714de69e227046ec:8539731 originBehind=false
+t=2025-10-31T02:36:31+0530 lvl=info msg="Advancing bq origin" origin=0x8de4bdfd126f87bd0f2e94fb1c04c474a6e45f58e1c80f88c07e14c8499faccc:8539732 originBehind=false
+t=2025-10-31T02:36:31+0530 lvl=info msg="Advancing bq origin" origin=0xf8c0f7a708d06293bef04efa848e37082d080ac1f29a0b53f1202caaa9a0092c:8539733 originBehind=false
+t=2025-10-31T02:36:32+0530 lvl=info msg="Advancing bq origin" origin=0xadb2fa5e90866891c7fc762f04126836adc2d4aa7519136250e02a0d4dc29788:8539734 originBehind=false
+t=2025-10-31T02:36:32+0530 lvl=info msg="Advancing bq origin" origin=0x008dbf91bf655ab9903f157e40d1b82c2c5b8264e0540d9f74563e3936a07f9c:8539735 originBehind=false
+t=2025-10-31T02:36:32+0530 lvl=info msg="Advancing bq origin" origin=0xcd46a7faf6a2438e67ceaf5ca263f919cf1470b078d64a1f0bf11f516585ce0b:8539736 originBehind=false
+t=2025-10-31T02:36:32+0530 lvl=info msg="Advancing bq origin" origin=0x513ea952eb8a5cbf87b8cdfcc5c792941c4bd98dcb5e301c73361240bc68e1b0:8539737 originBehind=false
+t=2025-10-31T02:36:32+0530 lvl=info msg="Advancing bq origin" origin=0xacd7425da5ab503b72b1a91da8ca197c8909a274142f422822ed28d6438997ca:8539738 originBehind=false
+t=2025-10-31T02:36:32+0530 lvl=info msg="Advancing bq origin" origin=0x9ece1b7473a920863e8e23feaa37d52390f7c4743debcca62dc16159a4c7e7c9:8539739 originBehind=false
+t=2025-10-31T02:36:32+0530 lvl=info msg="Advancing bq origin" origin=0xafd17e8af3c6d3bb54cc467ae17a56e76e45cc6b5d22890ef292c883f7d9f25e:8539740 originBehind=false
+t=2025-10-31T02:36:33+0530 lvl=info msg="Advancing bq origin" origin=0xeeaaf86415eaa003b8565b1e679695edc5daaf6fb9aad707886b1ddfb4d6d0d1:8539741 originBehind=false
+t=2025-10-31T02:36:33+0530 lvl=info msg="Advancing bq origin" origin=0x575912949c178e6a60aa779333cc3ddb6e619278d9685357a23cd13561e82659:8539742 originBehind=false
+t=2025-10-31T02:36:33+0530 lvl=info msg="Advancing bq origin" origin=0x9051b6d079d805fa162258740a602f7dc9aa62dd32ed1dd2fa83dd6ad7f9f888:8539743 originBehind=false
+t=2025-10-31T02:36:33+0530 lvl=info msg="Advancing bq origin" origin=0x6473580af98ffd9072649eb0a72a7d1152536fc7985ba072660707745dbfa0ae:8539744 originBehind=false
+t=2025-10-31T02:36:33+0530 lvl=info msg="Advancing bq origin" origin=0x3e27f1240657271c5212a30f87e98adf28d1a18ef0db514f04cabfaacf0cc5c7:8539745 originBehind=false
+t=2025-10-31T02:36:33+0530 lvl=info msg="Started sequencing new block" parent=0x8976181ad4dadc5cbd185ff469f661ab7bb88ae21936429faf41462e63abb843:0 l1Origin=0x22219833d4be19b9fa6a99ac9a3cc0fbd0e611477d2af3932f6a8796901a59d7:8539728
+t=2025-10-31T02:36:33+0530 lvl=warn msg="Failed to share forkchoice-updated signal" state="&{HeadBlockHash:0x8976181ad4dadc5cbd185ff469f661ab7bb88ae21936429faf41462e63abb843 SafeBlockHash:0x8976181ad4dadc5cbd185ff469f661ab7bb88ae21936429faf41462e63abb843 FinalizedBlockHash:0x8976181ad4dadc5cbd185ff469f661ab7bb88ae21936429faf41462e63abb843}" err="Unsupported fork: map[err:fcuV2 must only be called with paris or shanghai payloads]"
+t=2025-10-31T02:36:33+0530 lvl=info msg="Advancing bq origin" origin=0x771450a9c023fc7e2e735292a5aeab7ae90b3a9e5e0bdd78b3fc074a2cf5692e:8539746 originBehind=false
+t=2025-10-31T02:36:33+0530 lvl=warn msg="Deriver system is resetting" err="need reset to resolve pre-state problem: unexpected engine error code in forkchoice-updated response: Unsupported fork: map[err:fcuV2 must only be called with paris or shanghai payloads]"
+t=2025-10-31T02:36:33+0530 lvl=error msg="Sequencer encountered reset signal, aborting work" err="need reset to resolve pre-state problem: unexpected engine error code in forkchoice-updated response: Unsupported fork: map[err:fcuV2 must only be called with paris or shanghai payloads]"
+t=2025-10-31T02:36:33+0530 lvl=info msg="Loaded current L2 heads" unsafe=0x8976181ad4dadc5cbd185ff469f661ab7bb88ae21936429faf41462e63abb843:0 safe=0x8976181ad4dadc5cbd185ff469f661ab7bb88ae21936429faf41462e63abb843:0 finalized=0x8976181ad4dadc5cbd185ff469f661ab7bb88ae21936429faf41462e63abb843:0 unsafe_origin=0x6d465cd30c89b4cd7e353843802bb59e584c1c75211f71b8043b7b43c0c0b7aa:8539727 safe_origin=0x6d465cd30c89b4cd7e353843802bb59e584c1c75211f71b8043b7b43c0c0b7aa:8539727
+t=2025-10-31T02:36:34+0530 lvl=info msg="Walking back L1Block by number" curr=0x6d465cd30c89b4cd7e353843802bb59e584c1c75211f71b8043b7b43c0c0b7aa:8539727 next=0x6d465cd30c89b4cd7e353843802bb59e584c1c75211f71b8043b7b43c0c0b7aa:8539727 l2block=0x8976181ad4dadc5cbd185ff469f661ab7bb88ae21936429faf41462e63abb843:0
+t=2025-10-31T02:36:34+0530 lvl=info msg="Hit finalized L2 head, returning immediately" unsafe=0x8976181ad4dadc5cbd185ff469f661ab7bb88ae21936429faf41462e63abb843:0 safe=0x8976181ad4dadc5cbd185ff469f661ab7bb88ae21936429faf41462e63abb843:0 finalized=0x8976181ad4dadc5cbd185ff469f661ab7bb88ae21936429faf41462e63abb843:0 unsafe_origin=0x6d465cd30c89b4cd7e353843802bb59e584c1c75211f71b8043b7b43c0c0b7aa:8539727 safe_origin=0x6d465cd30c89b4cd7e353843802bb59e584c1c75211f71b8043b7b43c0c0b7aa:8539727
+t=2025-10-31T02:36:34+0530 lvl=info msg="Reset of Engine is completed" local_unsafe=0x8976181ad4dadc5cbd185ff469f661ab7bb88ae21936429faf41462e63abb843:0 cross_unsafe=0x8976181ad4dadc5cbd185ff469f661ab7bb88ae21936429faf41462e63abb843:0 local_safe=0x8976181ad4dadc5cbd185ff469f661ab7bb88ae21936429faf41462e63abb843:0 cross_safe=0x8976181ad4dadc5cbd185ff469f661ab7bb88ae21936429faf41462e63abb843:0 finalized=0x8976181ad4dadc5cbd185ff469f661ab7bb88ae21936429faf41462e63abb843:0
+t=2025-10-31T02:36:34+0530 lvl=info msg="Confirming pipeline reset"
+t=2025-10-31T02:36:34+0530 lvl=info msg="Engine reset confirmed, sequencer may continue" next=true
+t=2025-10-31T02:36:34+0530 lvl=info msg="Scheduled sequencer action" delta=1.999948208s
+t=2025-10-31T02:36:34+0530 lvl=info msg="Rewinding derivation-pipeline L1 traversal to handle reset"
+t=2025-10-31T02:36:34+0530 lvl=info msg="completed reset of derivation pipeline" origin=0x6d465cd30c89b4cd7e353843802bb59e584c1c75211f71b8043b7b43c0c0b7aa:8539727
+t=2025-10-31T02:36:34+0530 lvl=info msg="Reset of L1Retrieval done" origin=0x6d465cd30c89b4cd7e353843802bb59e584c1c75211f71b8043b7b43c0c0b7aa:8539727
+t=2025-10-31T02:36:34+0530 lvl=info msg="Advancing bq origin" origin=0x22219833d4be19b9fa6a99ac9a3cc0fbd0e611477d2af3932f6a8796901a59d7:8539728 originBehind=false
+t=2025-10-31T02:36:34+0530 lvl=info msg="Advancing bq origin" origin=0xd079a7442eb32df623d4cfdf646c4d3edf04ce2ce9215912ad9534c30328e044:8539729 originBehind=false
+t=2025-10-31T02:36:34+0530 lvl=info msg="Advancing bq origin" origin=0xe2c985fc485beb891e1de4fca41a5edd1a9414fea637867d5dc6e280704e41d0:8539730 originBehind=false
+t=2025-10-31T02:36:34+0530 lvl=info msg="Advancing bq origin" origin=0xfa3551170a87c00ac031632e29b3e69caf80519d26d19cf7714de69e227046ec:8539731 originBehind=false
+t=2025-10-31T02:36:34+0530 lvl=info msg="Advancing bq origin" origin=0x8de4bdfd126f87bd0f2e94fb1c04c474a6e45f58e1c80f88c07e14c8499faccc:8539732 originBehind=false
+t=2025-10-31T02:36:34+0530 lvl=info msg="Advancing bq origin" origin=0xf8c0f7a708d06293bef04efa848e37082d080ac1f29a0b53f1202caaa9a0092c:8539733 originBehind=false
+t=2025-10-31T02:36:34+0530 lvl=info msg="Advancing bq origin" origin=0xadb2fa5e90866891c7fc762f04126836adc2d4aa7519136250e02a0d4dc29788:8539734 originBehind=false
+t=2025-10-31T02:36:34+0530 lvl=info msg="Advancing bq origin" origin=0x008dbf91bf655ab9903f157e40d1b82c2c5b8264e0540d9f74563e3936a07f9c:8539735 originBehind=false
+t=2025-10-31T02:36:34+0530 lvl=info msg="Advancing bq origin" origin=0xcd46a7faf6a2438e67ceaf5ca263f919cf1470b078d64a1f0bf11f516585ce0b:8539736 originBehind=false
+t=2025-10-31T02:36:34+0530 lvl=info msg="Advancing bq origin" origin=0x513ea952eb8a5cbf87b8cdfcc5c792941c4bd98dcb5e301c73361240bc68e1b0:8539737 originBehind=false
+t=2025-10-31T02:36:34+0530 lvl=info msg="Advancing bq origin" origin=0xacd7425da5ab503b72b1a91da8ca197c8909a274142f422822ed28d6438997ca:8539738 originBehind=false
+t=2025-10-31T02:36:34+0530 lvl=info msg="Advancing bq origin" origin=0x9ece1b7473a920863e8e23feaa37d52390f7c4743debcca62dc16159a4c7e7c9:8539739 originBehind=false
+t=2025-10-31T02:36:34+0530 lvl=info msg="Advancing bq origin" origin=0xafd17e8af3c6d3bb54cc467ae17a56e76e45cc6b5d22890ef292c883f7d9f25e:8539740 originBehind=false
+t=2025-10-31T02:36:34+0530 lvl=info msg="Advancing bq origin" origin=0xeeaaf86415eaa003b8565b1e679695edc5daaf6fb9aad707886b1ddfb4d6d0d1:8539741 originBehind=false
+t=2025-10-31T02:36:35+0530 lvl=info msg="Advancing bq origin" origin=0x575912949c178e6a60aa779333cc3ddb6e619278d9685357a23cd13561e82659:8539742 originBehind=false
+t=2025-10-31T02:36:35+0530 lvl=info msg="Advancing bq origin" origin=0x9051b6d079d805fa162258740a602f7dc9aa62dd32ed1dd2fa83dd6ad7f9f888:8539743 originBehind=false
+t=2025-10-31T02:36:35+0530 lvl=info msg="Advancing bq origin" origin=0x6473580af98ffd9072649eb0a72a7d1152536fc7985ba072660707745dbfa0ae:8539744 originBehind=false
+t=2025-10-31T02:36:35+0530 lvl=info msg="Advancing bq origin" origin=0x3e27f1240657271c5212a30f87e98adf28d1a18ef0db514f04cabfaacf0cc5c7:8539745 originBehind=false
+t=2025-10-31T02:36:35+0530 lvl=info msg="Advancing bq origin" origin=0x771450a9c023fc7e2e735292a5aeab7ae90b3a9e5e0bdd78b3fc074a2cf5692e:8539746 originBehind=false
+t=2025-10-31T02:36:35+0530 lvl=info msg="Advancing bq origin" origin=0xe4166923c6fe213300cf2909aa86f5313102ae27bdfa83e550a0d129b72cba98:8539747 originBehind=false
