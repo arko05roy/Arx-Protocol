@@ -1,6 +1,16 @@
-t=2025-10-31T12:04:48+0530 lvl=info msg="Initializing L2Output Submitter"
-t=2025-10-31T12:04:49+0530 lvl=info msg="Started metrics server" addr=[::]:7302
-t=2025-10-31T12:04:50+0530 lvl=info msg="Stopping Proposer"
-t=2025-10-31T12:04:50+0530 lvl=info msg="balance metrics shutting down"
-t=2025-10-31T12:04:50+0530 lvl=info msg="L2Output Submitter stopped"
-t=2025-10-31T12:04:50+0530 lvl=crit msg="Application failed" message="failed to setup: failed to init Driver: failed to get version: failed to unpack result: failed to unpack data: abi: attempting to unmarshal an empty string while arguments are expected"
+t=2025-10-31T12:43:57+0530 lvl=info msg="Initializing L2Output Submitter"
+t=2025-10-31T12:43:58+0530 lvl=info msg="Started metrics server" addr=[::]:7302
+t=2025-10-31T12:43:59+0530 lvl=info msg="Connected to DisputeGameFactory" address=0x22C41b16BB395b217C192Ca25Bd7558D449e3043 version=1.4.0
+t=2025-10-31T12:43:59+0530 lvl=info msg="Starting JSON-RPC server"
+t=2025-10-31T12:43:59+0530 lvl=info msg="Started RPC server" endpoint=http://[::]:9547
+t=2025-10-31T12:43:59+0530 lvl=info msg="Starting Proposer"
+t=2025-10-31T12:43:59+0530 lvl=info msg="Starting Proposer"
+t=2025-10-31T12:43:59+0530 lvl=info msg="Proposer started"
+t=2025-10-31T12:44:11+0530 lvl=info msg="Skipping proposal for genesis block"
+t=2025-10-31T12:44:23+0530 lvl=info msg="Skipping proposal for genesis block"
+t=2025-10-31T12:44:35+0530 lvl=info msg="Skipping proposal for genesis block"
+t=2025-10-31T12:44:47+0530 lvl=info msg="Skipping proposal for genesis block"
+t=2025-10-31T12:44:59+0530 lvl=info msg="Skipping proposal for genesis block"
+t=2025-10-31T12:45:11+0530 lvl=info msg="Skipping proposal for genesis block"
+t=2025-10-31T12:45:23+0530 lvl=info msg="Skipping proposal for genesis block"
+t=2025-10-31T12:45:35+0530 lvl=info msg="Skipping proposal for genesis block"

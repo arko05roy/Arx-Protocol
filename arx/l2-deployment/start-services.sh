@@ -57,6 +57,7 @@ if [ -n "$GAME_FACTORY" ]; then
     --rollup-rpc=http://localhost:9545 \
     --game-factory-address="$GAME_FACTORY" \
     --proposal-interval=1m \
+    --rpc.port=9547 \
     --private-key=9ebad8e26c7d816238400f806f0c81b25ce6f8e937c3386efc5223c5bad12a02 \
     --metrics.enabled --metrics.addr=0.0.0.0 --metrics.port=7302 \
     > "$LOGS/op-proposer.log" 2>&1 &
