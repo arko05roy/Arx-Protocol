@@ -1,43 +1,34 @@
-t=2025-10-31T12:43:52+0530 lvl=info msg="Initializing Batch Submitter"
-t=2025-10-31T12:43:53+0530 lvl=info msg="Rollup Config" l2_chain_id=424242 l2_network="unknown L2" l1_chain_id=11142220 l1_network="unknown L1" l2_start_time=1761823715 l2_block_hash=0xba7502365875099a85255d51ef7a0a7470296fd02d25a2e5872c1cd7638e2560 l2_block_number=0 l1_block_hash=0x6d465cd30c89b4cd7e353843802bb59e584c1c75211f71b8043b7b43c0c0b7aa l1_block_number=8539727 regolith_time="@ genesis" canyon_time="@ genesis" delta_time="@ genesis" ecotone_time="(not configured)" fjord_time="(not configured)" granite_time="(not configured)" holocene_time="(not configured)" isthmus_time="(not configured)" jovian_time="(not configured)" interop_time="(not configured)"
-t=2025-10-31T12:43:53+0530 lvl=info msg="Initialized channel-config" da_type=calldata use_alt_da=false max_frame_size=119999 target_num_frames=1 compressor=shadow compression_algo=zlib batch_type=0 max_channel_duration=0 channel_timeout=60 sub_safety_margin=10
-t=2025-10-31T12:43:53+0530 lvl=info msg="Started metrics server" addr=[::]:7301
-t=2025-10-31T12:43:53+0530 lvl=info msg="Setting throttle controller" type=quadratic
-t=2025-10-31T12:43:53+0530 lvl=info msg="Successfully set throttle controller" old_type="" new_type=quadratic
-t=2025-10-31T12:43:53+0530 lvl=info msg="Starting JSON-RPC server"
-t=2025-10-31T12:43:53+0530 lvl=info msg="Started RPC server" endpoint=http://[::]:9546
-t=2025-10-31T12:43:53+0530 lvl=info msg="Starting batcher" notSubmittingOnStart=false
-t=2025-10-31T12:43:53+0530 lvl=info msg="Starting Batch Submitter"
-t=2025-10-31T12:43:53+0530 lvl=info msg="Clearing state"
-t=2025-10-31T12:43:53+0530 lvl=info msg="Clearing state with safe L1 origin" origin=0x6d465cd30c89b4cd7e353843802bb59e584c1c75211f71b8043b7b43c0c0b7aa:8539727
-t=2025-10-31T12:43:53+0530 lvl=info msg="State cleared"
-t=2025-10-31T12:43:53+0530 lvl=info msg="Batch Submitter started"
-t=2025-10-31T12:43:53+0530 lvl=info msg="Starting receipts processing loop"
-t=2025-10-31T12:43:53+0530 lvl=info msg="Starting DA throttling loop" controller_type=quadratic lower_threshold=3200000 upper_threshold=12800000
-t=2025-10-31T12:43:53+0530 lvl=info msg="Starting endpoint throttling loop" endpoint=http://localhost:8545
-t=2025-10-31T12:43:59+0530 lvl=info msg="no blocks in state" syncStatus.headL1=79c177..70dec2:8610842 syncStatus.currentL1=222198..1a59d7:8539728 syncStatus.localSafeL2=ba7502..8e2560:0 syncStatus.safeL2=ba7502..8e2560:0 syncStatus.unsafeL2=ba7502..8e2560:0 syncActions="SyncActions{blocksToPrune: 0, channelsToPrune: 0, clearState: nil, blocksToLoad: nil}"
-t=2025-10-31T12:44:05+0530 lvl=info msg="no blocks in state" syncStatus.headL1=416545..24c425:8610855 syncStatus.currentL1=222198..1a59d7:8539728 syncStatus.localSafeL2=ba7502..8e2560:0 syncStatus.safeL2=ba7502..8e2560:0 syncStatus.unsafeL2=ba7502..8e2560:0 syncActions="SyncActions{blocksToPrune: 0, channelsToPrune: 0, clearState: nil, blocksToLoad: nil}"
-t=2025-10-31T12:44:11+0530 lvl=info msg="no blocks in state" syncStatus.headL1=416545..24c425:8610855 syncStatus.currentL1=e2c985..4e41d0:8539730 syncStatus.localSafeL2=ba7502..8e2560:0 syncStatus.safeL2=ba7502..8e2560:0 syncStatus.unsafeL2=ba7502..8e2560:0 syncActions="SyncActions{blocksToPrune: 0, channelsToPrune: 0, clearState: nil, blocksToLoad: nil}"
-t=2025-10-31T12:44:17+0530 lvl=info msg="no blocks in state" syncStatus.headL1=92311c..723346:8610867 syncStatus.currentL1=e2c985..4e41d0:8539730 syncStatus.localSafeL2=ba7502..8e2560:0 syncStatus.safeL2=ba7502..8e2560:0 syncStatus.unsafeL2=ba7502..8e2560:0 syncActions="SyncActions{blocksToPrune: 0, channelsToPrune: 0, clearState: nil, blocksToLoad: nil}"
-t=2025-10-31T12:44:23+0530 lvl=info msg="no blocks in state" syncStatus.headL1=92311c..723346:8610867 syncStatus.currentL1=8de4bd..9faccc:8539732 syncStatus.localSafeL2=ba7502..8e2560:0 syncStatus.safeL2=ba7502..8e2560:0 syncStatus.unsafeL2=ba7502..8e2560:0 syncActions="SyncActions{blocksToPrune: 0, channelsToPrune: 0, clearState: nil, blocksToLoad: nil}"
-t=2025-10-31T12:44:29+0530 lvl=warn msg="sequencer currentL1 reversed" syncStatus.headL1=07abb3..33e87e:8610879 syncStatus.currentL1=222198..1a59d7:8539728 syncStatus.localSafeL2=ba7502..8e2560:0 syncStatus.safeL2=ba7502..8e2560:0 syncStatus.unsafeL2=ba7502..8e2560:0 prevCurrentL1=8de4bd..9faccc:8539732
-t=2025-10-31T12:44:29+0530 lvl=warn msg="Sequencer is out of sync, retrying next tick."
-t=2025-10-31T12:44:35+0530 lvl=warn msg="sequencer currentL1 reversed" syncStatus.headL1=07abb3..33e87e:8610879 syncStatus.currentL1=222198..1a59d7:8539728 syncStatus.localSafeL2=ba7502..8e2560:0 syncStatus.safeL2=ba7502..8e2560:0 syncStatus.unsafeL2=ba7502..8e2560:0 prevCurrentL1=8de4bd..9faccc:8539732
-t=2025-10-31T12:44:35+0530 lvl=warn msg="Sequencer is out of sync, retrying next tick."
-t=2025-10-31T12:44:41+0530 lvl=warn msg="sequencer currentL1 reversed" syncStatus.headL1=fa616c..22f599:8610891 syncStatus.currentL1=fa3551..7046ec:8539731 syncStatus.localSafeL2=ba7502..8e2560:0 syncStatus.safeL2=ba7502..8e2560:0 syncStatus.unsafeL2=ba7502..8e2560:0 prevCurrentL1=8de4bd..9faccc:8539732
-t=2025-10-31T12:44:41+0530 lvl=warn msg="Sequencer is out of sync, retrying next tick."
-t=2025-10-31T12:44:47+0530 lvl=warn msg="sequencer currentL1 reversed" syncStatus.headL1=fa616c..22f599:8610891 syncStatus.currentL1=e2c985..4e41d0:8539730 syncStatus.localSafeL2=ba7502..8e2560:0 syncStatus.safeL2=ba7502..8e2560:0 syncStatus.unsafeL2=ba7502..8e2560:0 prevCurrentL1=8de4bd..9faccc:8539732
-t=2025-10-31T12:44:47+0530 lvl=warn msg="Sequencer is out of sync, retrying next tick."
-t=2025-10-31T12:44:53+0530 lvl=warn msg="empty BlockRef in sync status" syncStatus.headL1=9bbeac..8ecff4:8610904 syncStatus.currentL1=000000..000000:0 syncStatus.localSafeL2=000000..000000:0 syncStatus.safeL2=000000..000000:0 syncStatus.unsafeL2=000000..000000:0
-t=2025-10-31T12:44:53+0530 lvl=warn msg="Sequencer is out of sync, retrying next tick."
-t=2025-10-31T12:44:59+0530 lvl=warn msg="sequencer currentL1 reversed" syncStatus.headL1=9bbeac..8ecff4:8610904 syncStatus.currentL1=6d465c..c0b7aa:8539727 syncStatus.localSafeL2=ba7502..8e2560:0 syncStatus.safeL2=ba7502..8e2560:0 syncStatus.unsafeL2=ba7502..8e2560:0 prevCurrentL1=8de4bd..9faccc:8539732
-t=2025-10-31T12:44:59+0530 lvl=warn msg="Sequencer is out of sync, retrying next tick."
-t=2025-10-31T12:45:05+0530 lvl=warn msg="sequencer currentL1 reversed" syncStatus.headL1=90fa5e..1f5230:8610916 syncStatus.currentL1=6d465c..c0b7aa:8539727 syncStatus.localSafeL2=ba7502..8e2560:0 syncStatus.safeL2=ba7502..8e2560:0 syncStatus.unsafeL2=ba7502..8e2560:0 prevCurrentL1=8de4bd..9faccc:8539732
-t=2025-10-31T12:45:05+0530 lvl=warn msg="Sequencer is out of sync, retrying next tick."
-t=2025-10-31T12:45:11+0530 lvl=warn msg="sequencer currentL1 reversed" syncStatus.headL1=90fa5e..1f5230:8610916 syncStatus.currentL1=fa3551..7046ec:8539731 syncStatus.localSafeL2=ba7502..8e2560:0 syncStatus.safeL2=ba7502..8e2560:0 syncStatus.unsafeL2=ba7502..8e2560:0 prevCurrentL1=8de4bd..9faccc:8539732
-t=2025-10-31T12:45:11+0530 lvl=warn msg="Sequencer is out of sync, retrying next tick."
-t=2025-10-31T12:45:17+0530 lvl=info msg="no blocks in state" syncStatus.headL1=90fa5e..1f5230:8610916 syncStatus.currentL1=8de4bd..9faccc:8539732 syncStatus.localSafeL2=ba7502..8e2560:0 syncStatus.safeL2=ba7502..8e2560:0 syncStatus.unsafeL2=ba7502..8e2560:0 syncActions="SyncActions{blocksToPrune: 0, channelsToPrune: 0, clearState: nil, blocksToLoad: nil}"
-t=2025-10-31T12:45:23+0530 lvl=info msg="no blocks in state" syncStatus.headL1=d0721d..71e4fd:8610929 syncStatus.currentL1=f8c0f7..a0092c:8539733 syncStatus.localSafeL2=ba7502..8e2560:0 syncStatus.safeL2=ba7502..8e2560:0 syncStatus.unsafeL2=ba7502..8e2560:0 syncActions="SyncActions{blocksToPrune: 0, channelsToPrune: 0, clearState: nil, blocksToLoad: nil}"
-t=2025-10-31T12:45:29+0530 lvl=info msg="no blocks in state" syncStatus.headL1=d0721d..71e4fd:8610929 syncStatus.currentL1=adb2fa..c29788:8539734 syncStatus.localSafeL2=ba7502..8e2560:0 syncStatus.safeL2=ba7502..8e2560:0 syncStatus.unsafeL2=ba7502..8e2560:0 syncActions="SyncActions{blocksToPrune: 0, channelsToPrune: 0, clearState: nil, blocksToLoad: nil}"
-t=2025-10-31T12:45:35+0530 lvl=warn msg="empty BlockRef in sync status" syncStatus.headL1=3eca36..141e27:8610941 syncStatus.currentL1=008dbf..a07f9c:8539735 syncStatus.localSafeL2=000000..000000:0 syncStatus.safeL2=000000..000000:0 syncStatus.unsafeL2=000000..000000:0
-t=2025-10-31T12:45:35+0530 lvl=warn msg="Sequencer is out of sync, retrying next tick."
+t=2025-10-31T12:50:14+0530 lvl=info msg="Initializing Batch Submitter"
+t=2025-10-31T12:50:14+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8545
+t=2025-10-31T12:50:16+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8545
+t=2025-10-31T12:50:18+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8545
+t=2025-10-31T12:50:20+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8545
+t=2025-10-31T12:50:22+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8545
+t=2025-10-31T12:50:24+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8545
+t=2025-10-31T12:50:26+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8545
+t=2025-10-31T12:50:28+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8545
+t=2025-10-31T12:50:30+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8545
+t=2025-10-31T12:50:32+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8545
+t=2025-10-31T12:50:34+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8545
+t=2025-10-31T12:50:36+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8545
+t=2025-10-31T12:50:38+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8545
+t=2025-10-31T12:50:40+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8545
+t=2025-10-31T12:50:42+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8545
+t=2025-10-31T12:50:44+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8545
+t=2025-10-31T12:50:46+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8545
+t=2025-10-31T12:50:48+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8545
+t=2025-10-31T12:50:50+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8545
+t=2025-10-31T12:50:52+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8545
+t=2025-10-31T12:50:54+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8545
+t=2025-10-31T12:50:56+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8545
+t=2025-10-31T12:50:58+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8545
+t=2025-10-31T12:51:00+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8545
+t=2025-10-31T12:51:02+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8545
+t=2025-10-31T12:51:04+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8545
+t=2025-10-31T12:51:06+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8545
+t=2025-10-31T12:51:08+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8545
+t=2025-10-31T12:51:10+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8545
+t=2025-10-31T12:51:12+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8545
+t=2025-10-31T12:51:12+0530 lvl=info msg="Stopping batcher"
+t=2025-10-31T12:51:12+0530 lvl=info msg="Batch Submitter stopped"
+t=2025-10-31T12:51:12+0530 lvl=crit msg="Application failed" message="failed to setup: failed to build static L2 endpoint provider: operation failed permanently after 30 attempts: address unavailable (http://localhost:8545)"
