@@ -1,80 +1,78 @@
 #!/bin/bash
-set -e
+set -euo pipefail
 
-# Celo Sepolia L3 - Service Startup Script
+OP_ROOT="/Users/arkoroy/Desktop/arx/Arx-Protocol/arx/optimism/optimism"
+L2_DIR="/Users/arkoroy/Desktop/arx/Arx-Protocol/arx/l2-deployment"
+LOGS="$L2_DIR/logs"
 
-DEPLOYMENT_DIR="/Users/arkoroy/Desktop/arx/Arx-Protocol/arx/l2-deployment"
-OPTIMISM_DIR="/Users/arkoroy/Desktop/arx/Arx-Protocol/arx/optimism/optimism"
+mkdir -p "$LOGS"
 
-echo "🚀 Starting Celo Sepolia L3 Services..."
-echo "=================================="
+echo "==== Starting L3 Services ===="
 
-# Colors for output
-GREEN='\033[0;32m'
-BLUE='\033[0;34m'
-NC='\033[0m' # No Color
+# Kill any existing processes
+echo "Stopping existing services..."
+pkill -9 -f "op-batcher/bin/op-batcher" 2>/dev/null || true
+pkill -9 -f "op-proposer/bin/op-proposer" 2>/dev/null || true
+sleep 2
 
-# Create logs directory
-mkdir -p "$DEPLOYMENT_DIR/logs"
+# Check if op-node is running
+if ! pgrep -f "op-node/bin/op-node" > /dev/null; then
+  echo "❌ op-node is not running. Start it first with START_L3_PROD.sh"
+  exit 1
+fi
 
-# Function to start service in background
-start_service() {
-    local service=$1
-    local env_file=$2
-    local binary=$3
-    local log_file="$DEPLOYMENT_DIR/logs/${service}.log"
-    
-    echo -e "${BLUE}Starting ${service}...${NC}"
-    
-    if [ ! -f "$binary" ]; then
-        echo "❌ Binary not found: $binary"
-        return 1
-    fi
-    
-    # Load environment and start service
-    set -a
-    source "$env_file"
-    set +a
-    
-    nohup "$binary" > "$log_file" 2>&1 &
-    local pid=$!
-    
-    echo "$pid" > "$DEPLOYMENT_DIR/${service}.pid"
-    echo -e "${GREEN}✅ ${service} started (PID: $pid)${NC}"
-    echo "   Logs: $log_file"
-}
+echo "✅ op-node is running"
 
-# Start op-node first (consensus layer)
-start_service "op-node" \
-    "$DEPLOYMENT_DIR/op-node.env" \
-    "$OPTIMISM_DIR/op-node/bin/op-node"
+# Wait for op-node RPC to be ready
+echo "Waiting for op-node RPC on port 9545..."
+for i in {1..30}; do
+  if curl -s http://localhost:9545 > /dev/null 2>&1; then
+    echo "✅ op-node RPC is ready"
+    break
+  fi
+  echo "Waiting... ($i/30)"
+  sleep 1
+done
+
+# Start op-batcher (use port 9546 for its RPC to avoid conflicts)
+echo "Starting op-batcher..."
+nohup "$OP_ROOT/op-batcher/bin/op-batcher" \
+  --l1-eth-rpc=https://forno.celo-sepolia.celo-testnet.org \
+  --l2-eth-rpc=http://localhost:8545 \
+  --rollup-rpc=http://localhost:9545 \
+  --private-key=f2d83d4bb547d821db1e33c6a488a9350d263dee584acadbd6603f862931349c \
+  --rpc.port=9546 \
+  --metrics.enabled --metrics.addr=0.0.0.0 --metrics.port=7301 \
+  > "$LOGS/op-batcher.log" 2>&1 &
 
 sleep 5
 
-# Start op-batcher (batch submission)
-start_service "op-batcher" \
-    "$DEPLOYMENT_DIR/op-batcher.env" \
-    "$OPTIMISM_DIR/op-batcher/bin/op-batcher"
+# Start op-proposer (if game factory address is available)
+GAME_FACTORY=$(jq -r '.DisputeGameFactoryProxy // empty' "$L2_DIR/l1-deployments/11142220-deploy.json" 2>/dev/null || echo "")
 
-sleep 5
+if [ -n "$GAME_FACTORY" ]; then
+  echo "Starting op-proposer with game factory: $GAME_FACTORY..."
+  nohup "$OP_ROOT/op-proposer/bin/op-proposer" \
+    --l1-eth-rpc=https://forno.celo-sepolia.celo-testnet.org \
+    --rollup-rpc=http://localhost:9545 \
+    --game-factory-address="$GAME_FACTORY" \
+    --proposal-interval=1m \
+    --private-key=9ebad8e26c7d816238400f806f0c81b25ce6f8e937c3386efc5223c5bad12a02 \
+    --metrics.enabled --metrics.addr=0.0.0.0 --metrics.port=7302 \
+    > "$LOGS/op-proposer.log" 2>&1 &
+  sleep 5
+else
+  echo "⚠️  Game factory address not found. Skipping op-proposer."
+  echo "Deploy L1 contracts first with: ./deploy-l1-contracts.sh"
+fi
 
-# Start op-proposer (state root submission)
-start_service "op-proposer" \
-    "$DEPLOYMENT_DIR/op-proposer.env" \
-    "$OPTIMISM_DIR/op-proposer/bin/op-proposer"
-
+# Status check
 echo ""
-echo "=================================="
-echo -e "${GREEN}✅ All services started!${NC}"
-echo ""
-echo "Service Status:"
-echo "  op-node:     http://localhost:9545"
-echo "  op-batcher:  Running (Metrics: http://localhost:7301)"
-echo "  op-proposer: http://localhost:8560"
+echo "==== Service Status ===="
+pgrep -f "op-batcher/bin/op-batcher" > /dev/null && echo "✅ op-batcher is running" || echo "❌ op-batcher failed"
+pgrep -f "op-proposer/bin/op-proposer" > /dev/null && echo "✅ op-proposer is running" || echo "❌ op-proposer not running"
+
 echo ""
 echo "Logs:"
-echo "  op-node:     $DEPLOYMENT_DIR/logs/op-node.log"
-echo "  op-batcher:  $DEPLOYMENT_DIR/logs/op-batcher.log"
-echo "  op-proposer: $DEPLOYMENT_DIR/logs/op-proposer.log"
-echo ""
-echo "To stop services: bash $DEPLOYMENT_DIR/stop-services.sh"
+echo "  op-batcher: tail -f $LOGS/op-batcher.log"
+echo "  op-proposer: tail -f $LOGS/op-proposer.log"

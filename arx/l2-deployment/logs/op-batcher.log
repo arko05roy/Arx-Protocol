@@ -1,12 +1,12 @@
-t=2025-10-31T11:50:27+0530 lvl=info msg="Initializing Batch Submitter"
-t=2025-10-31T11:50:27+0530 lvl=info msg="Rollup Config" l2_chain_id=424242 l2_network="unknown L2" l1_chain_id=11142220 l1_network="unknown L1" l2_start_time=1761823715 l2_block_hash=0xba7502365875099a85255d51ef7a0a7470296fd02d25a2e5872c1cd7638e2560 l2_block_number=0 l1_block_hash=0x6d465cd30c89b4cd7e353843802bb59e584c1c75211f71b8043b7b43c0c0b7aa l1_block_number=8539727 regolith_time="@ genesis" canyon_time="@ genesis" delta_time="@ genesis" ecotone_time="(not configured)" fjord_time="(not configured)" granite_time="(not configured)" holocene_time="(not configured)" isthmus_time="(not configured)" jovian_time="(not configured)" interop_time="(not configured)"
-t=2025-10-31T11:50:28+0530 lvl=info msg="Initialized channel-config" da_type=calldata use_alt_da=false max_frame_size=119999 target_num_frames=1 compressor=shadow compression_algo=zlib batch_type=0 max_channel_duration=0 channel_timeout=60 sub_safety_margin=10
-t=2025-10-31T11:50:28+0530 lvl=info msg="Started metrics server" addr=[::]:7301
-t=2025-10-31T11:50:28+0530 lvl=info msg="Setting throttle controller" type=quadratic
-t=2025-10-31T11:50:28+0530 lvl=info msg="Successfully set throttle controller" old_type="" new_type=quadratic
-t=2025-10-31T11:50:28+0530 lvl=info msg="Starting JSON-RPC server"
-t=2025-10-31T11:50:28+0530 lvl=info msg="Stopping batcher"
-t=2025-10-31T11:50:28+0530 lvl=info msg="Stopping Batch Submitter"
-t=2025-10-31T11:50:28+0530 lvl=info msg="balance metrics shutting down"
-t=2025-10-31T11:50:28+0530 lvl=info msg="Batch Submitter stopped"
-t=2025-10-31T11:50:28+0530 lvl=crit msg="Application failed" message="failed to setup: failed to start RPC server: unable to start RPC server: failed to bind to address \"0.0.0.0:8545\": listen tcp 0.0.0.0:8545: bind: address already in use"
+t=2025-10-31T12:06:43+0530 lvl=info msg="Initializing Batch Submitter"
+t=2025-10-31T12:06:43+0530 lvl=info msg="Rollup Config" l2_chain_id=424242 l2_network="unknown L2" l1_chain_id=11142220 l1_network="unknown L1" l2_start_time=1761823715 l2_block_hash=0xba7502365875099a85255d51ef7a0a7470296fd02d25a2e5872c1cd7638e2560 l2_block_number=0 l1_block_hash=0x6d465cd30c89b4cd7e353843802bb59e584c1c75211f71b8043b7b43c0c0b7aa l1_block_number=8539727 regolith_time="@ genesis" canyon_time="@ genesis" delta_time="@ genesis" ecotone_time="(not configured)" fjord_time="(not configured)" granite_time="(not configured)" holocene_time="(not configured)" isthmus_time="(not configured)" jovian_time="(not configured)" interop_time="(not configured)"
+t=2025-10-31T12:06:44+0530 lvl=info msg="Initialized channel-config" da_type=calldata use_alt_da=false max_frame_size=119999 target_num_frames=1 compressor=shadow compression_algo=zlib batch_type=0 max_channel_duration=0 channel_timeout=60 sub_safety_margin=10
+t=2025-10-31T12:06:44+0530 lvl=info msg="Started metrics server" addr=[::]:7301
+t=2025-10-31T12:06:44+0530 lvl=info msg="Setting throttle controller" type=quadratic
+t=2025-10-31T12:06:44+0530 lvl=info msg="Successfully set throttle controller" old_type="" new_type=quadratic
+t=2025-10-31T12:06:44+0530 lvl=info msg="Starting JSON-RPC server"
+t=2025-10-31T12:06:44+0530 lvl=info msg="Stopping batcher"
+t=2025-10-31T12:06:44+0530 lvl=info msg="Stopping Batch Submitter"
+t=2025-10-31T12:06:44+0530 lvl=info msg="balance metrics shutting down"
+t=2025-10-31T12:06:44+0530 lvl=info msg="Batch Submitter stopped"
+t=2025-10-31T12:06:44+0530 lvl=crit msg="Application failed" message="failed to setup: failed to start RPC server: unable to start RPC server: failed to bind to address \"0.0.0.0:8545\": listen tcp 0.0.0.0:8545: bind: address already in use"

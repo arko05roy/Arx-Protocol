@@ -258,8 +258,20 @@ else
 fi
 
 step "Stop existing services"
-pkill -f "op-node/bin/op-node|op-batcher/bin/op-batcher|op-proposer/bin/op-proposer|simple-rpc-proxy.js" 2>/dev/null || true
+pkill -9 -f "op-node/bin/op-node" 2>/dev/null || true
+pkill -9 -f "op-batcher/bin/op-batcher" 2>/dev/null || true
+pkill -9 -f "op-proposer/bin/op-proposer" 2>/dev/null || true
+pkill -9 -f "simple-rpc-proxy.js" 2>/dev/null || true
+sleep 2
+docker stop celo-l3-geth 2>/dev/null || true
+sleep 1
 docker rm -f celo-l3-geth 2>/dev/null || true
+# Kill any remaining processes on the ports
+lsof -ti:8545 | xargs kill -9 2>/dev/null || true
+lsof -ti:8546 | xargs kill -9 2>/dev/null || true
+lsof -ti:8551 | xargs kill -9 2>/dev/null || true
+lsof -ti:9545 | xargs kill -9 2>/dev/null || true
+sleep 2
 
 step "Initialize op-geth with new genesis"
 rm -rf "$L2_DIR/geth-data"/*
@@ -282,7 +294,18 @@ docker run -d \
   --authrpc.addr=0.0.0.0 --authrpc.port=8551 --authrpc.jwtsecret=/jwt-secret.txt --authrpc.vhosts="*" \
   --syncmode=full --maxpeers=0 --networkid=424242 --nodiscover --rollup.disabletxpoolgossip >/dev/null
 
-sleep 6
+sleep 10
+
+# Wait for geth to be ready
+echo "Waiting for op-geth to be ready..."
+for i in {1..30}; do
+  if curl -s http://localhost:8545 -X POST -H "Content-Type: application/json" -d '{"jsonrpc":"2.0","method":"eth_chainId","params":[],"id":1}' | grep -q "result"; then
+    echo "op-geth is ready"
+    break
+  fi
+  echo "Waiting... ($i/30)"
+  sleep 2
+done
 
 step "Start op-node"
 nohup "$OP_ROOT/op-node/bin/op-node" \
@@ -299,7 +322,7 @@ nohup "$OP_ROOT/op-node/bin/op-node" \
   --metrics.enabled --metrics.addr=0.0.0.0 --metrics.port=7300 \
   > "$LOGS/op-node.log" 2>&1 &
 
-sleep 10
+sleep 15
 
 step "Start op-batcher"
 nohup "$OP_ROOT/op-batcher/bin/op-batcher" \
@@ -310,19 +333,20 @@ nohup "$OP_ROOT/op-batcher/bin/op-batcher" \
   --metrics.enabled --metrics.addr=0.0.0.0 --metrics.port=7301 \
   > "$LOGS/op-batcher.log" 2>&1 &
 
-sleep 8
+sleep 10
 
-step "Start op-proposer"
-nohup "$OP_ROOT/op-proposer/bin/op-proposer" \
-  --l1-eth-rpc=https://rpc.ankr.com/celo_sepolia \
-  --rollup-rpc=http://localhost:9545 \
-  --game-factory-address=0x47EdA6d3E07ce233AB48e83Fb26329e077b40e8e \
-  --proposal-interval=1m \
-  --private-key=9ebad8e26c7d816238400f806f0c81b25ce6f8e937c3386efc5223c5bad12a02 \
-  --metrics.enabled --metrics.addr=0.0.0.0 --metrics.port=7302 \
-  > "$LOGS/op-proposer.log" 2>&1 &
+# Skip op-proposer for now as it requires L1 contracts to be deployed
+# step "Start op-proposer"
+# nohup "$OP_ROOT/op-proposer/bin/op-proposer" \
+#   --l1-eth-rpc=https://rpc.ankr.com/celo_sepolia \
+#   --rollup-rpc=http://localhost:9545 \
+#   --game-factory-address=0x47EdA6d3E07ce233AB48e83Fb26329e077b40e8e \
+#   --proposal-interval=1m \
+#   --private-key=9ebad8e26c7d816238400f806f0c81b25ce6f8e937c3386efc5223c5bad12a02 \
+#   --metrics.enabled --metrics.addr=0.0.0.0 --metrics.port=7302 \
+#   > "$LOGS/op-proposer.log" 2>&1 &
 
-sleep 12
+sleep 5
 
 step "Status"
 OK=1

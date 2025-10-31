@@ -1,6 +1,6 @@
 =============== Oct 31, 2025 (UTC) ===============
-06:20:11.673832 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
-06:20:11.676753 db@open opening
-06:20:11.678711 version@stat F·[] S·0B[] Sc·[]
-06:20:11.683713 db@janitor F·2 G·0
-06:20:11.683805 db@open done T·6.923084ms
+06:36:18.817854 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+06:36:18.819092 db@open opening
+06:36:18.819625 version@stat F·[] S·0B[] Sc·[]
+06:36:18.820210 db@janitor F·2 G·0
+06:36:18.820230 db@open done T·1.101042ms
