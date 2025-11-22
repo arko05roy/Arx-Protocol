@@ -3,7 +3,7 @@ import { CollateralManagerABI } from '@/lib/abis';
 
 const COLLATERAL_MANAGER_ABI = CollateralManagerABI as any;
 
-export const COLLATERAL_MANAGER_ADDRESS = '0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9' as const;
+export const COLLATERAL_MANAGER_ADDRESS = '0x1171E8484a6018b50603f93BB15E14f11a68f34a' as const;
 
 export enum StakeStatus {
   None = 0,

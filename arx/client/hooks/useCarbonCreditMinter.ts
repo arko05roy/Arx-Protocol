@@ -3,7 +3,7 @@ import { CarbonCreditMinterABI } from '@/lib/abis';
 
 const CARBON_CREDIT_MINTER_ABI = CarbonCreditMinterABI as any;
 
-export const CARBON_CREDIT_MINTER_ADDRESS = '0x0165878A594ca255338adfa4d48449f69242Eb8F' as const;
+export const CARBON_CREDIT_MINTER_ADDRESS = '0x6d8c132531ab6af82A543177FEf7C8c6009779B2' as const;
 
 export interface CreditMetadata {
   taskId: bigint;

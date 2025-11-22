@@ -3,7 +3,7 @@ import { VerificationManagerABI } from '@/lib/abis';
 
 const VERIFICATION_MANAGER_ABI = VerificationManagerABI as any;
 
-export const VERIFICATION_MANAGER_ADDRESS = '0x5FC8d32690cc91D4c39d9d3abcBD16989F875707' as const;
+export const VERIFICATION_MANAGER_ADDRESS = '0x4c6134C88DCeE609445688FcCe10102B7CFCf9CE' as const;
 
 export interface Vote {
   hasVoted: boolean;

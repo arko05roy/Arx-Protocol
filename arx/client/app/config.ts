@@ -18,17 +18,17 @@ import {
     },
     rpcUrls: {
       default: {
-        http: ['http://localhost:8546'],
+        http: ['http://localhost:8545'],
       },
     },
     blockExplorers: {
       default: {
         name: 'GaiaL3 Explorer',
-        url: 'http://localhost:8546',
+        url: 'http://localhost:8545',
       },
     },
   })
-  
+
   export function getConfig() {
     return createConfig({
       chains: [gaiaL3],
@@ -37,7 +37,7 @@ import {
         storage: cookieStorage,
       }),
       transports: {
-        [gaiaL3.id]: http('http://localhost:8546'),
+        [gaiaL3.id]: http('http://localhost:8545'),
       },
     })
   }

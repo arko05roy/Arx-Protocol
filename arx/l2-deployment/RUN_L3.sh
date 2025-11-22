@@ -250,6 +250,18 @@ else
     exit 1
 fi
 
+# Sync contract addresses to client hooks
+echo ""
+echo -e "${YELLOW}Syncing contract addresses to client...${NC}"
+node $PROJECT_ROOT/scripts/sync-addresses.js > $DEPLOYMENT_DIR/logs/address-sync.log 2>&1
+
+if [ $? -eq 0 ]; then
+    echo -e "${GREEN}✅ Contract addresses synced to client hooks${NC}"
+else
+    echo -e "${YELLOW}⚠️  Address sync encountered issues (non-fatal)${NC}"
+    echo -e "${YELLOW}Check logs at: $DEPLOYMENT_DIR/logs/address-sync.log${NC}"
+fi
+
 cd $DEPLOYMENT_DIR
 
 # =============================================================================
