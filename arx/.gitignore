@@ -35,8 +35,8 @@ node_modules/
 *.swo
 *~
 # L2 Deployment specific
-l2-deployment/logs/
-l2-deployment/geth-data/
-l2-deployment/*.log
-l2-deployment/nohup.out
-l2-deployment/startup.log
+./l2-deployment/logs/
+./l2-deployment/geth-data/
+./l2-deployment/*.log
+./l2-deployment/nohup.out
+./l2-deployment/startup.log

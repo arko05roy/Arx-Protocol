@@ -34,6 +34,16 @@ module.exports = {
       chainId: 424242,
       gasPrice: 1000000000,
     },
+    arxl3: {
+      url: "http://localhost:8545",
+      accounts: [
+        // Funded account from genesis with 100 ETH (used for deployment)
+        "0xf0071a1eef433a24b6603da004f67c6aad2513718c54ec0c70504a88de4edb88"
+      ],
+      chainId: 424242,
+      gasPrice: 1000000000,
+      gas: 30000000,
+    },
   },
   etherscan: {
     apiKey: {

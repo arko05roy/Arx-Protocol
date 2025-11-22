@@ -1,0 +1,7 @@
+arx/l2-deployment/geth-data/
+arx/l2-deployment/logs/
+arx/l2-deployment/arx-contracts.json
+arx/web3/deployments/l2-addresses.json
+arx/web3/artifacts/
+arx/web3/cache/
+    
