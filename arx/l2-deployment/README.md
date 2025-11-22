@@ -1,186 +1,122 @@
-# 🚀 CELO SEPOLIA L3 BLOCKCHAIN - COMPLETE SETUP
+# ARX L3 Blockchain
 
-## ⚡ TL;DR (Quick Start)
+Your Layer 3 blockchain on Optimism Bedrock stack, settling to Celo Sepolia.
 
-### Prerequisites
-- Docker Desktop installed and running
-- Nothing else needed
+## Quick Start
 
-### Start Your Blockchain
 ```bash
-bash /Users/arkoroy/Desktop/arx/Arx-Protocol/arx/l2-deployment/START_L3_COMPLETE.sh
+# Start the blockchain
+./RUN_L3.sh
+
+# Stop the blockchain
+Press Ctrl+C
 ```
 
-### Monitor Your Blockchain
+## What Happens When You Run It
+
+1. **Cleanup**: Stops any existing processes
+2. **Start op-geth**: Execution layer starts in Docker
+3. **Start op-node**: Consensus layer begins producing blocks
+4. **Fund ARX Account**: `0xabaf59180e0209bdb8b3048bfbe64e855074c0c4` receives 10,000 ETH
+5. **Start op-batcher**: Begins submitting batches to Celo Sepolia
+6. **Monitor**: Shows real-time blockchain status
+
+## Network Details
+
+- **L3 Chain ID**: 424242
+- **L3 RPC**: http://localhost:8545
+- **L3 WebSocket**: ws://localhost:8546
+- **L1**: Celo Sepolia (Chain ID: 11142220)
+
+## ARX Dapp Account
+
+- **Address**: `0xabaf59180e0209bdb8b3048bfbe64e855074c0c4`
+- **Initial Balance**: 10,000 ETH
+- **Purpose**: Interact with ARX Dapp
+
+## View Batches on Explorer
+
+Your batches settling to Celo Sepolia:
+https://sepolia.celoscan.io/address/0xd9fc5aea3d4e8f484f618cd90dc6f7844a500f62
+
+## Services & Ports
+
+| Service | Port | Purpose |
+|---------|------|---------|
+| op-geth | 8545 | HTTP RPC |
+| op-geth | 8546 | WebSocket |
+| op-geth | 8551 | Auth RPC |
+| op-node | 9545 | Rollup RPC |
+| op-node | 7300 | Metrics |
+| op-batcher | 8547 | Batcher RPC |
+| op-batcher | 7301 | Metrics |
+| op-proposer | 7302 | Metrics |
+
+## Log Files
+
+All logs are stored in `logs/`:
+
+- `op-node.log` - Consensus layer logs
+- `op-batcher.log` - Batch submission logs
+- `op-proposer.log` - State root submission logs
+
+## Troubleshooting
+
+### View logs in real-time
 ```bash
-bash /Users/arkoroy/Desktop/arx/Arx-Protocol/arx/l2-deployment/MONITOR.sh
+# Node logs
+tail -f logs/op-node.log
+
+# Batcher logs
+tail -f logs/op-batcher.log
 ```
 
-### Stop Your Blockchain
-```bash
-bash /Users/arkoroy/Desktop/arx/Arx-Protocol/arx/l2-deployment/STOP_L3.sh
-```
-
----
-
-## 📋 WHAT YOU GET
-
-| Component | Status | Purpose |
-|-----------|--------|---------|
-| **op-geth** | ✅ Included | L3 Sequencer (Execution Layer) |
-| **op-batcher** | ✅ Included | Submits batches to Celo Sepolia L1 |
-| **op-proposer** | ✅ Included | Submits state roots to Celo Sepolia L1 |
-| **Monitoring** | ✅ Included | Real-time dashboard with logs |
-
----
-
-## 💰 YOUR ACCOUNT
-
-```
-Address:     0xABaF59180e0209bdB8b3048bFbe64e855074C0c4
-Private Key: 0x9ef01f9bd02e2ee682be5c50c189720a37773ab58b5b031ebdb8489940cd01ad
-Balance:     100,000 GAIA tokens (pre-minted in genesis)
-Chain ID:    424242
-RPC:         http://localhost:8545
-```
-
----
-
-## 🧪 TEST COMMANDS
-
-### Send a Transaction
-```bash
-cast send \
-  --rpc-url http://localhost:8545 \
-  --private-key 0x9ef01f9bd02e2ee682be5c50c189720a37773ab58b5b031ebdb8489940cd01ad \
-  --value 1ether \
-  0x89a26a33747b293430D4269A59525d5D0D5BbE65
-```
-
-### Check Your Balance
-```bash
-cast balance 0xABaF59180e0209bdB8b3048bFbe64e855074C0c4 \
-  --rpc-url http://localhost:8545
-```
-
-### Get Current Block
+### Check current block
 ```bash
 cast block-number --rpc-url http://localhost:8545
 ```
 
-### Deploy a Contract
+### Check account balance
 ```bash
-forge create \
+cast balance 0xabaf59180e0209bdb8b3048bfbe64e855074c0c4 --rpc-url http://localhost:8545
+```
+
+### Send a test transaction
+```bash
+cast send 0xYourAddress \
+  --value 1ether \
+  --private-key 0xf0071a1eef433a24b6603da004f67c6aad2513718c54ec0c70504a88de4edb88 \
   --rpc-url http://localhost:8545 \
-  --private-key 0x9ef01f9bd02e2ee682be5c50c189720a37773ab58b5b031ebdb8489940cd01ad \
-  src/MyContract.sol:MyContract
+  --legacy
 ```
 
----
+## Important Files
 
-## 🌐 CONNECT IN METAMASK
+- `RUN_L3.sh` - Main blockchain runner script
+- `rollup.json` - Rollup configuration
+- `genesis.json` - L3 genesis state
+- `jwt-secret.txt` - JWT secret for op-geth <-> op-node auth
+- `celo-sepolia-l1.json` - L1 chain configuration
 
-1. Open MetaMask
-2. Click **Settings** → **Networks** → **Add a network**
-3. Fill in:
-   - **Network Name**: Celo Sepolia L3
-   - **RPC URL**: http://localhost:8545
-   - **Chain ID**: 424242
-   - **Currency Symbol**: GAIA
-4. Click **Save**
-5. Import your account with private key
+## Configuration Changes
 
----
+All critical fixes applied:
+- ✅ Scalar overflow fixed in `rollup.json`
+- ✅ Genesis funded with test accounts
+- ✅ Batcher throttling disabled
+- ✅ L1 chain config added for Celo Sepolia
+- ✅ Correct genesis hash in rollup config
 
-## 📊 MONITORING DASHBOARD
+## When Script Stops
 
-The MONITOR.sh script shows:
-- ✅ Service status (op-geth, op-batcher, op-proposer)
-- ✅ Current block height
-- ✅ Your account balance
-- ✅ Gas price
-- ✅ Recent logs from batcher and proposer
-- ✅ Real-time updates every 5 seconds
+Everything stops:
+- Docker container (op-geth) is removed
+- All processes (node, batcher, proposer) are killed
+- Blockchain stops producing blocks
+- No more batches submitted to L1
 
----
+## Data Persistence
 
-## 🔧 TROUBLESHOOTING
-
-### "Transaction indexing is in progress"
-- **Cause**: op-geth is indexing transactions (normal on startup)
-- **Solution**: Wait 30-60 seconds and retry
-
-### "Connection refused"
-- **Cause**: op-geth not running
-- **Solution**: Run START_L3_COMPLETE.sh again
-
-### "Docker not found"
-- **Cause**: Docker Desktop not running
-- **Solution**: Open Docker Desktop from Applications
-
-### Services not starting
-- **Cause**: Port already in use
-- **Solution**: Kill existing processes: `pkill -f "op-batcher|op-proposer|op-node" && docker stop celo-l3-geth`
-
----
-
-## 📁 FILES
-
-```
-/l2-deployment/
-├── START_L3_COMPLETE.sh    # Start everything
-├── MONITOR.sh              # Monitor dashboard
-├── STOP_L3.sh              # Stop everything
-├── QUICK_START.md          # Quick reference
-├── README.md               # This file
-├── genesis.json            # L3 genesis (pre-minted tokens)
-├── rollup.json             # L3 configuration
-├── jwt-secret.txt          # JWT authentication
-├── geth-data/              # op-geth data directory
-└── logs/
-    ├── op-batcher.log      # Batch submitter logs
-    └── op-proposer.log     # State root submitter logs
-```
-
----
-
-## 🎯 WORKFLOW
-
-### First Time
-1. Install Docker Desktop
-2. Run: `bash START_L3_COMPLETE.sh`
-3. Wait 30 seconds
-4. Run: `bash MONITOR.sh` (in new terminal)
-5. See your blockchain running!
-
-### Every Time You Start
-1. Open Docker Desktop
-2. Run: `bash START_L3_COMPLETE.sh`
-3. Run: `bash MONITOR.sh` (in new terminal)
-4. Use your blockchain!
-
-### When Done
-1. Run: `bash STOP_L3.sh`
-2. Close Docker Desktop (optional)
-
----
-
-## 🚀 YOU'RE READY!
-
-Your Celo Sepolia L3 blockchain is:
-- ✅ Fully operational
-- ✅ Settling to Celo Sepolia L1
-- ✅ Ready for contracts and transactions
-- ✅ Monitored and logged
-
-**Start your blockchain now:**
-```bash
-bash /Users/arkoroy/Desktop/arx/Arx-Protocol/arx/l2-deployment/START_L3_COMPLETE.sh
-```
-
-**Monitor it:**
-```bash
-bash /Users/arkoroy/Desktop/arx/Arx-Protocol/arx/l2-deployment/MONITOR.sh
-```
-
-**Enjoy! 🎉**
+- Blockchain data: `geth-data/` directory
+- Survives script restarts
+- To reset blockchain: `rm -rf geth-data && mkdir geth-data`
