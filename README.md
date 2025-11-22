@@ -1,4 +1,4 @@
-Demo and Pitch Deck--https://drive.google.com/drive/folders/14iDv4i7Y0qYo17QMX2ZNpQKj27Vw9Q9i
+Demo and Pitch Deck-- https://drive.google.com/drive/folders/14iDv4i7Y0qYo17QMX2ZNpQKj27Vw9Q9i?usp=sharing
 
 
 # Arx: Verifiable Impact Protocol on OP Stack L3
