@@ -1,34 +1,12 @@
-t=2025-10-31T12:50:14+0530 lvl=info msg="Initializing Batch Submitter"
-t=2025-10-31T12:50:14+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8545
-t=2025-10-31T12:50:16+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8545
-t=2025-10-31T12:50:18+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8545
-t=2025-10-31T12:50:20+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8545
-t=2025-10-31T12:50:22+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8545
-t=2025-10-31T12:50:24+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8545
-t=2025-10-31T12:50:26+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8545
-t=2025-10-31T12:50:28+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8545
-t=2025-10-31T12:50:30+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8545
-t=2025-10-31T12:50:32+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8545
-t=2025-10-31T12:50:34+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8545
-t=2025-10-31T12:50:36+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8545
-t=2025-10-31T12:50:38+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8545
-t=2025-10-31T12:50:40+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8545
-t=2025-10-31T12:50:42+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8545
-t=2025-10-31T12:50:44+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8545
-t=2025-10-31T12:50:46+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8545
-t=2025-10-31T12:50:48+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8545
-t=2025-10-31T12:50:50+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8545
-t=2025-10-31T12:50:52+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8545
-t=2025-10-31T12:50:54+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8545
-t=2025-10-31T12:50:56+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8545
-t=2025-10-31T12:50:58+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8545
-t=2025-10-31T12:51:00+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8545
-t=2025-10-31T12:51:02+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8545
-t=2025-10-31T12:51:04+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8545
-t=2025-10-31T12:51:06+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8545
-t=2025-10-31T12:51:08+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8545
-t=2025-10-31T12:51:10+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8545
-t=2025-10-31T12:51:12+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8545
-t=2025-10-31T12:51:12+0530 lvl=info msg="Stopping batcher"
-t=2025-10-31T12:51:12+0530 lvl=info msg="Batch Submitter stopped"
-t=2025-10-31T12:51:12+0530 lvl=crit msg="Application failed" message="failed to setup: failed to build static L2 endpoint provider: operation failed permanently after 30 attempts: address unavailable (http://localhost:8545)"
+t=2025-11-22T21:49:00+0530 lvl=info msg="Initializing Batch Submitter"
+t=2025-11-22T21:49:00+0530 lvl=info msg="Rollup Config" l2_chain_id=424242 l2_network="unknown L2" l1_chain_id=11142220 l1_network="unknown L1" l2_start_time=1761823715 l2_block_hash=0xf8a9baa98113aa34f7e00d2e5a9cb6e8bc5fa804bb79f3c5f38292168708fe21 l2_block_number=0 l1_block_hash=0x6d465cd30c89b4cd7e353843802bb59e584c1c75211f71b8043b7b43c0c0b7aa l1_block_number=8539727 regolith_time="@ genesis" canyon_time="@ genesis" delta_time="@ genesis" ecotone_time="(not configured)" fjord_time="(not configured)" granite_time="(not configured)" holocene_time="(not configured)" isthmus_time="(not configured)" jovian_time="(not configured)" interop_time="(not configured)"
+t=2025-11-22T21:49:01+0530 lvl=info msg="Initialized channel-config" da_type=calldata use_alt_da=false max_frame_size=119999 target_num_frames=1 compressor=shadow compression_algo=zlib batch_type=0 max_channel_duration=0 channel_timeout=60 sub_safety_margin=10
+t=2025-11-22T21:49:01+0530 lvl=info msg="Started metrics server" addr=[::]:7301
+t=2025-11-22T21:49:01+0530 lvl=info msg="Setting throttle controller" type=quadratic
+t=2025-11-22T21:49:01+0530 lvl=info msg="Successfully set throttle controller" old_type="" new_type=quadratic
+t=2025-11-22T21:49:01+0530 lvl=info msg="Starting JSON-RPC server"
+t=2025-11-22T21:49:01+0530 lvl=info msg="Stopping batcher"
+t=2025-11-22T21:49:01+0530 lvl=info msg="Stopping Batch Submitter"
+t=2025-11-22T21:49:01+0530 lvl=info msg="balance metrics shutting down"
+t=2025-11-22T21:49:01+0530 lvl=info msg="Batch Submitter stopped"
+t=2025-11-22T21:49:01+0530 lvl=crit msg="Application failed" message="failed to setup: failed to start RPC server: unable to start RPC server: failed to bind to address \"0.0.0.0:8545\": listen tcp 0.0.0.0:8545: bind: address already in use"

@@ -16,18 +16,18 @@
     "grayGlacierBlock": 0,
     "mergeNetsplitBlock": 0,
     "shanghaiTime": 0,
-    "cancunTime": null,
-    "pragueTime": null,
+    "cancunTime": 0,
+    "pragueTime": 0,
     "bedrockBlock": 0,
     "regolithTime": 0,
     "canyonTime": 0,
-    "ecotoneTime": null,
-    "fjordTime": null,
-    "graniteTime": null,
-    "holoceneTime": null,
-    "isthmusTime": null,
-    "jovianTime": null,
-    "interopTime": null,
+    "ecotoneTime": 0,
+    "fjordTime": 0,
+    "graniteTime": 0,
+    "holoceneTime": 0,
+    "isthmusTime": 0,
+    "jovianTime": 0,
+    "interopTime": 0,
     "terminalTotalDifficulty": 0,
     "depositContractAddress": "0x0000000000000000000000000000000000000000",
     "optimism": {
@@ -8255,9 +8255,6 @@
     },
     "d9fc5aea3d4e8f484f618cd90dc6f7844a500f62": {
       "balance": "0x2b5e3af16b1880000"
-    },
-    "6813eb9362372eef6200f3b1dbc3f819671cba69": {
-      "balance": "0x56BC75E2D63100000"
     }
   },
   "number": "0x0",
@@ -8267,3 +8264,4 @@
   "excessBlobGas": "0x0",
   "blobGasUsed": "0x0"
 }
+

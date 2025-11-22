@@ -41,6 +41,7 @@ if ! docker ps | grep -q celo-l3-geth; then
     --maxpeers=0 \
     --networkid=424242 \
     --nodiscover \
+    --ipcdisable \
     --rollup.disabletxpoolgossip > /dev/null 2>&1
   sleep 5
 fi
@@ -55,6 +56,8 @@ nohup $OPTIMISM_DIR/op-node/bin/op-node \
   --l2=http://localhost:8551 \
   --l2.jwt-secret=$DEPLOYMENT_DIR/jwt-secret.txt \
   --rollup.config=$DEPLOYMENT_DIR/rollup.json \
+  --rollup.l1-chain-config=$DEPLOYMENT_DIR/celo-sepolia-l1.json \
+  --sequencer.enabled \
   --rpc.addr=0.0.0.0 \
   --rpc.port=9545 \
   --metrics.enabled \

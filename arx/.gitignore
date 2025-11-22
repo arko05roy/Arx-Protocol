@@ -1,0 +1,36 @@
+# Logs
+arx/l2-deployment/logs/op-node.log
+arx/l2-deployment/logs/*.log
+
+# Optimism submodule
+arx/optimism
+
+# Environment files with private keys (CRITICAL - DO NOT COMMIT)
+.envrc
+.envrc.*
+.env
+.env.*
+*.env
+
+# L2 Data directories
+l2-data/
+l2-data-mainnet/
+l2-deployment/geth-data/
+l2-deployment/op-geth-data/
+
+# JWT secrets
+jwt.hex
+jwt-secret.txt
+l2-deployment/jwt-secret.txt
+
+# Deployment state files (may contain sensitive data)
+l2-deployment/state.json
+
+# Node modules
+node_modules/
+
+# OS files
+.DS_Store
+*.swp
+*.swo
+*~

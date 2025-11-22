@@ -1,0 +1,1 @@
+t=2025-11-22T20:49:58+0530 lvl=crit msg="Application failed" message="failed to setup: unable to create the rollup node config: failed to read chain spec: open : no such file or directory"

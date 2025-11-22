@@ -1,34 +1,6 @@
-t=2025-10-31T12:50:19+0530 lvl=info msg="Initializing L2Output Submitter"
-t=2025-10-31T12:50:19+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:9545
-t=2025-10-31T12:50:21+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:9545
-t=2025-10-31T12:50:23+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:9545
-t=2025-10-31T12:50:25+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:9545
-t=2025-10-31T12:50:27+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:9545
-t=2025-10-31T12:50:29+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:9545
-t=2025-10-31T12:50:31+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:9545
-t=2025-10-31T12:50:33+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:9545
-t=2025-10-31T12:50:35+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:9545
-t=2025-10-31T12:50:37+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:9545
-t=2025-10-31T12:50:39+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:9545
-t=2025-10-31T12:50:41+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:9545
-t=2025-10-31T12:50:43+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:9545
-t=2025-10-31T12:50:45+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:9545
-t=2025-10-31T12:50:47+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:9545
-t=2025-10-31T12:50:49+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:9545
-t=2025-10-31T12:50:51+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:9545
-t=2025-10-31T12:50:53+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:9545
-t=2025-10-31T12:50:55+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:9545
-t=2025-10-31T12:50:57+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:9545
-t=2025-10-31T12:50:59+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:9545
-t=2025-10-31T12:51:01+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:9545
-t=2025-10-31T12:51:03+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:9545
-t=2025-10-31T12:51:05+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:9545
-t=2025-10-31T12:51:08+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:9545
-t=2025-10-31T12:51:10+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:9545
-t=2025-10-31T12:51:12+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:9545
-t=2025-10-31T12:51:14+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:9545
-t=2025-10-31T12:51:16+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:9545
-t=2025-10-31T12:51:18+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:9545
-t=2025-10-31T12:51:18+0530 lvl=info msg="Stopping Proposer"
-t=2025-10-31T12:51:18+0530 lvl=info msg="L2Output Submitter stopped"
-t=2025-10-31T12:51:18+0530 lvl=crit msg="Application failed" message="failed to setup: failed to build L2 endpoint provider: operation failed permanently after 30 attempts: address unavailable (http://localhost:9545)"
+t=2025-11-22T21:49:03+0530 lvl=info msg="Initializing L2Output Submitter"
+t=2025-11-22T21:49:04+0530 lvl=info msg="Started metrics server" addr=[::]:7302
+t=2025-11-22T21:49:04+0530 lvl=info msg="Stopping Proposer"
+t=2025-11-22T21:49:04+0530 lvl=info msg="balance metrics shutting down"
+t=2025-11-22T21:49:04+0530 lvl=info msg="L2Output Submitter stopped"
+t=2025-11-22T21:49:04+0530 lvl=crit msg="Application failed" message="failed to setup: failed to init Driver: failed to get version: failed to unpack result: failed to unpack data: abi: attempting to unmarshal an empty string while arguments are expected"

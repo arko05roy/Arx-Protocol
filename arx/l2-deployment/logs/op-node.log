@@ -1,16 +1,297 @@
-t=2025-10-31T12:50:04+0530 lvl=info msg="Not opted in to ProtocolVersions signal loading, disabling ProtocolVersions contract now."
-t=2025-10-31T12:50:04+0530 lvl=info msg="No persisted sequencer state loaded"
-t=2025-10-31T12:50:04+0530 lvl=info msg="Rollup Config" l2_chain_id=424242 l2_network="unknown L2" l1_chain_id=11142220 l1_network="unknown L1" l2_start_time=1761823715 l2_block_hash=0xba7502365875099a85255d51ef7a0a7470296fd02d25a2e5872c1cd7638e2560 l2_block_number=0 l1_block_hash=0x6d465cd30c89b4cd7e353843802bb59e584c1c75211f71b8043b7b43c0c0b7aa l1_block_number=8539727 regolith_time="@ genesis" canyon_time="@ genesis" delta_time="@ genesis" ecotone_time="(not configured)" fjord_time="(not configured)" granite_time="(not configured)" holocene_time="(not configured)" isthmus_time="(not configured)" jovian_time="(not configured)" interop_time="(not configured)"
-t=2025-10-31T12:50:04+0530 lvl=info msg="Initializing rollup node" version=untagged-e8065c02-1761790726
-t=2025-10-31T12:50:06+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8551
-t=2025-10-31T12:50:07+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8551
-t=2025-10-31T12:50:09+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8551
-t=2025-10-31T12:50:13+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8551
-t=2025-10-31T12:50:21+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8551
-t=2025-10-31T12:50:31+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8551
-t=2025-10-31T12:50:42+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8551
-t=2025-10-31T12:50:52+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8551
-t=2025-10-31T12:51:02+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8551
-t=2025-10-31T12:51:12+0530 lvl=warn msg="failed to dial address, but may connect later" addr=http://localhost:8551
-t=2025-10-31T12:51:12+0530 lvl=error msg="Error initializing the rollup node" err="failed to init L2: failed to setup L2 execution-engine RPC client: operation failed permanently after 10 attempts: address unavailable (http://localhost:8551)"
-t=2025-10-31T12:51:12+0530 lvl=crit msg="Application failed" message="failed to setup: unable to create the rollup node: failed to init L2: failed to setup L2 execution-engine RPC client: operation failed permanently after 10 attempts: address unavailable (http://localhost:8551)"
+t=2025-11-22T21:48:55+0530 lvl=info msg="Not opted in to ProtocolVersions signal loading, disabling ProtocolVersions contract now."
+t=2025-11-22T21:48:55+0530 lvl=info msg="No persisted sequencer state loaded"
+t=2025-11-22T21:48:55+0530 lvl=info msg="Rollup Config" l2_chain_id=424242 l2_network="unknown L2" l1_chain_id=11142220 l1_network="unknown L1" l2_start_time=1761823715 l2_block_hash=0xf8a9baa98113aa34f7e00d2e5a9cb6e8bc5fa804bb79f3c5f38292168708fe21 l2_block_number=0 l1_block_hash=0x6d465cd30c89b4cd7e353843802bb59e584c1c75211f71b8043b7b43c0c0b7aa l1_block_number=8539727 regolith_time="@ genesis" canyon_time="@ genesis" delta_time="@ genesis" ecotone_time="(not configured)" fjord_time="(not configured)" granite_time="(not configured)" holocene_time="(not configured)" isthmus_time="(not configured)" jovian_time="(not configured)" interop_time="(not configured)"
+t=2025-11-22T21:48:55+0530 lvl=info msg="Initializing rollup node" version=untagged-e8065c02-1761790726
+t=2025-11-22T21:48:57+0530 lvl=warn msg="No interop RPC configured, falling back to legacy sync mode."
+t=2025-11-22T21:48:58+0530 lvl=info msg="loaded new runtime config values!" p2p_seq_address=0x0000000000000000000000000000000000000000
+t=2025-11-22T21:48:58+0530 lvl=info msg="registered API" route="" namespace=optimism
+t=2025-11-22T21:48:58+0530 lvl=info msg="registered API" route="" namespace=optimism
+t=2025-11-22T21:48:58+0530 lvl=info msg="Starting JSON-RPC server"
+t=2025-11-22T21:48:58+0530 lvl=info msg="Started RPC server" endpoint=http://[::]:9545
+t=2025-11-22T21:48:58+0530 lvl=info msg="Started JSON-RPC server" addr=[::]:9545
+t=2025-11-22T21:48:58+0530 lvl=info msg="started metrics server" addr=[::]:7300
+t=2025-11-22T21:48:58+0530 lvl=info msg="Starting execution engine driver"
+t=2025-11-22T21:48:58+0530 lvl=info msg="Starting driver" sequencerEnabled=true sequencerStopped=false recoverMode=false
+t=2025-11-22T21:48:58+0530 lvl=info msg="Starting sequencing, without known pre-state"
+t=2025-11-22T21:48:58+0530 lvl=info msg="Sequencer has been started" "next action"=2025-11-22T21:48:58+0530
+t=2025-11-22T21:48:58+0530 lvl=info msg="Rollup node started"
+t=2025-11-22T21:48:58+0530 lvl=info msg="State loop started"
+t=2025-11-22T21:48:58+0530 lvl=info msg="Scheduled sequencer action" delta=-19.5µs
+t=2025-11-22T21:48:58+0530 lvl=warn msg="Deriver system is resetting" err="reset: cannot continue derivation until Engine has been reset"
+t=2025-11-22T21:48:58+0530 lvl=error msg="Sequencer encountered reset signal, aborting work" err="reset: cannot continue derivation until Engine has been reset"
+t=2025-11-22T21:48:58+0530 lvl=info msg="Loaded current L2 heads" unsafe=0xf8a9baa98113aa34f7e00d2e5a9cb6e8bc5fa804bb79f3c5f38292168708fe21:0 safe=0xf8a9baa98113aa34f7e00d2e5a9cb6e8bc5fa804bb79f3c5f38292168708fe21:0 finalized=0xf8a9baa98113aa34f7e00d2e5a9cb6e8bc5fa804bb79f3c5f38292168708fe21:0 unsafe_origin=0x6d465cd30c89b4cd7e353843802bb59e584c1c75211f71b8043b7b43c0c0b7aa:8539727 safe_origin=0x6d465cd30c89b4cd7e353843802bb59e584c1c75211f71b8043b7b43c0c0b7aa:8539727
+t=2025-11-22T21:48:58+0530 lvl=info msg="Walking back L1Block by number" curr=0x6d465cd30c89b4cd7e353843802bb59e584c1c75211f71b8043b7b43c0c0b7aa:8539727 next=0x6d465cd30c89b4cd7e353843802bb59e584c1c75211f71b8043b7b43c0c0b7aa:8539727 l2block=0xf8a9baa98113aa34f7e00d2e5a9cb6e8bc5fa804bb79f3c5f38292168708fe21:0
+t=2025-11-22T21:48:58+0530 lvl=info msg="Hit finalized L2 head, returning immediately" unsafe=0xf8a9baa98113aa34f7e00d2e5a9cb6e8bc5fa804bb79f3c5f38292168708fe21:0 safe=0xf8a9baa98113aa34f7e00d2e5a9cb6e8bc5fa804bb79f3c5f38292168708fe21:0 finalized=0xf8a9baa98113aa34f7e00d2e5a9cb6e8bc5fa804bb79f3c5f38292168708fe21:0 unsafe_origin=0x6d465cd30c89b4cd7e353843802bb59e584c1c75211f71b8043b7b43c0c0b7aa:8539727 safe_origin=0x6d465cd30c89b4cd7e353843802bb59e584c1c75211f71b8043b7b43c0c0b7aa:8539727
+t=2025-11-22T21:48:58+0530 lvl=info msg="Current hardfork version detected" forkName=delta
+t=2025-11-22T21:48:58+0530 lvl=info msg="Reset of Engine is completed" local_unsafe=0xf8a9baa98113aa34f7e00d2e5a9cb6e8bc5fa804bb79f3c5f38292168708fe21:0 cross_unsafe=0xf8a9baa98113aa34f7e00d2e5a9cb6e8bc5fa804bb79f3c5f38292168708fe21:0 local_safe=0xf8a9baa98113aa34f7e00d2e5a9cb6e8bc5fa804bb79f3c5f38292168708fe21:0 cross_safe=0xf8a9baa98113aa34f7e00d2e5a9cb6e8bc5fa804bb79f3c5f38292168708fe21:0 finalized=0xf8a9baa98113aa34f7e00d2e5a9cb6e8bc5fa804bb79f3c5f38292168708fe21:0
+t=2025-11-22T21:48:58+0530 lvl=info msg="Confirming pipeline reset"
+t=2025-11-22T21:48:58+0530 lvl=info msg="Engine reset confirmed, sequencer may continue" next=true
+t=2025-11-22T21:48:58+0530 lvl=info msg="Scheduled sequencer action" delta=1.999981042s
+t=2025-11-22T21:49:00+0530 lvl=info msg="Rewinding derivation-pipeline L1 traversal to handle reset"
+t=2025-11-22T21:49:00+0530 lvl=info msg="completed reset of derivation pipeline" origin=0x6d465cd30c89b4cd7e353843802bb59e584c1c75211f71b8043b7b43c0c0b7aa:8539727
+t=2025-11-22T21:49:00+0530 lvl=info msg="Reset of L1Retrieval done" origin=0x6d465cd30c89b4cd7e353843802bb59e584c1c75211f71b8043b7b43c0c0b7aa:8539727
+t=2025-11-22T21:49:00+0530 lvl=info msg="ChannelMux: activating pre-Holocene stage during reset" origin=0x6d465cd30c89b4cd7e353843802bb59e584c1c75211f71b8043b7b43c0c0b7aa:8539727
+t=2025-11-22T21:49:00+0530 lvl=info msg="BatchMux: activating pre-Holocene stage during reset" origin=0x6d465cd30c89b4cd7e353843802bb59e584c1c75211f71b8043b7b43c0c0b7aa:8539727
+t=2025-11-22T21:49:02+0530 lvl=info msg="Started sequencing new block" parent=0xf8a9baa98113aa34f7e00d2e5a9cb6e8bc5fa804bb79f3c5f38292168708fe21:0 l1Origin=0x22219833d4be19b9fa6a99ac9a3cc0fbd0e611477d2af3932f6a8796901a59d7:8539728
+t=2025-11-22T21:49:02+0530 lvl=info msg="Advancing bq origin" origin=0x22219833d4be19b9fa6a99ac9a3cc0fbd0e611477d2af3932f6a8796901a59d7:8539728 originBehind=false
+t=2025-11-22T21:49:03+0530 lvl=info msg="Scheduled sequencer action" delta=-1.44162875s
+t=2025-11-22T21:49:03+0530 lvl=info msg="Advancing bq origin" origin=0xd079a7442eb32df623d4cfdf646c4d3edf04ce2ce9215912ad9534c30328e044:8539729 originBehind=false
+t=2025-11-22T21:49:04+0530 lvl=info msg="Sequencer sealed block" payloadID=0x02ce7e0c6f70270f block=0xf33a463af5a90d9414e9ed6d7bae3a56326395670117c1f821303ae741216696:1 parent=0xf8a9baa98113aa34f7e00d2e5a9cb6e8bc5fa804bb79f3c5f38292168708fe21:0 txs=1 time=1761823717
+t=2025-11-22T21:49:04+0530 lvl=info msg="Inserted new L2 unsafe block" hash=0xf33a463af5a90d9414e9ed6d7bae3a56326395670117c1f821303ae741216696 number=1 build_time=2.145s insert_time=4.214ms total_time=2.150s mgas=0.138563 mgasps=0.06444367692376471
+t=2025-11-22T21:49:04+0530 lvl=info msg="Sequencer inserted block" block=0xf33a463af5a90d9414e9ed6d7bae3a56326395670117c1f821303ae741216696:1 parent=0xf8a9baa98113aa34f7e00d2e5a9cb6e8bc5fa804bb79f3c5f38292168708fe21:0
+t=2025-11-22T21:49:04+0530 lvl=error msg="Failed to get next origin" err="failed to fetch header by num 8539729: Post \"https://rpc.ankr.com/celo_sepolia\": context deadline exceeded"
+t=2025-11-22T21:49:04+0530 lvl=info msg="Scheduled sequencer action" delta=-23.583µs
+t=2025-11-22T21:49:04+0530 lvl=info msg="Started sequencing new block" parent=0xf33a463af5a90d9414e9ed6d7bae3a56326395670117c1f821303ae741216696:1 l1Origin=0x22219833d4be19b9fa6a99ac9a3cc0fbd0e611477d2af3932f6a8796901a59d7:8539728
+t=2025-11-22T21:49:05+0530 lvl=info msg="Scheduled sequencer action" delta=-1.958µs
+t=2025-11-22T21:49:05+0530 lvl=info msg="Advancing bq origin" origin=0xe2c985fc485beb891e1de4fca41a5edd1a9414fea637867d5dc6e280704e41d0:8539730 originBehind=false
+t=2025-11-22T21:49:06+0530 lvl=info msg="Advancing bq origin" origin=0xfa3551170a87c00ac031632e29b3e69caf80519d26d19cf7714de69e227046ec:8539731 originBehind=false
+t=2025-11-22T21:49:07+0530 lvl=info msg="Sequencer sealed block" payloadID=0x02421ff845ede47b block=0xcaf3a441d631372aca44f51ea0529ed1878d4eb67f216b7121b82a7344623fb3:2 parent=0xf33a463af5a90d9414e9ed6d7bae3a56326395670117c1f821303ae741216696:1 txs=1 time=1761823719
+t=2025-11-22T21:49:07+0530 lvl=info msg="Inserted new L2 unsafe block" hash=0xcaf3a441d631372aca44f51ea0529ed1878d4eb67f216b7121b82a7344623fb3 number=2 build_time=2.273s insert_time=3.698ms total_time=2.277s mgas=0.058975 mgasps=0.02589930221746444
+t=2025-11-22T21:49:07+0530 lvl=info msg="Sequencer inserted block" block=0xcaf3a441d631372aca44f51ea0529ed1878d4eb67f216b7121b82a7344623fb3:2 parent=0xf33a463af5a90d9414e9ed6d7bae3a56326395670117c1f821303ae741216696:1
+t=2025-11-22T21:49:07+0530 lvl=info msg="Scheduled sequencer action" delta=-8.5µs
+t=2025-11-22T21:49:07+0530 lvl=info msg="Advancing bq origin" origin=0x8de4bdfd126f87bd0f2e94fb1c04c474a6e45f58e1c80f88c07e14c8499faccc:8539732 originBehind=false
+t=2025-11-22T21:49:08+0530 lvl=info msg="Received first L1 head signal" l1_head=0x98efd5d26d55156aab04ac870223c9fa62a133ec41d964d891edae9b9395c242:10544359
+t=2025-11-22T21:49:09+0530 lvl=info msg="Started sequencing new block" parent=0xcaf3a441d631372aca44f51ea0529ed1878d4eb67f216b7121b82a7344623fb3:2 l1Origin=0xd079a7442eb32df623d4cfdf646c4d3edf04ce2ce9215912ad9534c30328e044:8539729
+t=2025-11-22T21:49:09+0530 lvl=info msg="Advancing bq origin" origin=0xf8c0f7a708d06293bef04efa848e37082d080ac1f29a0b53f1202caaa9a0092c:8539733 originBehind=false
+t=2025-11-22T21:49:11+0530 lvl=info msg="Scheduled sequencer action" delta=-1.972250375s
+t=2025-11-22T21:49:11+0530 lvl=info msg="Advancing bq origin" origin=0xadb2fa5e90866891c7fc762f04126836adc2d4aa7519136250e02a0d4dc29788:8539734 originBehind=false
+t=2025-11-22T21:49:12+0530 lvl=info msg="Advancing bq origin" origin=0x008dbf91bf655ab9903f157e40d1b82c2c5b8264e0540d9f74563e3936a07f9c:8539735 originBehind=false
+t=2025-11-22T21:49:15+0530 lvl=info msg="Sequencer sealed block" payloadID=0x02436b2b1f64f76e block=0x2d512ac49f59b3b5d52e628be5e0ae75ec8b011fd8e3bf0955d3e2782487d6f1:3 parent=0xcaf3a441d631372aca44f51ea0529ed1878d4eb67f216b7121b82a7344623fb3:2 txs=1 time=1761823721
+t=2025-11-22T21:49:15+0530 lvl=info msg="Advancing bq origin" origin=0xcd46a7faf6a2438e67ceaf5ca263f919cf1470b078d64a1f0bf11f516585ce0b:8539736 originBehind=false
+t=2025-11-22T21:49:16+0530 lvl=info msg="Inserted new L2 unsafe block" hash=0x2d512ac49f59b3b5d52e628be5e0ae75ec8b011fd8e3bf0955d3e2782487d6f1 number=3 build_time=6.906s insert_time=3.909ms total_time=6.910s mgas=0.042663 mgasps=0.006173388276628874
+t=2025-11-22T21:49:16+0530 lvl=info msg="Sequencer inserted block" block=0x2d512ac49f59b3b5d52e628be5e0ae75ec8b011fd8e3bf0955d3e2782487d6f1:3 parent=0xcaf3a441d631372aca44f51ea0529ed1878d4eb67f216b7121b82a7344623fb3:2
+t=2025-11-22T21:49:16+0530 lvl=info msg="Scheduled sequencer action" delta=-16.833µs
+t=2025-11-22T21:49:16+0530 lvl=info msg="Started sequencing new block" parent=0x2d512ac49f59b3b5d52e628be5e0ae75ec8b011fd8e3bf0955d3e2782487d6f1:3 l1Origin=0xe2c985fc485beb891e1de4fca41a5edd1a9414fea637867d5dc6e280704e41d0:8539730
+t=2025-11-22T21:49:16+0530 lvl=info msg="Advancing bq origin" origin=0x513ea952eb8a5cbf87b8cdfcc5c792941c4bd98dcb5e301c73361240bc68e1b0:8539737 originBehind=false
+t=2025-11-22T21:49:18+0530 lvl=info msg="Scheduled sequencer action" delta=-1.500273208s
+t=2025-11-22T21:49:18+0530 lvl=info msg="Sequencer sealed block" payloadID=0x02f648a3abd4212d block=0x035d7ab836a5efe911f515b180fb017f2e08761e027770c4ba9c864666a03f09:4 parent=0x2d512ac49f59b3b5d52e628be5e0ae75ec8b011fd8e3bf0955d3e2782487d6f1:3 txs=1 time=1761823723
+t=2025-11-22T21:49:18+0530 lvl=info msg="Inserted new L2 unsafe block" hash=0x035d7ab836a5efe911f515b180fb017f2e08761e027770c4ba9c864666a03f09 number=4 build_time=1.504s insert_time=3.726ms total_time=1.508s mgas=0.044663 mgasps=0.02961694438285254
+t=2025-11-22T21:49:18+0530 lvl=info msg="Sequencer inserted block" block=0x035d7ab836a5efe911f515b180fb017f2e08761e027770c4ba9c864666a03f09:4 parent=0x2d512ac49f59b3b5d52e628be5e0ae75ec8b011fd8e3bf0955d3e2782487d6f1:3
+t=2025-11-22T21:49:18+0530 lvl=info msg="Scheduled sequencer action" delta=-14.917µs
+t=2025-11-22T21:49:18+0530 lvl=info msg="Advancing bq origin" origin=0xacd7425da5ab503b72b1a91da8ca197c8909a274142f422822ed28d6438997ca:8539738 originBehind=false
+t=2025-11-22T21:49:20+0530 lvl=info msg="Started sequencing new block" parent=0x035d7ab836a5efe911f515b180fb017f2e08761e027770c4ba9c864666a03f09:4 l1Origin=0xfa3551170a87c00ac031632e29b3e69caf80519d26d19cf7714de69e227046ec:8539731
+t=2025-11-22T21:49:20+0530 lvl=info msg="Scheduled sequencer action" delta=-2µs
+t=2025-11-22T21:49:20+0530 lvl=info msg="Advancing bq origin" origin=0x9ece1b7473a920863e8e23feaa37d52390f7c4743debcca62dc16159a4c7e7c9:8539739 originBehind=false
+t=2025-11-22T21:49:21+0530 lvl=warn msg="L1 head signal indicates a possible L1 re-org" old_l1_head=0x98efd5d26d55156aab04ac870223c9fa62a133ec41d964d891edae9b9395c242:10544359 new_l1_head_parent=0xf695992e95810162a763d91a9d169bfbb497f08f7220954f469c42fed6056401 new_l1_head=0x3e226f0f0ce5efac85f68830cb637951670b8cd616c121f1ee425044b2f6a3e3:10544372
+t=2025-11-22T21:49:22+0530 lvl=info msg="Sequencer sealed block" payloadID=0x02b62a901eb91696 block=0xf03750543e5fcbef524205e08b21ef1a05ff78707ee4f0cf1978260499398fbf:5 parent=0x035d7ab836a5efe911f515b180fb017f2e08761e027770c4ba9c864666a03f09:4 txs=1 time=1761823725
+t=2025-11-22T21:49:22+0530 lvl=info msg="Inserted new L2 unsafe block" hash=0xf03750543e5fcbef524205e08b21ef1a05ff78707ee4f0cf1978260499398fbf number=5 build_time=2.242s insert_time=4.169ms total_time=2.246s mgas=0.044663 mgasps=0.01988021337074292
+t=2025-11-22T21:49:22+0530 lvl=info msg="Sequencer inserted block" block=0xf03750543e5fcbef524205e08b21ef1a05ff78707ee4f0cf1978260499398fbf:5 parent=0x035d7ab836a5efe911f515b180fb017f2e08761e027770c4ba9c864666a03f09:4
+t=2025-11-22T21:49:22+0530 lvl=info msg="Scheduled sequencer action" delta=-12.458µs
+t=2025-11-22T21:49:22+0530 lvl=info msg="Advancing bq origin" origin=0xafd17e8af3c6d3bb54cc467ae17a56e76e45cc6b5d22890ef292c883f7d9f25e:8539740 originBehind=false
+t=2025-11-22T21:49:23+0530 lvl=info msg="Advancing bq origin" origin=0xeeaaf86415eaa003b8565b1e679695edc5daaf6fb9aad707886b1ddfb4d6d0d1:8539741 originBehind=false
+t=2025-11-22T21:49:24+0530 lvl=info msg="Advancing bq origin" origin=0x575912949c178e6a60aa779333cc3ddb6e619278d9685357a23cd13561e82659:8539742 originBehind=false
+t=2025-11-22T21:49:25+0530 lvl=info msg="Started sequencing new block" parent=0xf03750543e5fcbef524205e08b21ef1a05ff78707ee4f0cf1978260499398fbf:5 l1Origin=0x8de4bdfd126f87bd0f2e94fb1c04c474a6e45f58e1c80f88c07e14c8499faccc:8539732
+t=2025-11-22T21:49:25+0530 lvl=info msg="Advancing bq origin" origin=0x9051b6d079d805fa162258740a602f7dc9aa62dd32ed1dd2fa83dd6ad7f9f888:8539743 originBehind=false
+t=2025-11-22T21:49:27+0530 lvl=info msg="Scheduled sequencer action" delta=-2.042390209s
+t=2025-11-22T21:49:27+0530 lvl=info msg="Advancing bq origin" origin=0x6473580af98ffd9072649eb0a72a7d1152536fc7985ba072660707745dbfa0ae:8539744 originBehind=false
+t=2025-11-22T21:49:29+0530 lvl=info msg="Advancing bq origin" origin=0x3e27f1240657271c5212a30f87e98adf28d1a18ef0db514f04cabfaacf0cc5c7:8539745 originBehind=false
+t=2025-11-22T21:49:30+0530 lvl=info msg="Sequencer sealed block" payloadID=0x02006d0eba3e6e82 block=0x1aa26f8cc5050ebe1eb98ffc28b8ff5d5e81e9bd6e064bc3a144d04aeba88403:6 parent=0xf03750543e5fcbef524205e08b21ef1a05ff78707ee4f0cf1978260499398fbf:5 txs=1 time=1761823727
+t=2025-11-22T21:49:30+0530 lvl=info msg="Advancing bq origin" origin=0x771450a9c023fc7e2e735292a5aeab7ae90b3a9e5e0bdd78b3fc074a2cf5692e:8539746 originBehind=false
+t=2025-11-22T21:49:32+0530 lvl=info msg="Inserted new L2 unsafe block" hash=0x1aa26f8cc5050ebe1eb98ffc28b8ff5d5e81e9bd6e064bc3a144d04aeba88403 number=6 build_time=6.712s insert_time=4.995ms total_time=6.717s mgas=0.044663 mgasps=0.006648600918093411
+t=2025-11-22T21:49:32+0530 lvl=info msg="Sequencer inserted block" block=0x1aa26f8cc5050ebe1eb98ffc28b8ff5d5e81e9bd6e064bc3a144d04aeba88403:6 parent=0xf03750543e5fcbef524205e08b21ef1a05ff78707ee4f0cf1978260499398fbf:5
+t=2025-11-22T21:49:32+0530 lvl=info msg="Scheduled sequencer action" delta=-15.209µs
+t=2025-11-22T21:49:32+0530 lvl=info msg="Started sequencing new block" parent=0x1aa26f8cc5050ebe1eb98ffc28b8ff5d5e81e9bd6e064bc3a144d04aeba88403:6 l1Origin=0xf8c0f7a708d06293bef04efa848e37082d080ac1f29a0b53f1202caaa9a0092c:8539733
+t=2025-11-22T21:49:32+0530 lvl=info msg="Advancing bq origin" origin=0xe4166923c6fe213300cf2909aa86f5313102ae27bdfa83e550a0d129b72cba98:8539747 originBehind=false
+t=2025-11-22T21:49:33+0530 lvl=warn msg="L1 head signal indicates a possible L1 re-org" old_l1_head=0x3e226f0f0ce5efac85f68830cb637951670b8cd616c121f1ee425044b2f6a3e3:10544372 new_l1_head_parent=0x6781a84dd8c39237b85c9a466dd48757ecaf68919afa108c47e6a6fe1ed8cea6 new_l1_head=0xe1c6193c7d9516b54f393515dfc3c7cf05ff5a4352841afc4d7c14a89306af3f:10544385
+t=2025-11-22T21:49:34+0530 lvl=info msg="Scheduled sequencer action" delta=-9.375µs
+t=2025-11-22T21:49:34+0530 lvl=info msg="Sequencer sealed block" payloadID=0x0234cc8086d392e3 block=0xee6a56b4b9eb168f75bc64f74826f252f42dddb2337d44e44005b5c0d72e3929:7 parent=0x1aa26f8cc5050ebe1eb98ffc28b8ff5d5e81e9bd6e064bc3a144d04aeba88403:6 txs=1 time=1761823729
+t=2025-11-22T21:49:34+0530 lvl=info msg="Advancing bq origin" origin=0xb09a2b604ebb3bab1c956b701e879d41ce053cc684f7f42ed26abfb90a8458c8:8539748 originBehind=false
+t=2025-11-22T21:49:35+0530 lvl=info msg="Inserted new L2 unsafe block" hash=0xee6a56b4b9eb168f75bc64f74826f252f42dddb2337d44e44005b5c0d72e3929 number=7 build_time=2.854s insert_time=3.959ms total_time=2.858s mgas=0.044663 mgasps=0.015625916109916014
+t=2025-11-22T21:49:35+0530 lvl=info msg="Sequencer inserted block" block=0xee6a56b4b9eb168f75bc64f74826f252f42dddb2337d44e44005b5c0d72e3929:7 parent=0x1aa26f8cc5050ebe1eb98ffc28b8ff5d5e81e9bd6e064bc3a144d04aeba88403:6
+t=2025-11-22T21:49:35+0530 lvl=info msg="Scheduled sequencer action" delta=-11.625µs
+t=2025-11-22T21:49:35+0530 lvl=info msg="Started sequencing new block" parent=0xee6a56b4b9eb168f75bc64f74826f252f42dddb2337d44e44005b5c0d72e3929:7 l1Origin=0xadb2fa5e90866891c7fc762f04126836adc2d4aa7519136250e02a0d4dc29788:8539734
+t=2025-11-22T21:49:35+0530 lvl=info msg="Advancing bq origin" origin=0x1a4f64eef15cb9e6712c5c4d92bbb79ce7e0536c59e2aa162ba6b6c2fa5a5268:8539749 originBehind=false
+t=2025-11-22T21:49:36+0530 lvl=info msg="Scheduled sequencer action" delta=-721.06375ms
+t=2025-11-22T21:49:46+0530 lvl=warn msg="L1 head signal indicates a possible L1 re-org" old_l1_head=0xe1c6193c7d9516b54f393515dfc3c7cf05ff5a4352841afc4d7c14a89306af3f:10544385 new_l1_head_parent=0x163bd41fa78f17eca70f81556d84f93b50fd86581a8926f79bb09c60c8e63513 new_l1_head=0x812208e3585619bc125af3eb8cffabbf183a10c04bdfbb7dfa218dec240f7efa:10544397
+t=2025-11-22T21:49:46+0530 lvl=warn msg="Failed to get payload" payload_id=0x0200269ca7e8dadd payload_id=0x0200269ca7e8dadd err="Post \"http://localhost:8551\": context deadline exceeded"
+t=2025-11-22T21:49:46+0530 lvl=error msg="Sequencer temporarily could not seal block" payloadID=0x0200269ca7e8dadd timestamp=1761823731 err="failed to seal execution payload (ID: 0x0200269ca7e8dadd): Post \"http://localhost:8551\": context deadline exceeded"
+t=2025-11-22T21:49:46+0530 lvl=info msg="Scheduled sequencer action" delta=1.999996s
+t=2025-11-22T21:49:46+0530 lvl=info msg="Advancing bq origin" origin=0x3adcc54d11886a4db11c1b9d7957dde3b61a190280555e27a23301d21c34dc15:8539750 originBehind=false
+t=2025-11-22T21:49:47+0530 lvl=info msg="Advancing bq origin" origin=0x6ccdc99715ed93e06735f1ace37e0b613817aaa198a93eeaf121482b7197ceae:8539751 originBehind=false
+t=2025-11-22T21:49:48+0530 lvl=info msg="Started sequencing new block" parent=0xee6a56b4b9eb168f75bc64f74826f252f42dddb2337d44e44005b5c0d72e3929:7 l1Origin=0xadb2fa5e90866891c7fc762f04126836adc2d4aa7519136250e02a0d4dc29788:8539734
+t=2025-11-22T21:49:48+0530 lvl=info msg="Advancing bq origin" origin=0xe8c497248bf48436cae8be5d79c74b1e581695794a87f562492d0eb42cde0727:8539752 originBehind=false
+t=2025-11-22T21:49:49+0530 lvl=info msg="Scheduled sequencer action" delta=-819.938542ms
+t=2025-11-22T21:49:58+0530 lvl=warn msg="L1 head signal indicates a possible L1 re-org" old_l1_head=0x812208e3585619bc125af3eb8cffabbf183a10c04bdfbb7dfa218dec240f7efa:10544397 new_l1_head_parent=0x8f9f361f5ea50b6d519bfeb2424cd5894acedef82addbb6b461a2e675626c26d new_l1_head=0xe43e1f56b662b523cdc41e95b5163d9707bd305d328c0291e18d0b9337d0e8c6:10544409
+t=2025-11-22T21:49:59+0530 lvl=warn msg="Failed to get payload" payload_id=0x0200269ca7e8dadd payload_id=0x0200269ca7e8dadd err="Post \"http://localhost:8551\": context deadline exceeded"
+t=2025-11-22T21:49:59+0530 lvl=info msg="Advancing bq origin" origin=0x83cd04466bac412ac4b1e047bce5a7fb39fcdba18d077ffab23f34ebc50a8ce1:8539753 originBehind=false
+t=2025-11-22T21:50:00+0530 lvl=error msg="Sequencer temporarily could not seal block" payloadID=0x0200269ca7e8dadd timestamp=1761823731 err="failed to seal execution payload (ID: 0x0200269ca7e8dadd): Post \"http://localhost:8551\": context deadline exceeded"
+t=2025-11-22T21:50:00+0530 lvl=info msg="Scheduled sequencer action" delta=1.999993375s
+t=2025-11-22T21:50:00+0530 lvl=info msg="Advancing bq origin" origin=0x774198dd8e3e496d6bddcefe8334c2f3e4472473f7734bf52565327a914515a1:8539754 originBehind=false
+t=2025-11-22T21:50:02+0530 lvl=info msg="Advancing bq origin" origin=0x6bd3bb9d61e323f9c5cce7b01e9285db5728fa07526242a8926f8d5113ff7e2d:8539755 originBehind=false
+t=2025-11-22T21:50:03+0530 lvl=info msg="Started sequencing new block" parent=0xee6a56b4b9eb168f75bc64f74826f252f42dddb2337d44e44005b5c0d72e3929:7 l1Origin=0xadb2fa5e90866891c7fc762f04126836adc2d4aa7519136250e02a0d4dc29788:8539734
+t=2025-11-22T21:50:03+0530 lvl=info msg="Advancing bq origin" origin=0x0e9eeb3554edbf263f25d25999653c6bc7a1d20c786c64d16801f390132d7021:8539756 originBehind=false
+t=2025-11-22T21:50:04+0530 lvl=info msg="Scheduled sequencer action" delta=-1.512304708s
+t=2025-11-22T21:50:10+0530 lvl=warn msg="L1 head signal indicates a possible L1 re-org" old_l1_head=0xe43e1f56b662b523cdc41e95b5163d9707bd305d328c0291e18d0b9337d0e8c6:10544409 new_l1_head_parent=0xe23fadeec94ed0e059017138a57b5076deb862fe20c6e9376734573090cb7fbd new_l1_head=0xd4855b3e5e74321b54ee2f94c0c09a4c30309d0d62444576305cadfe0b348e43:10544422
+t=2025-11-22T21:50:14+0530 lvl=warn msg="Failed to get payload" payload_id=0x0200269ca7e8dadd payload_id=0x0200269ca7e8dadd err="Post \"http://localhost:8551\": context deadline exceeded"
+t=2025-11-22T21:50:14+0530 lvl=info msg="Advancing bq origin" origin=0x8ea321ca16b90ae4df99dc6ed9c6fb0762c121a0a60259c0d0752a4246deb6e2:8539757 originBehind=false
+t=2025-11-22T21:50:15+0530 lvl=error msg="Sequencer temporarily could not seal block" payloadID=0x0200269ca7e8dadd timestamp=1761823731 err="failed to seal execution payload (ID: 0x0200269ca7e8dadd): Post \"http://localhost:8551\": context deadline exceeded"
+t=2025-11-22T21:50:15+0530 lvl=info msg="Scheduled sequencer action" delta=1.999992958s
+t=2025-11-22T21:50:15+0530 lvl=info msg="Advancing bq origin" origin=0xb8ba437eda960cab9b0637849c443b8bfa61359d448ce46aa1407c02c7046e6c:8539758 originBehind=false
+t=2025-11-22T21:50:17+0530 lvl=info msg="Advancing bq origin" origin=0x8ba3e2b25e2d4bbf253206fcd3cc513f6b060fe22ab7c46802575e9941d3b814:8539759 originBehind=false
+t=2025-11-22T21:50:18+0530 lvl=info msg="Started sequencing new block" parent=0xee6a56b4b9eb168f75bc64f74826f252f42dddb2337d44e44005b5c0d72e3929:7 l1Origin=0xadb2fa5e90866891c7fc762f04126836adc2d4aa7519136250e02a0d4dc29788:8539734
+t=2025-11-22T21:50:18+0530 lvl=info msg="Advancing bq origin" origin=0xa75a76c0c4475f6901a12640b624a166ac6b4fb3cd7d6d391fbbfaa62469e283:8539760 originBehind=false
+t=2025-11-22T21:50:20+0530 lvl=info msg="Scheduled sequencer action" delta=-7.25µs
+t=2025-11-22T21:50:22+0530 lvl=warn msg="L1 head signal indicates a possible L1 re-org" old_l1_head=0xd4855b3e5e74321b54ee2f94c0c09a4c30309d0d62444576305cadfe0b348e43:10544422 new_l1_head_parent=0xbf09fdc44090dd484dba43faed303eafb38df6010172340423ded5575eabdad2 new_l1_head=0xa9f89cd5b0c55db5c087a5f9ebcdb9307de8f0241128f9dcaaf4aad8fee2a6ec:10544433
+t=2025-11-22T21:50:30+0530 lvl=warn msg="Failed to get payload" payload_id=0x0200269ca7e8dadd payload_id=0x0200269ca7e8dadd err="Post \"http://localhost:8551\": context deadline exceeded"
+t=2025-11-22T21:50:30+0530 lvl=error msg="Sequencer temporarily could not seal block" payloadID=0x0200269ca7e8dadd timestamp=1761823731 err="failed to seal execution payload (ID: 0x0200269ca7e8dadd): Post \"http://localhost:8551\": context deadline exceeded"
+t=2025-11-22T21:50:30+0530 lvl=info msg="Advancing bq origin" origin=0x1cbfffcf455a5e1df73ddbcc567bce1e689cbdb7ed6904af0081ee101a57ad41:8539761 originBehind=false
+t=2025-11-22T21:50:31+0530 lvl=info msg="Scheduled sequencer action" delta=905.368ms
+t=2025-11-22T21:50:31+0530 lvl=info msg="Advancing bq origin" origin=0xbe177e3b92b484e3b9191b1cfb0f37001317d3eaeb7927e52c89ac94d86bdd28:8539762 originBehind=false
+t=2025-11-22T21:50:33+0530 lvl=info msg="Advancing bq origin" origin=0xb68dc6db5a2cd7bf282dc31cc4470868dd66bffd9e0f93668d245ca6b3c33ca1:8539763 originBehind=false
+t=2025-11-22T21:50:34+0530 lvl=info msg="Started sequencing new block" parent=0xee6a56b4b9eb168f75bc64f74826f252f42dddb2337d44e44005b5c0d72e3929:7 l1Origin=0xadb2fa5e90866891c7fc762f04126836adc2d4aa7519136250e02a0d4dc29788:8539734
+t=2025-11-22T21:50:34+0530 lvl=info msg="Scheduled sequencer action" delta=-917ns
+t=2025-11-22T21:50:35+0530 lvl=warn msg="L1 head signal indicates a possible L1 re-org" old_l1_head=0xa9f89cd5b0c55db5c087a5f9ebcdb9307de8f0241128f9dcaaf4aad8fee2a6ec:10544433 new_l1_head_parent=0xd875913992806aff1a4af8c75101354f31c45141d4bf2a4abf2da131c06f60d7 new_l1_head=0x67d4542e29935e3b22014b65288009c35634da6875b8673205e193c700372ff0:10544446
+t=2025-11-22T21:50:44+0530 lvl=warn msg="Failed to get payload" payload_id=0x0200269ca7e8dadd payload_id=0x0200269ca7e8dadd err="Post \"http://localhost:8551\": context deadline exceeded"
+t=2025-11-22T21:50:44+0530 lvl=info msg="Advancing bq origin" origin=0xb744e119acaa395365733b733971818966a615fd07023700fec8ac854367519a:8539764 originBehind=false
+t=2025-11-22T21:50:45+0530 lvl=error msg="Sequencer temporarily could not seal block" payloadID=0x0200269ca7e8dadd timestamp=1761823731 err="failed to seal execution payload (ID: 0x0200269ca7e8dadd): Post \"http://localhost:8551\": context deadline exceeded"
+t=2025-11-22T21:50:45+0530 lvl=info msg="Scheduled sequencer action" delta=1.999992875s
+t=2025-11-22T21:50:45+0530 lvl=info msg="Advancing bq origin" origin=0x66be69219c56782804fbf92b72e7a15db7b31f594b48ef6fdfdf10db525959b0:8539765 originBehind=false
+t=2025-11-22T21:50:45+0530 lvl=info msg="Advancing bq origin" origin=0x6195f89cd62cb7376ffd5481db4f20aa341e73e7f65d1226a1a62356ca255075:8539766 originBehind=false
+t=2025-11-22T21:50:46+0530 lvl=info msg="Advancing bq origin" origin=0xbc8b0e9a41363a541ae281dc8c201a4082bf0292fe2afd2af19eda6ab04517b9:8539767 originBehind=false
+t=2025-11-22T21:50:47+0530 lvl=warn msg="L1 head signal indicates a possible L1 re-org" old_l1_head=0x67d4542e29935e3b22014b65288009c35634da6875b8673205e193c700372ff0:10544446 new_l1_head_parent=0x6515a9b84593f6880855fb54fc5a109f66910a0f1c34390eabc2d80cb2aebe29 new_l1_head=0x159ecfc3cf81385660ae42692d8d0f22c8bcf7e8a58b2600d7200932917af5e4:10544458
+t=2025-11-22T21:50:48+0530 lvl=info msg="Started sequencing new block" parent=0xee6a56b4b9eb168f75bc64f74826f252f42dddb2337d44e44005b5c0d72e3929:7 l1Origin=0xadb2fa5e90866891c7fc762f04126836adc2d4aa7519136250e02a0d4dc29788:8539734
+t=2025-11-22T21:50:48+0530 lvl=info msg="Advancing bq origin" origin=0xe6c84fcab762f8e76d3d75983e1a6d53cd9e11c9c5135033865017331f2a1891:8539768 originBehind=false
+t=2025-11-22T21:50:48+0530 lvl=info msg="Scheduled sequencer action" delta=-701.491208ms
+t=2025-11-22T21:50:58+0530 lvl=warn msg="Failed to get payload" payload_id=0x0200269ca7e8dadd payload_id=0x0200269ca7e8dadd err="Post \"http://localhost:8551\": context deadline exceeded"
+t=2025-11-22T21:50:58+0530 lvl=info msg="Advancing bq origin" origin=0x311809967322db4f340847a93008b55d28028cbca88f11727f03f7aa1797f569:8539769 originBehind=false
+t=2025-11-22T21:50:59+0530 lvl=error msg="Sequencer temporarily could not seal block" payloadID=0x0200269ca7e8dadd timestamp=1761823731 err="failed to seal execution payload (ID: 0x0200269ca7e8dadd): Post \"http://localhost:8551\": context deadline exceeded"
+t=2025-11-22T21:50:59+0530 lvl=info msg="Scheduled sequencer action" delta=1.999990875s
+t=2025-11-22T21:50:59+0530 lvl=info msg="Advancing bq origin" origin=0xac818bf5d58e7ed0b25c6f372cc91822ffac5b8c20eed4ea9eeeba16ea37c26b:8539770 originBehind=false
+t=2025-11-22T21:50:59+0530 lvl=warn msg="L1 head signal indicates a possible L1 re-org" old_l1_head=0x159ecfc3cf81385660ae42692d8d0f22c8bcf7e8a58b2600d7200932917af5e4:10544458 new_l1_head_parent=0xfe10a4da4dd84ad3ae4c11f263974c0dba915ae4b601d14b0d1073aebfe94729 new_l1_head=0x923a0ae1b09015368ac071ffe9e7b79ff06b91087312d23da7d3ff5aa9453cab:10544470
+t=2025-11-22T21:51:00+0530 lvl=info msg="Advancing bq origin" origin=0xd39190b107f373a280a884564a1aed6c411b5467b0ffe9299ad0cdd5d5fd036f:8539771 originBehind=false
+t=2025-11-22T21:51:01+0530 lvl=info msg="Started sequencing new block" parent=0xee6a56b4b9eb168f75bc64f74826f252f42dddb2337d44e44005b5c0d72e3929:7 l1Origin=0xadb2fa5e90866891c7fc762f04126836adc2d4aa7519136250e02a0d4dc29788:8539734
+t=2025-11-22T21:51:01+0530 lvl=info msg="Scheduled sequencer action" delta=-959ns
+t=2025-11-22T21:51:11+0530 lvl=warn msg="Failed to get payload" payload_id=0x0200269ca7e8dadd payload_id=0x0200269ca7e8dadd err="Post \"http://localhost:8551\": context deadline exceeded"
+t=2025-11-22T21:51:11+0530 lvl=error msg="Sequencer temporarily could not seal block" payloadID=0x0200269ca7e8dadd timestamp=1761823731 err="failed to seal execution payload (ID: 0x0200269ca7e8dadd): Post \"http://localhost:8551\": context deadline exceeded"
+t=2025-11-22T21:51:11+0530 lvl=info msg="Advancing bq origin" origin=0x3a413a513f85c2ba4cdb08b9934d46c321beb5ba6f999888796b2f3aa27290d2:8539772 originBehind=false
+t=2025-11-22T21:51:12+0530 lvl=warn msg="L1 head signal indicates a possible L1 re-org" old_l1_head=0x923a0ae1b09015368ac071ffe9e7b79ff06b91087312d23da7d3ff5aa9453cab:10544470 new_l1_head_parent=0x116310ad260e1abc86556dcebf03d1f91645c424e385d6d3e2878bee35813973 new_l1_head=0xb7d42dc25736c21ea3530930383af158ec166ade8b082986afb89b6e2ac96acc:10544483
+t=2025-11-22T21:51:12+0530 lvl=info msg="Scheduled sequencer action" delta=995.776583ms
+t=2025-11-22T21:51:12+0530 lvl=info msg="Advancing bq origin" origin=0x6550bab52ef1bd87ac31ccd12c3f00044ecc484bee8369976b2e4c7939a1610c:8539773 originBehind=false
+t=2025-11-22T21:51:13+0530 lvl=info msg="Advancing bq origin" origin=0xcbab5e472710b4a9ed759e988916888c99646702a367fd02f98c66efddc9abc0:8539774 originBehind=false
+t=2025-11-22T21:51:14+0530 lvl=info msg="Started sequencing new block" parent=0xee6a56b4b9eb168f75bc64f74826f252f42dddb2337d44e44005b5c0d72e3929:7 l1Origin=0xadb2fa5e90866891c7fc762f04126836adc2d4aa7519136250e02a0d4dc29788:8539734
+t=2025-11-22T21:51:14+0530 lvl=info msg="Advancing bq origin" origin=0xc1eb91acda19d43f697670947a9ea85a700f1d3037956d439d7d293705981755:8539775 originBehind=false
+t=2025-11-22T21:51:15+0530 lvl=info msg="Scheduled sequencer action" delta=-6.25µs
+t=2025-11-22T21:51:15+0530 lvl=info msg="Advancing bq origin" origin=0x007c181a651eb7083c7ee44640c210a2a82eb1ea677e3eb9cc6c4474f11a5fd9:8539776 originBehind=false
+t=2025-11-22T21:51:24+0530 lvl=warn msg="L1 head signal indicates a possible L1 re-org" old_l1_head=0xb7d42dc25736c21ea3530930383af158ec166ade8b082986afb89b6e2ac96acc:10544483 new_l1_head_parent=0x5a7fd0e93fd66a8588e4aa61367040151a2d6a2ca7ee2c939e3fcf475a066029 new_l1_head=0xa1e0bbacd63d18116540bcec1d626a745d6766df08ea6cc503c7bca94e81cf74:10544496
+t=2025-11-22T21:51:26+0530 lvl=warn msg="Failed to get payload" payload_id=0x0200269ca7e8dadd payload_id=0x0200269ca7e8dadd err="Post \"http://localhost:8551\": context deadline exceeded"
+t=2025-11-22T21:51:26+0530 lvl=error msg="Sequencer temporarily could not seal block" payloadID=0x0200269ca7e8dadd timestamp=1761823731 err="failed to seal execution payload (ID: 0x0200269ca7e8dadd): Post \"http://localhost:8551\": context deadline exceeded"
+t=2025-11-22T21:51:26+0530 lvl=info msg="Advancing bq origin" origin=0x4743c2826cb23d66785c9064cb6acc68de4aa63821a614fc9117a4f010602ea2:8539777 originBehind=false
+t=2025-11-22T21:51:27+0530 lvl=info msg="Scheduled sequencer action" delta=1.307344417s
+t=2025-11-22T21:51:27+0530 lvl=info msg="Advancing bq origin" origin=0x91b721d1a98334551cf5e9c6951035019a0354223a209bff239cabaa2eb3b2bd:8539778 originBehind=false
+t=2025-11-22T21:51:28+0530 lvl=info msg="Advancing bq origin" origin=0x8c158a947a440820a28c7501f03c79041a65a3731a65081e60c0dbd397905abe:8539779 originBehind=false
+t=2025-11-22T21:51:29+0530 lvl=info msg="Started sequencing new block" parent=0xee6a56b4b9eb168f75bc64f74826f252f42dddb2337d44e44005b5c0d72e3929:7 l1Origin=0xadb2fa5e90866891c7fc762f04126836adc2d4aa7519136250e02a0d4dc29788:8539734
+t=2025-11-22T21:51:29+0530 lvl=info msg="Scheduled sequencer action" delta=-1.834µs
+t=2025-11-22T21:51:37+0530 lvl=warn msg="L1 head signal indicates a possible L1 re-org" old_l1_head=0xa1e0bbacd63d18116540bcec1d626a745d6766df08ea6cc503c7bca94e81cf74:10544496 new_l1_head_parent=0xb19e481d45433fcd0d1ff754b02060f10e46b618cda4d14a9d37fbed4621c725 new_l1_head=0x01f348b1870889daa2369e5c9d9b4d6d522e2ff64ec3486ed6009634acc5943a:10544508
+t=2025-11-22T21:51:39+0530 lvl=warn msg="Failed to get payload" payload_id=0x0200269ca7e8dadd payload_id=0x0200269ca7e8dadd err="Post \"http://localhost:8551\": context deadline exceeded"
+t=2025-11-22T21:51:39+0530 lvl=error msg="Sequencer temporarily could not seal block" payloadID=0x0200269ca7e8dadd timestamp=1761823731 err="failed to seal execution payload (ID: 0x0200269ca7e8dadd): Post \"http://localhost:8551\": context deadline exceeded"
+t=2025-11-22T21:51:39+0530 lvl=info msg="Scheduled sequencer action" delta=1.999993417s
+t=2025-11-22T21:51:39+0530 lvl=info msg="Advancing bq origin" origin=0xfd643aca2d42d5b530f7886e9f723ed7ceb0946f4eca630918458eb9ba6d4105:8539780 originBehind=false
+t=2025-11-22T21:51:40+0530 lvl=info msg="Advancing bq origin" origin=0x8aad846c1e61da1f76a76577a5267ac6a043d1765332138878de43d899138340:8539781 originBehind=false
+t=2025-11-22T21:51:41+0530 lvl=info msg="Advancing bq origin" origin=0x9d84e10b2cf56e7fabf9284f4e74e1331b2e1724108afe7eb0cb6ea829968cfc:8539782 originBehind=false
+t=2025-11-22T21:51:42+0530 lvl=info msg="Started sequencing new block" parent=0xee6a56b4b9eb168f75bc64f74826f252f42dddb2337d44e44005b5c0d72e3929:7 l1Origin=0xadb2fa5e90866891c7fc762f04126836adc2d4aa7519136250e02a0d4dc29788:8539734
+t=2025-11-22T21:51:42+0530 lvl=info msg="Advancing bq origin" origin=0xd7d271bfe927283374e8deb010eb2d5603b3bd6e98022547d468e3169349c838:8539783 originBehind=false
+t=2025-11-22T21:51:43+0530 lvl=info msg="Scheduled sequencer action" delta=-14.542µs
+t=2025-11-22T21:51:49+0530 lvl=warn msg="L1 head signal indicates a possible L1 re-org" old_l1_head=0x01f348b1870889daa2369e5c9d9b4d6d522e2ff64ec3486ed6009634acc5943a:10544508 new_l1_head_parent=0x2bedd77d57712554828a50a025e8c10c79ff2c3da9e400f35850887e041f93ed new_l1_head=0xf1ab5f6fe3e919f88be70cb4d5aa8c48607a7bfa7adc4b5cc5502eb707c845ac:10544520
+t=2025-11-22T21:51:53+0530 lvl=warn msg="Failed to get payload" payload_id=0x0200269ca7e8dadd payload_id=0x0200269ca7e8dadd err="Post \"http://localhost:8551\": context deadline exceeded"
+t=2025-11-22T21:51:53+0530 lvl=info msg="Advancing bq origin" origin=0xbfe9374891d3af0470e04aa2ad1346ed7dae7f30a26d0e8aff233f8e21adc658:8539784 originBehind=false
+t=2025-11-22T21:51:54+0530 lvl=error msg="Sequencer temporarily could not seal block" payloadID=0x0200269ca7e8dadd timestamp=1761823731 err="failed to seal execution payload (ID: 0x0200269ca7e8dadd): Post \"http://localhost:8551\": context deadline exceeded"
+t=2025-11-22T21:51:54+0530 lvl=info msg="Scheduled sequencer action" delta=1.999989708s
+t=2025-11-22T21:51:54+0530 lvl=info msg="Advancing bq origin" origin=0xdf5d2a855d20905435dd5789ccf3f983b9d365a254d39b591e3aefbd191be07a:8539785 originBehind=false
+t=2025-11-22T21:51:55+0530 lvl=info msg="Advancing bq origin" origin=0x8fe9bcbfeb9f250fa6638ed9cd09e04b4c549451f3186142605f2b9a1fbda25d:8539786 originBehind=false
+t=2025-11-22T21:51:56+0530 lvl=info msg="Started sequencing new block" parent=0xee6a56b4b9eb168f75bc64f74826f252f42dddb2337d44e44005b5c0d72e3929:7 l1Origin=0xadb2fa5e90866891c7fc762f04126836adc2d4aa7519136250e02a0d4dc29788:8539734
+t=2025-11-22T21:51:56+0530 lvl=info msg="Advancing bq origin" origin=0x02e072f3bfe33463942b8ad614f6b3728b07420815b67ea22168d1e6a183637e:8539787 originBehind=false
+t=2025-11-22T21:51:57+0530 lvl=info msg="Scheduled sequencer action" delta=-718.480208ms
+t=2025-11-22T21:51:57+0530 lvl=info msg="Advancing bq origin" origin=0x1218f192ff88ec09f03c98a40879e7e035246235eef27d52c7b694b293d3da7f:8539788 originBehind=false
+t=2025-11-22T21:52:01+0530 lvl=warn msg="L1 head signal indicates a possible L1 re-org" old_l1_head=0xf1ab5f6fe3e919f88be70cb4d5aa8c48607a7bfa7adc4b5cc5502eb707c845ac:10544520 new_l1_head_parent=0x7643b0c3b88764e0f6103e0feabe126aec2a4ab8d9b72df2e248396134012adf new_l1_head=0x1ccb3ddb0a5ed7930b98dbb569b413de8af5b7a1ab9aaede0759120aed53a6d3:10544532
+t=2025-11-22T21:52:08+0530 lvl=warn msg="Failed to get payload" payload_id=0x0200269ca7e8dadd payload_id=0x0200269ca7e8dadd err="Post \"http://localhost:8551\": context deadline exceeded"
+t=2025-11-22T21:52:08+0530 lvl=error msg="Sequencer temporarily could not seal block" payloadID=0x0200269ca7e8dadd timestamp=1761823731 err="failed to seal execution payload (ID: 0x0200269ca7e8dadd): Post \"http://localhost:8551\": context deadline exceeded"
+t=2025-11-22T21:52:08+0530 lvl=info msg="Advancing bq origin" origin=0xc547a323de842ffad1f1341757a37a63c12e58d5dfbb8aeb8292fc691a077e61:8539789 originBehind=false
+t=2025-11-22T21:52:09+0530 lvl=info msg="Scheduled sequencer action" delta=583.799166ms
+t=2025-11-22T21:52:09+0530 lvl=info msg="Advancing bq origin" origin=0x3e19fee2f2d85a70d8ec14c9a020ee2a2e7c520a4ec984e1aa9b43002aea6246:8539790 originBehind=false
+t=2025-11-22T21:52:10+0530 lvl=info msg="Started sequencing new block" parent=0xee6a56b4b9eb168f75bc64f74826f252f42dddb2337d44e44005b5c0d72e3929:7 l1Origin=0xadb2fa5e90866891c7fc762f04126836adc2d4aa7519136250e02a0d4dc29788:8539734
+t=2025-11-22T21:52:10+0530 lvl=info msg="Advancing bq origin" origin=0xaa9f735f7ca66c1bded5d9602ec9917d13e9724ba81994ef97d9ca74ef2af3d3:8539791 originBehind=false
+t=2025-11-22T21:52:11+0530 lvl=info msg="Scheduled sequencer action" delta=-1.085637416s
+t=2025-11-22T21:52:14+0530 lvl=warn msg="L1 head signal indicates a possible L1 re-org" old_l1_head=0x1ccb3ddb0a5ed7930b98dbb569b413de8af5b7a1ab9aaede0759120aed53a6d3:10544532 new_l1_head_parent=0xc681e1018bf97466b7156f58b294f851cb95d11ce7db65a23705ac0d6a13ffdf new_l1_head=0xf1faf068a9c7bf827699d64d74ac3be93129731dec9735188d3f8693f42fc1a2:10544545
+t=2025-11-22T21:52:21+0530 lvl=warn msg="Failed to get payload" payload_id=0x0200269ca7e8dadd payload_id=0x0200269ca7e8dadd err="Post \"http://localhost:8551\": context deadline exceeded"
+t=2025-11-22T21:52:21+0530 lvl=error msg="Sequencer temporarily could not seal block" payloadID=0x0200269ca7e8dadd timestamp=1761823731 err="failed to seal execution payload (ID: 0x0200269ca7e8dadd): Post \"http://localhost:8551\": context deadline exceeded"
+t=2025-11-22T21:52:21+0530 lvl=info msg="Scheduled sequencer action" delta=1.999994792s
+t=2025-11-22T21:52:21+0530 lvl=info msg="Advancing bq origin" origin=0x5c749e0b83a1045a76d3c6e0ce4d6788e83a8e497f414c4e3396b7558963ba94:8539792 originBehind=false
+t=2025-11-22T21:52:23+0530 lvl=info msg="Advancing bq origin" origin=0x15ec0699e4b3c1c7df19a6795edaf099e6ddfb0818d37084c1480d57781dc87d:8539793 originBehind=false
+t=2025-11-22T21:52:23+0530 lvl=info msg="Advancing bq origin" origin=0x26286800ed0760e9c135e4f7b049fb298a892b13ddb0da4cda1dde6588106e16:8539794 originBehind=false
+t=2025-11-22T21:52:24+0530 lvl=info msg="Started sequencing new block" parent=0xee6a56b4b9eb168f75bc64f74826f252f42dddb2337d44e44005b5c0d72e3929:7 l1Origin=0xadb2fa5e90866891c7fc762f04126836adc2d4aa7519136250e02a0d4dc29788:8539734
+t=2025-11-22T21:52:24+0530 lvl=info msg="Scheduled sequencer action" delta=-2.875µs
+t=2025-11-22T21:52:24+0530 lvl=info msg="Advancing bq origin" origin=0x3fb406cb3eed3a1304d83686fc8e95250cc14d9d694d783e81c2a67dbde43242:8539795 originBehind=false
+t=2025-11-22T21:52:26+0530 lvl=warn msg="L1 head signal indicates a possible L1 re-org" old_l1_head=0xf1faf068a9c7bf827699d64d74ac3be93129731dec9735188d3f8693f42fc1a2:10544545 new_l1_head_parent=0xd1b33064f1370edb6fcce6ab6a4a2b67ee5a189b036c94be4913d62877fc8f05 new_l1_head=0x94970a47d473dbc9e1c3093bc2132a4582f30022177767b5eacf46d35f8316bd:10544558
+t=2025-11-22T21:52:36+0530 lvl=warn msg="Failed to get payload" payload_id=0x0200269ca7e8dadd payload_id=0x0200269ca7e8dadd err="Post \"http://localhost:8551\": context deadline exceeded"
+t=2025-11-22T21:52:36+0530 lvl=error msg="Sequencer temporarily could not seal block" payloadID=0x0200269ca7e8dadd timestamp=1761823731 err="failed to seal execution payload (ID: 0x0200269ca7e8dadd): Post \"http://localhost:8551\": context deadline exceeded"
+t=2025-11-22T21:52:36+0530 lvl=info msg="Advancing bq origin" origin=0x19888311a0e4b44074b6ba510f4f62d7f9d74f40a58ff826ac9774d02e21c32c:8539796 originBehind=false
+t=2025-11-22T21:52:37+0530 lvl=info msg="Scheduled sequencer action" delta=679.535542ms
+t=2025-11-22T21:52:37+0530 lvl=info msg="Advancing bq origin" origin=0x78db3b4687161e228d2157adedecf5596e1514648f58f97206227e22e40f53bc:8539797 originBehind=false
+t=2025-11-22T21:52:38+0530 lvl=info msg="Advancing bq origin" origin=0x923070df7ba9e69804874a2be0d2f9029b34ddb0ef39523181c9c615a545ce35:8539798 originBehind=false
+t=2025-11-22T21:52:39+0530 lvl=warn msg="L1 head signal indicates a possible L1 re-org" old_l1_head=0x94970a47d473dbc9e1c3093bc2132a4582f30022177767b5eacf46d35f8316bd:10544558 new_l1_head_parent=0x6a19af14a2e113cdade7ff2cede19e2a8eafe848e47194e9000a721662e5963b new_l1_head=0xe5da40b64b78038f85e596846b9598b6a5641a829376e83b50ae16b8f23c8656:10544570
+t=2025-11-22T21:52:39+0530 lvl=info msg="Started sequencing new block" parent=0xee6a56b4b9eb168f75bc64f74826f252f42dddb2337d44e44005b5c0d72e3929:7 l1Origin=0xadb2fa5e90866891c7fc762f04126836adc2d4aa7519136250e02a0d4dc29788:8539734
+t=2025-11-22T21:52:39+0530 lvl=info msg="Advancing bq origin" origin=0x4dda695cc28aab5d95dc3dfd562d72de552179546035e5af080b0ecbd2fcf433:8539799 originBehind=false
+t=2025-11-22T21:52:40+0530 lvl=info msg="Scheduled sequencer action" delta=-702.679208ms
+t=2025-11-22T21:52:50+0530 lvl=warn msg="Failed to get payload" payload_id=0x0200269ca7e8dadd payload_id=0x0200269ca7e8dadd err="Post \"http://localhost:8551\": context deadline exceeded"
+t=2025-11-22T21:52:50+0530 lvl=error msg="Sequencer temporarily could not seal block" payloadID=0x0200269ca7e8dadd timestamp=1761823731 err="failed to seal execution payload (ID: 0x0200269ca7e8dadd): Post \"http://localhost:8551\": context deadline exceeded"
+t=2025-11-22T21:52:50+0530 lvl=info msg="Advancing bq origin" origin=0xbf7874153cba06361cce20aec24cd8353fd115bb3f755bb61dd03f676c652c83:8539800 originBehind=false
+t=2025-11-22T21:52:51+0530 lvl=info msg="Scheduled sequencer action" delta=1.138888s
+t=2025-11-22T21:52:51+0530 lvl=info msg="Advancing bq origin" origin=0x2a2c20ddd8d27ceeae69039585f38bdbae62192896104015151a33d6f97876d5:8539801 originBehind=false
+t=2025-11-22T21:52:51+0530 lvl=warn msg="L1 head signal indicates a possible L1 re-org" old_l1_head=0xe5da40b64b78038f85e596846b9598b6a5641a829376e83b50ae16b8f23c8656:10544570 new_l1_head_parent=0x8b5c021a73a1f04914edf2c66eaab64787ef38133f103aae6ad1a0a4dbee5f78 new_l1_head=0x8f562882c04e02f17488d1a4869ffd1110edb9f4ab88f986950ab91b10e83335:10544582
+t=2025-11-22T21:52:52+0530 lvl=info msg="Started sequencing new block" parent=0xee6a56b4b9eb168f75bc64f74826f252f42dddb2337d44e44005b5c0d72e3929:7 l1Origin=0xadb2fa5e90866891c7fc762f04126836adc2d4aa7519136250e02a0d4dc29788:8539734
+t=2025-11-22T21:52:52+0530 lvl=info msg="Scheduled sequencer action" delta=-1.833µs
+t=2025-11-22T21:53:02+0530 lvl=warn msg="Failed to get payload" payload_id=0x0200269ca7e8dadd payload_id=0x0200269ca7e8dadd err="Post \"http://localhost:8551\": context deadline exceeded"
+t=2025-11-22T21:53:02+0530 lvl=error msg="Sequencer temporarily could not seal block" payloadID=0x0200269ca7e8dadd timestamp=1761823731 err="failed to seal execution payload (ID: 0x0200269ca7e8dadd): Post \"http://localhost:8551\": context deadline exceeded"
+t=2025-11-22T21:53:02+0530 lvl=info msg="Scheduled sequencer action" delta=1.999997875s
+t=2025-11-22T21:53:02+0530 lvl=info msg="Advancing bq origin" origin=0xbf0c1994cfc97227d357ec131157e9034a324c42470559060c49b0cd7f14ce84:8539802 originBehind=false
+t=2025-11-22T21:53:03+0530 lvl=info msg="Advancing bq origin" origin=0x7ed308eea91a70815ab8a03e4144c1638a4bfb6fa44380a0e607412326199f6f:8539803 originBehind=false
+t=2025-11-22T21:53:04+0530 lvl=warn msg="L1 head signal indicates a possible L1 re-org" old_l1_head=0x8f562882c04e02f17488d1a4869ffd1110edb9f4ab88f986950ab91b10e83335:10544582 new_l1_head_parent=0x04819b271092b72da90fd46e8be6f4186dca65a30d9913981ed62f901f638d63 new_l1_head=0xb28c1d45a47f8a5bdbb0ae63ee56a5076bde9a5f71ce1d83d7228a416983b072:10544595
+t=2025-11-22T21:53:04+0530 lvl=info msg="Advancing bq origin" origin=0xddc9b4d5acab2047e736e01163823658c6a8c04ba4b1f979815d00172d2b208a:8539804 originBehind=false
+t=2025-11-22T21:53:06+0530 lvl=info msg="Started sequencing new block" parent=0xee6a56b4b9eb168f75bc64f74826f252f42dddb2337d44e44005b5c0d72e3929:7 l1Origin=0xadb2fa5e90866891c7fc762f04126836adc2d4aa7519136250e02a0d4dc29788:8539734
+t=2025-11-22T21:53:06+0530 lvl=info msg="Scheduled sequencer action" delta=-2µs
+t=2025-11-22T21:53:16+0530 lvl=warn msg="Failed to get payload" payload_id=0x0200269ca7e8dadd payload_id=0x0200269ca7e8dadd err="Post \"http://localhost:8551\": context deadline exceeded"
+t=2025-11-22T21:53:16+0530 lvl=info msg="Advancing bq origin" origin=0x2000d89937ff926ac99cb6278a6c3f06f0993e4bd27776188b814e514863fdbb:8539805 originBehind=false
+t=2025-11-22T21:53:16+0530 lvl=warn msg="L1 head signal indicates a possible L1 re-org" old_l1_head=0xb28c1d45a47f8a5bdbb0ae63ee56a5076bde9a5f71ce1d83d7228a416983b072:10544595 new_l1_head_parent=0xcac5ab691f610a0f5c907708b674ab16f5b91ff2060aa4965a6a08fe3bdec130 new_l1_head=0xc8ee15fdcefa2e2758b953cea77880e59406373f345fb02b490d616328eebc8a:10544607
+t=2025-11-22T21:53:17+0530 lvl=error msg="Sequencer temporarily could not seal block" payloadID=0x0200269ca7e8dadd timestamp=1761823731 err="failed to seal execution payload (ID: 0x0200269ca7e8dadd): Post \"http://localhost:8551\": context deadline exceeded"
+t=2025-11-22T21:53:17+0530 lvl=info msg="Scheduled sequencer action" delta=1.999983333s
+t=2025-11-22T21:53:17+0530 lvl=info msg="Advancing bq origin" origin=0x6e97d466d3d9d55aee0ee74bc129468125cab9d919b0a691558f0a053dbbfa72:8539806 originBehind=false
+t=2025-11-22T21:53:18+0530 lvl=info msg="Advancing bq origin" origin=0xc5405d42bdc301629fe096796b673c1832396cec7f143e35aa29f9c6f357978b:8539807 originBehind=false
+t=2025-11-22T21:53:19+0530 lvl=info msg="Advancing bq origin" origin=0x4384a0300a567f708bc687d5fef2a964e1c5e6956fad28b0129d4cb70474a4d0:8539808 originBehind=false
+t=2025-11-22T21:53:19+0530 lvl=info msg="Started sequencing new block" parent=0xee6a56b4b9eb168f75bc64f74826f252f42dddb2337d44e44005b5c0d72e3929:7 l1Origin=0xadb2fa5e90866891c7fc762f04126836adc2d4aa7519136250e02a0d4dc29788:8539734
+t=2025-11-22T21:53:19+0530 lvl=info msg="Scheduled sequencer action" delta=-1.5µs
+t=2025-11-22T21:53:28+0530 lvl=warn msg="L1 head signal indicates a possible L1 re-org" old_l1_head=0xc8ee15fdcefa2e2758b953cea77880e59406373f345fb02b490d616328eebc8a:10544607 new_l1_head_parent=0x1b92806c36df0abbe9e96621453962e72dc731ba3c57d7cdd7fa2c92514ca3f7 new_l1_head=0xb340b631727f26d966666cb18ca1afa30a49ba2b263768b11eb014ebf4c5f652:10544619
+t=2025-11-22T21:53:29+0530 lvl=warn msg="Failed to get payload" payload_id=0x0200269ca7e8dadd payload_id=0x0200269ca7e8dadd err="Post \"http://localhost:8551\": context deadline exceeded"
+t=2025-11-22T21:53:29+0530 lvl=error msg="Sequencer temporarily could not seal block" payloadID=0x0200269ca7e8dadd timestamp=1761823731 err="failed to seal execution payload (ID: 0x0200269ca7e8dadd): Post \"http://localhost:8551\": context deadline exceeded"
+t=2025-11-22T21:53:29+0530 lvl=info msg="Advancing bq origin" origin=0x73728c2059d25380cd375c725931570b84e574823b9bdc34821ce20e6ffe45db:8539809 originBehind=false
+t=2025-11-22T21:53:30+0530 lvl=info msg="Scheduled sequencer action" delta=1.291497542s
+t=2025-11-22T21:53:30+0530 lvl=info msg="Advancing bq origin" origin=0x33c88022066fbcc4100c75488ef734fae8641d0880a5d3f1e107d1e5ac8e7e9a:8539810 originBehind=false
+t=2025-11-22T21:53:31+0530 lvl=info msg="Advancing bq origin" origin=0x7951812b1edd2660d7d360bb8dcabb148e21d94bfeccd98ec06e1f7c223ba00c:8539811 originBehind=false
+t=2025-11-22T21:53:32+0530 lvl=info msg="Started sequencing new block" parent=0xee6a56b4b9eb168f75bc64f74826f252f42dddb2337d44e44005b5c0d72e3929:7 l1Origin=0xadb2fa5e90866891c7fc762f04126836adc2d4aa7519136250e02a0d4dc29788:8539734
+t=2025-11-22T21:53:32+0530 lvl=info msg="Advancing bq origin" origin=0x1d66ded33ab8d947840ce772d3595cb3d1dd68a827c77bb33145aa7f86ace99a:8539812 originBehind=false
+t=2025-11-22T21:53:34+0530 lvl=info msg="Scheduled sequencer action" delta=-1.632904667s
+t=2025-11-22T21:53:40+0530 lvl=warn msg="L1 head signal indicates a possible L1 re-org" old_l1_head=0xb340b631727f26d966666cb18ca1afa30a49ba2b263768b11eb014ebf4c5f652:10544619 new_l1_head_parent=0x880f170e9928b7dc042c9b4862c6a17b445077617f1b6b19bd8874241f2357c4 new_l1_head=0x96ad5860c8424b3233b67d1ff4b4b4e4548ee69ac94884ccbd7c7d3ba2d63d47:10544632
+t=2025-11-22T21:53:44+0530 lvl=warn msg="Failed to get payload" payload_id=0x0200269ca7e8dadd payload_id=0x0200269ca7e8dadd err="Post \"http://localhost:8551\": context deadline exceeded"
+t=2025-11-22T21:53:44+0530 lvl=error msg="Sequencer temporarily could not seal block" payloadID=0x0200269ca7e8dadd timestamp=1761823731 err="failed to seal execution payload (ID: 0x0200269ca7e8dadd): Post \"http://localhost:8551\": context deadline exceeded"
+t=2025-11-22T21:53:44+0530 lvl=info msg="Scheduled sequencer action" delta=1.999997333s
+t=2025-11-22T21:53:44+0530 lvl=info msg="Advancing bq origin" origin=0xe10161556bf0763b26ddc827e5ac9fd460b7067da4a90bdb072e6bcede42e6e9:8539813 originBehind=false
+t=2025-11-22T21:53:45+0530 lvl=info msg="Advancing bq origin" origin=0x7d004f855cd2e3b7c75502d2a14421dc7434a2bd72adb135f2d9f3594f3ae936:8539814 originBehind=false
+t=2025-11-22T21:53:46+0530 lvl=info msg="Started sequencing new block" parent=0xee6a56b4b9eb168f75bc64f74826f252f42dddb2337d44e44005b5c0d72e3929:7 l1Origin=0xadb2fa5e90866891c7fc762f04126836adc2d4aa7519136250e02a0d4dc29788:8539734
+t=2025-11-22T21:53:46+0530 lvl=info msg="Advancing bq origin" origin=0x6e2c9d59b8f151d63bad9efa8a5b94d914d8248e4135dba3eea589f0eb23bf31:8539815 originBehind=false
+t=2025-11-22T21:53:47+0530 lvl=info msg="Scheduled sequencer action" delta=-11.292µs
+t=2025-11-22T21:53:47+0530 lvl=info msg="Advancing bq origin" origin=0x024bbf14cbbe3974459e8b8449f6a8db6c41c4a5b921c83f3dbf8b1f481f2325:8539816 originBehind=false
+t=2025-11-22T21:53:53+0530 lvl=warn msg="L1 head signal indicates a possible L1 re-org" old_l1_head=0x96ad5860c8424b3233b67d1ff4b4b4e4548ee69ac94884ccbd7c7d3ba2d63d47:10544632 new_l1_head_parent=0x1f94d68ba3645bfb6cdf6496dfca75ffa9578d72a42868a41052a8a1c24fb979 new_l1_head=0xfc7e7dffa79760a2318dc3035ce4100f56dbb5b8225fe21848f7330af45bf1f5:10544643
+t=2025-11-22T21:53:59+0530 lvl=warn msg="Failed to get payload" payload_id=0x0200269ca7e8dadd payload_id=0x0200269ca7e8dadd err="Post \"http://localhost:8551\": context deadline exceeded"
+t=2025-11-22T21:53:59+0530 lvl=info msg="Advancing bq origin" origin=0xd1954929ccaf718aa9059a71c79285aa412710d4df6a2d568bdaad26a116e707:8539817 originBehind=false
+t=2025-11-22T21:54:00+0530 lvl=error msg="Sequencer temporarily could not seal block" payloadID=0x0200269ca7e8dadd timestamp=1761823731 err="failed to seal execution payload (ID: 0x0200269ca7e8dadd): Post \"http://localhost:8551\": context deadline exceeded"
+t=2025-11-22T21:54:00+0530 lvl=info msg="Scheduled sequencer action" delta=1.99998975s
+t=2025-11-22T21:54:00+0530 lvl=info msg="Advancing bq origin" origin=0x5ff805e052ea4241360dad76bc689c7de3598038de9bf3e1343bf417460652e7:8539818 originBehind=false
+t=2025-11-22T21:54:01+0530 lvl=info msg="Advancing bq origin" origin=0xdaa97c1c682fc785b6dcb07d0770b1c033f23ced729496333bc24109e407197d:8539819 originBehind=false
+t=2025-11-22T21:54:02+0530 lvl=info msg="Started sequencing new block" parent=0xee6a56b4b9eb168f75bc64f74826f252f42dddb2337d44e44005b5c0d72e3929:7 l1Origin=0xadb2fa5e90866891c7fc762f04126836adc2d4aa7519136250e02a0d4dc29788:8539734
+t=2025-11-22T21:54:02+0530 lvl=info msg="Advancing bq origin" origin=0xabe115eec4739c1ac175240e4978e68b8cfee68d754086b4995162787bb392a1:8539820 originBehind=false
+t=2025-11-22T21:54:04+0530 lvl=info msg="Scheduled sequencer action" delta=-10.208µs
+t=2025-11-22T21:54:05+0530 lvl=warn msg="L1 head signal indicates a possible L1 re-org" old_l1_head=0xfc7e7dffa79760a2318dc3035ce4100f56dbb5b8225fe21848f7330af45bf1f5:10544643 new_l1_head_parent=0x13bbb1ae5a4fffba29f75c6004b6dbb94ee49a9356ece591115c963f151896bd new_l1_head=0x5ea9fc0361dd23b33f9262cf96db57b07362673fb6b96eb79b637d656875f4da:10544656
+t=2025-11-22T21:54:06+0530 lvl=info msg="Stopped RPC server"
+t=2025-11-22T21:54:06+0530 lvl=info msg="Sequencer has been stopped"
+t=2025-11-22T21:54:06+0530 lvl=info msg="stopped sequencer" latestHead=0xee6a56b4b9eb168f75bc64f74826f252f42dddb2337d44e44005b5c0d72e3929
+t=2025-11-22T21:54:06+0530 lvl=warn msg="Failed to get payload" payload_id=0x0200269ca7e8dadd payload_id=0x0200269ca7e8dadd err="Post \"http://localhost:8551\": context canceled"
+t=2025-11-22T21:54:06+0530 lvl=info msg="State loop returned"
