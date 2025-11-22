@@ -1,7 +1,44 @@
+# ============================================================================
+# ARX L3 Blockchain - Runtime & Build Artifacts
+# ============================================================================
+
+# L2 Deployment - Blockchain Data & Logs
 arx/l2-deployment/geth-data/
 arx/l2-deployment/logs/
+arx/l2-deployment/*.log
+arx/l2-deployment/*.pid
+arx/l2-deployment/nohup.out
+
+# Contract Deployment Addresses (generated at runtime)
 arx/l2-deployment/arx-contracts.json
 arx/web3/deployments/l2-addresses.json
+
+# Web3/Hardhat Build Artifacts
 arx/web3/artifacts/
 arx/web3/cache/
-    
+arx/web3/*.log
+arx/web3/typechain-types/
+
+# Optimism Build Artifacts
+arx/optimism/optimism/packages/contracts-bedrock/deploy.log
+arx/optimism/optimism/packages/contracts-bedrock/deployments/
+arx/optimism/optimism/packages/contracts-bedrock/.deploy
+arx/optimism/**/*.log
+
+# Client/Next.js Build Artifacts
+arx/client/.next/
+arx/client/out/
+arx/client/*.log
+
+# All Log Files (catch-all)
+**/*.log
+**/logs/
+**/*.pid
+
+# Temporary Files
+**/*.tmp
+**/*.swp
+**/*~
+nohup.out
+startup.log
+
