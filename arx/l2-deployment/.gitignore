@@ -1,0 +1,19 @@
+# Logs
+logs/
+*.log
+
+# Blockchain data
+geth-data/
+
+# Temporary files
+*.tmp
+*.swp
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Background process outputs
+nohup.out
+startup.log
