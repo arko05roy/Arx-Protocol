@@ -76,9 +76,13 @@ nohup $OPTIMISM_DIR/op-batcher/bin/op-batcher \
   --l2-eth-rpc=http://localhost:8545 \
   --rollup-rpc=http://localhost:9545 \
   --private-key=f2d83d4bb547d821db1e33c6a488a9350d263dee584acadbd6603f862931349c \
+  --rpc.addr=0.0.0.0 \
+  --rpc.port=8547 \
   --metrics.enabled \
   --metrics.addr=0.0.0.0 \
   --metrics.port=7301 \
+  --data-availability-type=calldata \
+  --throttle.unsafe-da-bytes-lower-threshold=0 \
   > $DEPLOYMENT_DIR/logs/op-batcher.log 2>&1 &
 
 sleep 3
