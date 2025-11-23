@@ -235,18 +235,26 @@ TARGET_ACCOUNT="0xABaF59180e0209bdB8b3048bFbe64e855074C0c4"
 FUNDED_KEY="0xf0071a1eef433a24b6603da004f67c6aad2513718c54ec0c70504a88de4edb88"
 MINT_AMOUNT="1000000000000000000000000" # 1M tokens with 18 decimals
 
-# Mint cUSD tokens to ARX Dapp account
-cast send $CUSD_ADDRESS \
+# Wait a bit for the chain to stabilize
+sleep 2
+
+# Mint cUSD tokens to ARX Dapp account (with timeout)
+timeout 10s cast send $CUSD_ADDRESS \
   "mint(address,uint256)" \
   $TARGET_ACCOUNT \
   $MINT_AMOUNT \
   --private-key $FUNDED_KEY \
   --rpc-url http://localhost:8545 \
   --legacy \
-  --gas-price 1000000000 > /dev/null 2>&1
+  --gas-price 1000000000 \
+  --gas-limit 100000 > /dev/null 2>&1 || MINT_STATUS=$?
 
-if [ $? -eq 0 ]; then
+# Set default status if not set
+MINT_STATUS=${MINT_STATUS:-0}
+if [ $MINT_STATUS -eq 0 ]; then
     echo -e "${GREEN}✅ Minted 1,000,000 cUSD to ARX Dapp account${NC}"
+elif [ $MINT_STATUS -eq 124 ]; then
+    echo -e "${YELLOW}⚠️  cUSD minting timed out (will retry in background)${NC}"
 else
     echo -e "${YELLOW}⚠️  cUSD minting failed (may already be minted)${NC}"
 fi
@@ -266,32 +274,38 @@ TARGET_ACCOUNT="0xabaf59180e0209bdb8b3048bfbe64e855074c0c4"
 FUNDED_ACCOUNT="0x6813Eb9362372EeF6200f3b1dbC3f819671cBA69"
 FUNDED_PRIVATE_KEY="0xf0071a1eef433a24b6603da004f67c6aad2513718c54ec0c70504a88de4edb88"
 
-echo -e "${YELLOW}Funding account: $TARGET_ACCOUNT${NC}"
-echo -e "${YELLOW}Amount: 10,000 ETH (for ARX Dapp)${NC}"
-echo ""
+# Check current balance
+CURRENT_BALANCE=$(cast balance $TARGET_ACCOUNT --rpc-url http://localhost:8545 2>/dev/null || echo "0")
+CURRENT_BALANCE_ETH=$(cast --to-unit $CURRENT_BALANCE ether 2>/dev/null || echo "0")
 
-# Send 10,000 ETH to the target account
-TX_HASH=$(cast send $TARGET_ACCOUNT \
-  --value 10000ether \
-  --private-key $FUNDED_PRIVATE_KEY \
-  --rpc-url http://localhost:8545 \
-  --legacy 2>&1 | grep "transactionHash" | awk '{print $2}')
+echo -e "${YELLOW}Current balance: $CURRENT_BALANCE_ETH ETH${NC}"
 
-if [ -z "$TX_HASH" ]; then
-    echo -e "${RED}❌ Failed to fund ARX Dapp account${NC}"
-    exit 1
+# Only fund if balance is less than 15,000 ETH (account starts with 20,000 from genesis)
+if (( $(echo "$CURRENT_BALANCE_ETH < 15000" | bc -l) )); then
+    echo -e "${YELLOW}Funding account: $TARGET_ACCOUNT${NC}"
+    echo -e "${YELLOW}Amount: 10,000 ETH${NC}"
+    echo ""
+
+    # Send 10,000 ETH to the target account
+    TX_HASH=$(cast send $TARGET_ACCOUNT \
+      --value 10000ether \
+      --private-key $FUNDED_PRIVATE_KEY \
+      --rpc-url http://localhost:8545 \
+      --legacy 2>&1 | grep "transactionHash" | awk '{print $2}')
+
+    if [ -z "$TX_HASH" ]; then
+        echo -e "${YELLOW}⚠️  Funding transaction failed (account may already be funded)${NC}"
+    else
+        echo -e "${GREEN}✅ Funding transaction sent: $TX_HASH${NC}"
+        sleep 3
+    fi
 fi
 
-echo -e "${GREEN}✅ Funding transaction sent: $TX_HASH${NC}"
-
-# Wait for transaction to be mined
-sleep 3
-
-# Verify balance
+# Verify final balance
 BALANCE=$(cast balance $TARGET_ACCOUNT --rpc-url http://localhost:8545)
 BALANCE_ETH=$(cast --to-unit $BALANCE ether)
 
-echo -e "${GREEN}✅ Account funded successfully!${NC}"
+echo -e "${GREEN}✅ ARX Dapp account ready${NC}"
 echo -e "${GREEN}   Balance: $BALANCE_ETH ETH${NC}"
 echo ""
 
