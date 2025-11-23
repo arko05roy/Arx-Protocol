@@ -84,6 +84,20 @@ docker rm celo-l3-geth 2>/dev/null || true
 sleep 2
 
 # =============================================================================
+# INITIALIZE GETH WITH GENESIS (if needed)
+# =============================================================================
+if [ ! -d "$DEPLOYMENT_DIR/geth-data/geth/chaindata" ]; then
+    echo ""
+    echo -e "${YELLOW}Initializing geth with genesis (first run)...${NC}"
+    docker run --rm \
+      -v $DEPLOYMENT_DIR/geth-data:/geth-data \
+      -v $DEPLOYMENT_DIR/genesis.json:/genesis.json:ro \
+      us-docker.pkg.dev/oplabs-tools-artifacts/images/op-geth:latest \
+      init --datadir=/geth-data /genesis.json
+    echo -e "${GREEN}✅ Geth initialized with genesis${NC}"
+fi
+
+# =============================================================================
 # START OP-GETH (Execution Layer)
 # =============================================================================
 echo ""

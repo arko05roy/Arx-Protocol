@@ -106,29 +106,22 @@ function injectPredeploy(contractName, address) {
   // Most ARX contracts inherit from Ownable, which stores owner at slot 0
   if (contractName !== 'MockERC20') {
     predeploy.storage = {
-      // Slot 0: Owner address (Ownable)
+      // Slot 0: Owner address (Ownable) - must be exactly 32 bytes (64 hex chars)
       '0x0000000000000000000000000000000000000000000000000000000000000000':
-        '0x000000000000000000000000' + ARX_DAPP_ACCOUNT.slice(2).toLowerCase(),
+        '0x000000000000000000000000' + ARX_DAPP_ACCOUNT.slice(2),
     };
   } else {
-    // MockERC20 special case: set total supply and balance
-    const totalSupply = '1000000000000000000000000'; // 1M tokens with 18 decimals
+    // MockERC20 special case: set total supply
     predeploy.storage = {
       // Slot 0: Owner
       '0x0000000000000000000000000000000000000000000000000000000000000000':
-        '0x000000000000000000000000' + ARX_DAPP_ACCOUNT.slice(2).toLowerCase(),
-      // Slot 2: Total supply (standard ERC20 layout)
+        '0x000000000000000000000000' + ARX_DAPP_ACCOUNT.slice(2),
+      // Slot 2: Total supply (standard ERC20 layout) - 1M * 10^18
       '0x0000000000000000000000000000000000000000000000000000000000000002':
-        '0x00000000000000000000000000000000000000000000d3c21bcecceda1000000', // 1M * 10^18
+        '0x00000000000000000000000000000000000000000000d3c21bcecceda1000000',
     };
-
-    // Balance mapping: keccak256(address . slot)
-    // For simplicity, we'll set balance in the mapping manually
-    // Standard ERC20 balances are at slot 1, mapping(address => uint256)
-    // Hash of (ARX_DAPP_ACCOUNT, 1) gives the storage location
-    // This is a simplified version - for full EVM compatibility, use proper keccak256
-    predeploy.storage['0x' + '0'.repeat(24) + ARX_DAPP_ACCOUNT.slice(2).toLowerCase() + '01'] =
-      '0x00000000000000000000000000000000000000000000d3c21bcecceda1000000';
+    // Note: Balance mappings would require proper keccak256 calculation
+    // For simplicity, we'll mint tokens via contract interaction after genesis
   }
 
   // Inject into genesis alloc
