@@ -32,6 +32,7 @@ const ARX_DAPP_ACCOUNT = '0xABaF59180e0209bdB8b3048bFbe64e855074C0c4';
 
 // Paths
 const GENESIS_PATH = path.join(__dirname, '../genesis.json');
+const ROLLUP_PATH = path.join(__dirname, '../rollup.json');
 const WEB3_DIR = path.join(__dirname, '../../web3');
 const ARTIFACTS_DIR = path.join(WEB3_DIR, 'artifacts/contracts');
 
@@ -102,26 +103,36 @@ function injectPredeploy(contractName, address) {
     balance: '0x0',
   };
 
-  // Add storage initialization for owner (Ownable contracts)
-  // Most ARX contracts inherit from Ownable, which stores owner at slot 0
-  if (contractName !== 'MockERC20') {
-    predeploy.storage = {
-      // Slot 0: Owner address (Ownable) - must be exactly 32 bytes (64 hex chars)
-      '0x0000000000000000000000000000000000000000000000000000000000000000':
-        '0x000000000000000000000000' + ARX_DAPP_ACCOUNT.slice(2),
-    };
-  } else {
-    // MockERC20 special case: set total supply
-    predeploy.storage = {
-      // Slot 0: Owner
-      '0x0000000000000000000000000000000000000000000000000000000000000000':
-        '0x000000000000000000000000' + ARX_DAPP_ACCOUNT.slice(2),
-      // Slot 2: Total supply (standard ERC20 layout) - 1M * 10^18
-      '0x0000000000000000000000000000000000000000000000000000000000000002':
-        '0x00000000000000000000000000000000000000000000d3c21bcecceda1000000',
-    };
-    // Note: Balance mappings would require proper keccak256 calculation
-    // For simplicity, we'll mint tokens via contract interaction after genesis
+  // Initialize storage for OpenZeppelin contracts
+  // Storage layout for contracts inheriting Ownable, Pausable, ReentrancyGuard:
+  // Slot 0: _owner (address) from Ownable
+  // Slot 1: _paused (bool) from Pausable - false = not paused (0x00)
+  // Slot 2: _status (uint256) from ReentrancyGuard - NOT_ENTERED = 1
+
+  predeploy.storage = {
+    // Slot 0: Owner address (Ownable)
+    '0x0000000000000000000000000000000000000000000000000000000000000000':
+      '0x000000000000000000000000' + ARX_DAPP_ACCOUNT.slice(2),
+    // Slot 1: Paused state (false = not paused)
+    '0x0000000000000000000000000000000000000000000000000000000000000001':
+      '0x0000000000000000000000000000000000000000000000000000000000000000',
+    // Slot 2: ReentrancyGuard status (NOT_ENTERED = 1)
+    '0x0000000000000000000000000000000000000000000000000000000000000002':
+      '0x0000000000000000000000000000000000000000000000000000000000000001',
+  };
+
+  // Additional storage for specific contracts
+  if (contractName === 'MockERC20') {
+    // ERC20 storage: name, symbol, decimals, totalSupply, balances
+    // Slot 3: Total supply - 1M * 10^18
+    predeploy.storage['0x0000000000000000000000000000000000000000000000000000000000000003'] =
+      '0x00000000000000000000000000000000000000000000d3c21bcecceda1000000';
+    // Note: Balance mappings would require keccak256 calculation
+    // We'll mint tokens after genesis if needed
+  } else if (contractName === 'TaskRegistry') {
+    // Slot 3: taskIdCounter - start at 1
+    predeploy.storage['0x0000000000000000000000000000000000000000000000000000000000000003'] =
+      '0x0000000000000000000000000000000000000000000000000000000000000001';
   }
 
   // Inject into genesis alloc
