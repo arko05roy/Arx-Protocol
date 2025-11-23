@@ -226,6 +226,34 @@ echo -e "${GREEN}   (No deployment needed - contracts embedded in genesis)${NC}"
 echo ""
 
 # =============================================================================
+# MINT CUSD TOKENS
+# =============================================================================
+echo -e "${YELLOW}Minting cUSD tokens...${NC}"
+
+CUSD_ADDRESS="0x420000000000000000000000000000000000010B"
+TARGET_ACCOUNT="0xABaF59180e0209bdB8b3048bFbe64e855074C0c4"
+FUNDED_KEY="0xf0071a1eef433a24b6603da004f67c6aad2513718c54ec0c70504a88de4edb88"
+MINT_AMOUNT="1000000000000000000000000" # 1M tokens with 18 decimals
+
+# Mint cUSD tokens to ARX Dapp account
+cast send $CUSD_ADDRESS \
+  "mint(address,uint256)" \
+  $TARGET_ACCOUNT \
+  $MINT_AMOUNT \
+  --private-key $FUNDED_KEY \
+  --rpc-url http://localhost:8545 \
+  --legacy \
+  --gas-price 1000000000 > /dev/null 2>&1
+
+if [ $? -eq 0 ]; then
+    echo -e "${GREEN}✅ Minted 1,000,000 cUSD to ARX Dapp account${NC}"
+else
+    echo -e "${YELLOW}⚠️  cUSD minting failed (may already be minted)${NC}"
+fi
+
+echo ""
+
+# =============================================================================
 # FUND ARX DAPP ACCOUNT
 # =============================================================================
 echo ""

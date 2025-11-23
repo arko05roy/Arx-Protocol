@@ -4,8 +4,10 @@ import { useEffect, useState } from 'react';
 
 const ERC20_ABI = ((OZ_IERC20ABIImport as any)?.default || OZ_IERC20ABIImport || []) as any;
 
-// Default fallback address (will be overridden by deployment config)
-const DEFAULT_CUSD_TOKEN_ADDRESS = '0x5E1767D0E3B376A2685Fe8489Ac590FD24640F2C' as const;
+import { ARX_PREDEPLOYS } from '@/lib/predeploys';
+
+// cUSD Token predeploy address
+const DEFAULT_CUSD_TOKEN_ADDRESS = ARX_PREDEPLOYS.CUSD_TOKEN;
 
 // Get cUSD address from deployment config or use fallback
 function getCUSDTokenAddress(): `0x${string}` {

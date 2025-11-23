@@ -122,14 +122,7 @@ function injectPredeploy(contractName, address) {
   };
 
   // Additional storage for specific contracts
-  if (contractName === 'MockERC20') {
-    // ERC20 storage: name, symbol, decimals, totalSupply, balances
-    // Slot 3: Total supply - 1M * 10^18
-    predeploy.storage['0x0000000000000000000000000000000000000000000000000000000000000003'] =
-      '0x00000000000000000000000000000000000000000000d3c21bcecceda1000000';
-    // Note: Balance mappings would require keccak256 calculation
-    // We'll mint tokens after genesis if needed
-  } else if (contractName === 'TaskRegistry') {
+  if (contractName === 'TaskRegistry') {
     // Slot 3: taskIdCounter - start at 1
     predeploy.storage['0x0000000000000000000000000000000000000000000000000000000000000003'] =
       '0x0000000000000000000000000000000000000000000000000000000000000001';
