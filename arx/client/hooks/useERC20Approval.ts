@@ -9,18 +9,9 @@ import { ARX_PREDEPLOYS } from '@/lib/predeploys';
 // cUSD Token predeploy address
 const DEFAULT_CUSD_TOKEN_ADDRESS = ARX_PREDEPLOYS.CUSD_TOKEN;
 
-// Get cUSD address from deployment config or use fallback
+// Get cUSD address - always use predeploy address
 function getCUSDTokenAddress(): `0x${string}` {
-  if (typeof window !== 'undefined') {
-    try {
-      const deploymentConfig = (window as any).__DEPLOYMENT_CONFIG__;
-      if (deploymentConfig?.cUSD) {
-        return deploymentConfig.cUSD as `0x${string}`;
-      }
-    } catch (e) {
-      // Fallback to default
-    }
-  }
+  // Always return the predeploy address (fixed genesis address)
   return DEFAULT_CUSD_TOKEN_ADDRESS;
 }
 
