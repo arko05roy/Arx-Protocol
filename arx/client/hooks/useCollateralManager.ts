@@ -1,9 +1,10 @@
 import { useReadContract, useWriteContract, useWaitForTransactionReceipt } from 'wagmi';
 import { CollateralManagerABI } from '@/lib/abis';
+import { ARX_PREDEPLOYS, DEFAULT_GAS_CONFIG } from '@/lib/predeploys';
 
 const COLLATERAL_MANAGER_ABI = CollateralManagerABI as any;
 
-export const COLLATERAL_MANAGER_ADDRESS = '0x1171E8484a6018b50603f93BB15E14f11a68f34a' as const;
+export const COLLATERAL_MANAGER_ADDRESS = ARX_PREDEPLOYS.COLLATERAL_MANAGER;
 
 export enum StakeStatus {
   None = 0,
@@ -34,6 +35,7 @@ export function useRegisterOperator() {
       functionName: 'registerOperator',
       args: [],
       value: amount,
+      ...DEFAULT_GAS_CONFIG,
     });
   };
 
@@ -55,6 +57,7 @@ export function useAddStake() {
       functionName: 'addStake',
       args: [],
       value: amount,
+      ...DEFAULT_GAS_CONFIG,
     });
   };
 
@@ -75,6 +78,7 @@ export function useWithdrawStake() {
       abi: COLLATERAL_MANAGER_ABI,
       functionName: 'withdrawStake',
       args: [amount],
+      ...DEFAULT_GAS_CONFIG,
     });
   };
 
@@ -95,6 +99,7 @@ export function useStakeForTask() {
       abi: COLLATERAL_MANAGER_ABI,
       functionName: 'stakeForTask',
       args: [taskId],
+      ...DEFAULT_GAS_CONFIG,
     });
   };
 

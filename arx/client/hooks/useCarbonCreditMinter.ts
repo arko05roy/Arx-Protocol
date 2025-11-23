@@ -1,9 +1,10 @@
 import { useReadContract, useWriteContract, useWaitForTransactionReceipt } from 'wagmi';
 import { CarbonCreditMinterABI } from '@/lib/abis';
+import { ARX_PREDEPLOYS, DEFAULT_GAS_CONFIG } from '@/lib/predeploys';
 
 const CARBON_CREDIT_MINTER_ABI = CarbonCreditMinterABI as any;
 
-export const CARBON_CREDIT_MINTER_ADDRESS = '0x6d8c132531ab6af82A543177FEf7C8c6009779B2' as const;
+export const CARBON_CREDIT_MINTER_ADDRESS = ARX_PREDEPLOYS.CARBON_CREDIT_MINTER;
 
 export interface CreditMetadata {
   taskId: bigint;
@@ -30,6 +31,7 @@ export function useRetireCredits() {
       abi: CARBON_CREDIT_MINTER_ABI,
       functionName: 'retireCredits',
       args: [tokenId, amount, reason],
+      ...DEFAULT_GAS_CONFIG,
     });
   };
 

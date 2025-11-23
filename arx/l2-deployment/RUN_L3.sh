@@ -182,87 +182,34 @@ for i in {1..30}; do
 done
 
 # =============================================================================
-# DEPLOY ARX PROTOCOL CONTRACTS
+# ARX PROTOCOL CONTRACTS - NOW USING PREDEPLOYS
 # =============================================================================
+# NOTE: ARX Protocol contracts are now embedded in genesis as predeploys.
+# They are available immediately at fixed addresses from block 0.
+# No compilation, deployment, or initialization needed!
+#
+# To regenerate genesis with predeploys, run:
+#   node $DEPLOYMENT_DIR/scripts/inject-arx-predeploys.js
+#
+# Predeploy addresses (0x4200...0100 - 0x4200...010B):
+#   - TaskRegistry: 0x4200000000000000000000000000000000000100
+#   - DataRegistry: 0x4200000000000000000000000000000000000101
+#   - ModelRegistry: 0x4200000000000000000000000000000000000102
+#   - FundingPool: 0x4200000000000000000000000000000000000103
+#   - CollateralManager: 0x4200000000000000000000000000000000000104
+#   - VerificationManager: 0x4200000000000000000000000000000000000105
+#   - CarbonCreditMinter: 0x4200000000000000000000000000000000000106
+#   - CarbonMarketplace: 0x4200000000000000000000000000000000000107
+#   - PredictionMarketplace: 0x4200000000000000000000000000000000000108
+#   - GovernanceDAO: 0x4200000000000000000000000000000000000109
+#   - Treasury: 0x420000000000000000000000000000000000010A
+#   - cUSD Token: 0x420000000000000000000000000000000000010B
+# =============================================================================
+
 echo ""
-echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
-echo -e "${BLUE}          📜 DEPLOYING ARX PROTOCOL CONTRACTS${NC}"
-echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
+echo -e "${GREEN}✅ ARX Protocol contracts available as genesis predeploys${NC}"
+echo -e "${GREEN}   (No deployment needed - contracts embedded in genesis)${NC}"
 echo ""
-
-echo -e "${YELLOW}Deploying 12 smart contracts to ARX L3...${NC}"
-echo -e "${YELLOW}This may take 2-3 minutes...${NC}"
-echo ""
-
-# Create logs directory if it doesn't exist
-mkdir -p $DEPLOYMENT_DIR/logs
-
-# Compile contracts first
-cd $WEB3_DIR
-echo -e "${YELLOW}Compiling smart contracts...${NC}"
-npx hardhat compile > $DEPLOYMENT_DIR/logs/contract-compilation.log 2>&1
-
-if [ $? -ne 0 ]; then
-    echo -e "${RED}❌ Contract compilation failed${NC}"
-    echo -e "${RED}Check logs at: $DEPLOYMENT_DIR/logs/contract-compilation.log${NC}"
-    exit 1
-fi
-
-echo -e "${GREEN}✅ Contracts compiled successfully${NC}"
-echo ""
-
-# Deploy all contracts
-echo -e "${YELLOW}Deploying contracts to L3...${NC}"
-npx hardhat run scripts/deploy-l2.js --network arxl3 > $DEPLOYMENT_DIR/logs/contract-deployment.log 2>&1
-
-if [ $? -eq 0 ]; then
-    echo -e "${GREEN}✅ All contracts deployed successfully${NC}"
-
-    # Show deployed addresses
-    if [ -f "$DEPLOYMENT_DIR/arx-contracts.json" ]; then
-        echo ""
-        echo -e "${GREEN}📝 Contract Addresses:${NC}"
-        cat $DEPLOYMENT_DIR/arx-contracts.json | python3 -m json.tool | grep -v "^{" | grep -v "^}" | sed 's/^/   /'
-    fi
-else
-    echo -e "${RED}❌ Contract deployment failed${NC}"
-    echo -e "${RED}Check logs at: $DEPLOYMENT_DIR/logs/contract-deployment.log${NC}"
-    echo ""
-    echo -e "${YELLOW}Last 20 lines of deployment log:${NC}"
-    tail -20 $DEPLOYMENT_DIR/logs/contract-deployment.log
-    exit 1
-fi
-
-# Initialize contracts (set cross-references)
-echo ""
-echo -e "${YELLOW}Initializing contract references...${NC}"
-
-npx hardhat run scripts/initialize-l2.js --network arxl3 > $DEPLOYMENT_DIR/logs/contract-initialization.log 2>&1
-
-if [ $? -eq 0 ]; then
-    echo -e "${GREEN}✅ Contracts initialized successfully${NC}"
-else
-    echo -e "${RED}❌ Contract initialization failed${NC}"
-    echo -e "${RED}Check logs at: $DEPLOYMENT_DIR/logs/contract-initialization.log${NC}"
-    echo ""
-    echo -e "${YELLOW}Last 20 lines of initialization log:${NC}"
-    tail -20 $DEPLOYMENT_DIR/logs/contract-initialization.log
-    exit 1
-fi
-
-# Sync contract addresses to client hooks
-echo ""
-echo -e "${YELLOW}Syncing contract addresses to client...${NC}"
-node $PROJECT_ROOT/scripts/sync-addresses.js > $DEPLOYMENT_DIR/logs/address-sync.log 2>&1
-
-if [ $? -eq 0 ]; then
-    echo -e "${GREEN}✅ Contract addresses synced to client hooks${NC}"
-else
-    echo -e "${YELLOW}⚠️  Address sync encountered issues (non-fatal)${NC}"
-    echo -e "${YELLOW}Check logs at: $DEPLOYMENT_DIR/logs/address-sync.log${NC}"
-fi
-
-cd $DEPLOYMENT_DIR
 
 # =============================================================================
 # FUND ARX DAPP ACCOUNT

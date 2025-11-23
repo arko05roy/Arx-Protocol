@@ -1,11 +1,12 @@
 import { useReadContract, useWriteContract, useWaitForTransactionReceipt } from 'wagmi';
 import { parseEther } from 'viem';
 import { TaskRegistryABI as TaskRegistryABIImport } from '@/lib/abis';
+import { ARX_PREDEPLOYS, DEFAULT_GAS_CONFIG } from '@/lib/predeploys';
 
 const TASK_REGISTRY_ABI_SRC = (TaskRegistryABIImport as any)?.default || TaskRegistryABIImport || [];
 const TASK_REGISTRY_ABI = ((TASK_REGISTRY_ABI_SRC as any)?.abi ?? TASK_REGISTRY_ABI_SRC) as any;
 
-export const TASK_REGISTRY_ADDRESS = '0x558544d1e3145253715245fB2a36aD23FCd6bFb4' as const;
+export const TASK_REGISTRY_ADDRESS = ARX_PREDEPLOYS.TASK_REGISTRY;
 
 export enum TaskStatus {
   Proposed = 0,
@@ -81,7 +82,7 @@ export function useCreateTask() {
         abi: TASK_REGISTRY_ABI,
         functionName: 'createTask',
         args: [description, estimatedCost, expectedCO2, location, deadline, proofRequirements, ipfsHash],
-        gas: 5000000n,
+        ...DEFAULT_GAS_CONFIG,
       };
 
       writeContract(writeParams);
@@ -262,6 +263,7 @@ export function useSubmitProof() {
       abi: TASK_REGISTRY_ABI,
       functionName: 'submitProof',
       args: [taskId, proofHash, actualCO2],
+      ...DEFAULT_GAS_CONFIG,
     });
   };
 

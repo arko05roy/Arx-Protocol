@@ -1,9 +1,10 @@
 import { useReadContract, useWriteContract, useWaitForTransactionReceipt } from 'wagmi';
 import { GovernanceDAOABI } from '@/lib/abis';
+import { ARX_PREDEPLOYS, DEFAULT_GAS_CONFIG } from '@/lib/predeploys';
 
 const GOVERNANCE_DAO_ABI = GovernanceDAOABI as any;
 
-export const GOVERNANCE_DAO_ADDRESS = '0xbbeB2f113A5f03634e6eC1EfD1073e36E74584ED' as const;
+export const GOVERNANCE_DAO_ADDRESS = ARX_PREDEPLOYS.GOVERNANCE_DAO;
 
 export enum ProposalState {
   Active = 0,
@@ -71,6 +72,7 @@ export function useCreateProposal() {
       abi: GOVERNANCE_DAO_ABI,
       functionName: 'createProposal',
       args: [description, targetContract, callData],
+      ...DEFAULT_GAS_CONFIG,
     });
   };
 
@@ -91,6 +93,7 @@ export function useVote() {
       abi: GOVERNANCE_DAO_ABI,
       functionName: 'vote',
       args: [proposalId, support, tokenId],
+      ...DEFAULT_GAS_CONFIG,
     });
   };
 
@@ -111,6 +114,7 @@ export function useExecuteProposal() {
       abi: GOVERNANCE_DAO_ABI,
       functionName: 'executeProposal',
       args: [proposalId],
+      ...DEFAULT_GAS_CONFIG,
     });
   };
 
@@ -131,6 +135,7 @@ export function useCancelProposal() {
       abi: GOVERNANCE_DAO_ABI,
       functionName: 'cancelProposal',
       args: [proposalId],
+      ...DEFAULT_GAS_CONFIG,
     });
   };
 
@@ -151,6 +156,7 @@ export function useSetVotingPeriod() {
       abi: GOVERNANCE_DAO_ABI,
       functionName: 'setVotingPeriod',
       args: [newPeriod],
+      ...DEFAULT_GAS_CONFIG,
     });
   };
 
@@ -171,6 +177,7 @@ export function useSetProposalBond() {
       abi: GOVERNANCE_DAO_ABI,
       functionName: 'setProposalBond',
       args: [newBond],
+      ...DEFAULT_GAS_CONFIG,
     });
   };
 
@@ -191,6 +198,7 @@ export function useSetQuorum() {
       abi: GOVERNANCE_DAO_ABI,
       functionName: 'setQuorum',
       args: [newQuorumBps],
+      ...DEFAULT_GAS_CONFIG,
     });
   };
 
@@ -211,6 +219,7 @@ export function useSetExecutionDelay() {
       abi: GOVERNANCE_DAO_ABI,
       functionName: 'setExecutionDelay',
       args: [newDelay],
+      ...DEFAULT_GAS_CONFIG,
     });
   };
 

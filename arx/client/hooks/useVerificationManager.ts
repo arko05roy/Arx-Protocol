@@ -1,9 +1,10 @@
 import { useReadContract, useWriteContract, useWaitForTransactionReceipt } from 'wagmi';
 import { VerificationManagerABI } from '@/lib/abis';
+import { ARX_PREDEPLOYS, DEFAULT_GAS_CONFIG } from '@/lib/predeploys';
 
 const VERIFICATION_MANAGER_ABI = VerificationManagerABI as any;
 
-export const VERIFICATION_MANAGER_ADDRESS = '0x4c6134C88DCeE609445688FcCe10102B7CFCf9CE' as const;
+export const VERIFICATION_MANAGER_ADDRESS = ARX_PREDEPLOYS.VERIFICATION_MANAGER;
 
 export interface Vote {
   hasVoted: boolean;
@@ -28,6 +29,7 @@ export function useInitiateVerification() {
       abi: VERIFICATION_MANAGER_ABI,
       functionName: 'initiateVerification',
       args: [taskId],
+      ...DEFAULT_GAS_CONFIG,
     });
   };
 
@@ -50,6 +52,7 @@ export function useAddValidator() {
       abi: VERIFICATION_MANAGER_ABI,
       functionName: 'addValidator',
       args: [validator],
+      ...DEFAULT_GAS_CONFIG,
     });
   };
 
@@ -83,6 +86,7 @@ export function useSubmitValidatorVote() {
       functionName: 'submitVote',
       // Contract signature: submitVote(uint256 taskId, bool approve, uint256 confidenceScore, string justification)
       args: [taskId, approve, confidenceScore, justification],
+      ...DEFAULT_GAS_CONFIG,
     });
   };
 

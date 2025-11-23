@@ -1,9 +1,10 @@
 import { useReadContract, useWriteContract, useWaitForTransactionReceipt } from 'wagmi';
 import { ModelRegistryABI } from '@/lib/abis';
+import { ARX_PREDEPLOYS, DEFAULT_GAS_CONFIG } from '@/lib/predeploys';
 
 const MODEL_REGISTRY_ABI = ModelRegistryABI as any;
 
-export const MODEL_REGISTRY_ADDRESS = '0xA52bc8BdC9f3B3D80eDBe566813Ba63A86Ad34E8' as const;
+export const MODEL_REGISTRY_ADDRESS = ARX_PREDEPLOYS.MODEL_REGISTRY;
 
 export interface Model {
   id: bigint;
@@ -70,6 +71,7 @@ export function useRegisterModel() {
       abi: MODEL_REGISTRY_ABI,
       functionName: 'registerModel',
       args: [name, description, ipfsHash, architecture, stakeAmount],
+      ...DEFAULT_GAS_CONFIG,
     });
   };
 
@@ -90,6 +92,7 @@ export function useUpdateModel() {
       abi: MODEL_REGISTRY_ABI,
       functionName: 'updateModel',
       args: [modelId, newIpfsHash],
+      ...DEFAULT_GAS_CONFIG,
     });
   };
 
@@ -110,6 +113,7 @@ export function useAddModelStake() {
       abi: MODEL_REGISTRY_ABI,
       functionName: 'addStake',
       args: [modelId, amount],
+      ...DEFAULT_GAS_CONFIG,
     });
   };
 
@@ -130,6 +134,7 @@ export function useWithdrawModelStake() {
       abi: MODEL_REGISTRY_ABI,
       functionName: 'withdrawStake',
       args: [modelId, amount],
+      ...DEFAULT_GAS_CONFIG,
     });
   };
 
@@ -155,6 +160,7 @@ export function useRecordPrediction() {
       abi: MODEL_REGISTRY_ABI,
       functionName: 'recordPrediction',
       args: [modelId, taskId, predictedOutcome, confidence],
+      ...DEFAULT_GAS_CONFIG,
     });
   };
 
@@ -175,6 +181,7 @@ export function useDeactivateModel() {
       abi: MODEL_REGISTRY_ABI,
       functionName: 'deactivateModel',
       args: [modelId, reason],
+      ...DEFAULT_GAS_CONFIG,
     });
   };
 
@@ -195,6 +202,7 @@ export function useReactivateModel() {
       abi: MODEL_REGISTRY_ABI,
       functionName: 'reactivateModel',
       args: [modelId],
+      ...DEFAULT_GAS_CONFIG,
     });
   };
 

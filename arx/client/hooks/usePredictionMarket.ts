@@ -1,10 +1,11 @@
 import { useReadContract, useWriteContract, useWaitForTransactionReceipt } from 'wagmi';
 import { PredictionMarketABI as PredictionMarketABIImport } from '@/lib/abis';
+import { ARX_PREDEPLOYS, DEFAULT_GAS_CONFIG } from '@/lib/predeploys';
 
 const PREDICTION_MARKET_ABI_SRC = (PredictionMarketABIImport as any)?.default || PredictionMarketABIImport || [];
 const PREDICTION_MARKET_ABI = (((PREDICTION_MARKET_ABI_SRC as any)?.abi) ?? PREDICTION_MARKET_ABI_SRC) as any;
 
-export const PREDICTION_MARKET_ADDRESS = '0x6d3b5EAa55892c9B0a26609Fea7bb2987c307f21' as const;
+export const PREDICTION_MARKET_ADDRESS = ARX_PREDEPLOYS.PREDICTION_MARKETPLACE;
 
 export interface Market {
   taskId: bigint;
@@ -56,6 +57,7 @@ export function useBuyShares() {
       abi: PREDICTION_MARKET_ABI,
       functionName: 'buyShares',
       args: [taskId, isYes, amount],
+      ...DEFAULT_GAS_CONFIG,
     });
   };
 
@@ -76,6 +78,7 @@ export function useClaimWinnings() {
       abi: PREDICTION_MARKET_ABI,
       functionName: 'claimWinnings',
       args: [taskId],
+      ...DEFAULT_GAS_CONFIG,
     });
   };
 
@@ -95,6 +98,7 @@ export function useCreateMarket() {
       abi: PREDICTION_MARKET_ABI,
       functionName: 'createMarket',
       args: [taskId, resolutionDeadline],
+      ...DEFAULT_GAS_CONFIG,
     });
   };
 

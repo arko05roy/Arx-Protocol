@@ -31,7 +31,7 @@ export function Providers({ children, initialState }: Props) {
             fontStack: "system",
             overlayBlur: "small",
           })}
-          initialChain={11142220}
+          initialChain={424242}
         >
           <DeploymentConfigInjector />
           {children}

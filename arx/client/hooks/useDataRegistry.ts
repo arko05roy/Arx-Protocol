@@ -1,9 +1,10 @@
 import { useReadContract, useWriteContract, useWaitForTransactionReceipt } from 'wagmi';
 import { DataRegistryABI } from '@/lib/abis';
+import { ARX_PREDEPLOYS, DEFAULT_GAS_CONFIG } from '@/lib/predeploys';
 
 const DATA_REGISTRY_ABI = DataRegistryABI as any;
 
-export const DATA_REGISTRY_ADDRESS = '0x9d9f446b7Fd788bF348e223A0C057CFCfFea1318' as const;
+export const DATA_REGISTRY_ADDRESS = ARX_PREDEPLOYS.DATA_REGISTRY;
 
 export interface DataEntry {
   taskId: bigint;
@@ -45,6 +46,7 @@ export function useAuthorizeResearcher() {
       abi: DATA_REGISTRY_ABI,
       functionName: 'authorizeResearcher',
       args: [researcher],
+      ...DEFAULT_GAS_CONFIG,
     });
   };
 
@@ -65,6 +67,7 @@ export function useRevokeResearcher() {
       abi: DATA_REGISTRY_ABI,
       functionName: 'revokeResearcher',
       args: [researcher],
+      ...DEFAULT_GAS_CONFIG,
     });
   };
 
@@ -85,6 +88,7 @@ export function usePublishTaskData() {
       abi: DATA_REGISTRY_ABI,
       functionName: 'publishTaskData',
       args: [taskId, qualityScore],
+      ...DEFAULT_GAS_CONFIG,
     });
   };
 
@@ -105,6 +109,7 @@ export function useUpdateDataHash() {
       abi: DATA_REGISTRY_ABI,
       functionName: 'updateDataHash',
       args: [taskId, newIpfsHash],
+      ...DEFAULT_GAS_CONFIG,
     });
   };
 
@@ -125,6 +130,7 @@ export function useSetDataPrivacy() {
       abi: DATA_REGISTRY_ABI,
       functionName: 'setDataPrivacy',
       args: [taskId, isPublic],
+      ...DEFAULT_GAS_CONFIG,
     });
   };
 
@@ -384,6 +390,7 @@ export function useCreateDataEntry() {
       abi: DATA_REGISTRY_ABI,
       functionName: 'updateDataHash',
       args: [taskId, ipfsHash],
+      ...DEFAULT_GAS_CONFIG,
     });
   };
 

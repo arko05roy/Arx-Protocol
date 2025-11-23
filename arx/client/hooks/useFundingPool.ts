@@ -1,9 +1,10 @@
 import { useReadContract, useWriteContract, useWaitForTransactionReceipt } from 'wagmi';
 import { FundingPoolABI } from '@/lib/abis';
+import { ARX_PREDEPLOYS, DEFAULT_GAS_CONFIG } from '@/lib/predeploys';
 
 const FUNDING_POOL_ABI = FundingPoolABI as any;
 
-export const FUNDING_POOL_ADDRESS = '0xceB4cbbF82119d6DD1282A8d63bDE348A76feB71' as const;
+export const FUNDING_POOL_ADDRESS = ARX_PREDEPLOYS.FUNDING_POOL;
 
 export interface Pool {
   totalFunded: bigint;
@@ -32,6 +33,7 @@ export function useFundTask() {
       abi: FUNDING_POOL_ABI,
       functionName: 'fundTask',
       args: [taskId, amount],
+      ...DEFAULT_GAS_CONFIG,
     });
   };
 
@@ -52,6 +54,7 @@ export function useWithdrawFunding() {
       abi: FUNDING_POOL_ABI,
       functionName: 'withdrawFunding',
       args: [taskId],
+      ...DEFAULT_GAS_CONFIG,
     });
   };
 
@@ -72,6 +75,7 @@ export function useClaimRefund() {
       abi: FUNDING_POOL_ABI,
       functionName: 'claimRefund',
       args: [taskId],
+      ...DEFAULT_GAS_CONFIG,
     });
   };
 

@@ -1,9 +1,10 @@
 import { useReadContract, useWriteContract, useWaitForTransactionReceipt } from 'wagmi';
 import { CarbonMarketplaceABI } from '@/lib/abis';
+import { ARX_PREDEPLOYS, DEFAULT_GAS_CONFIG } from '@/lib/predeploys';
 
 const CARBON_MARKETPLACE_ABI = CarbonMarketplaceABI as any;
 
-export const CARBON_MARKETPLACE_ADDRESS = '0x9b11e9EA38E86B60f0C47c0C1f85Bf15109C6d96' as const;
+export const CARBON_MARKETPLACE_ADDRESS = ARX_PREDEPLOYS.CARBON_MARKETPLACE;
 
 export interface Order {
   orderId: bigint;
@@ -41,6 +42,7 @@ export function useCreateSellOrder() {
       abi: CARBON_MARKETPLACE_ABI,
       functionName: 'createSellOrder',
       args: [tokenId, amount, pricePerCredit],
+      ...DEFAULT_GAS_CONFIG,
     });
   };
 
@@ -61,6 +63,7 @@ export function useCancelOrder() {
       abi: CARBON_MARKETPLACE_ABI,
       functionName: 'cancelOrder',
       args: [orderId],
+      ...DEFAULT_GAS_CONFIG,
     });
   };
 
@@ -81,6 +84,7 @@ export function useBuyCredits() {
       abi: CARBON_MARKETPLACE_ABI,
       functionName: 'buyCredits',
       args: [orderId, amount],
+      ...DEFAULT_GAS_CONFIG,
     });
   };
 
